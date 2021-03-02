@@ -43,15 +43,6 @@ After completing this lab, you will be able to:
 
 -  Describe characteristics of manual vertical scaling of Azure VM Scale Sets
 
-
-## Lab Environment
-  
-Windows Server admin credentials
-
--  User Name: **Student**
-
--  Password: **Pa55w.rd1234**
-
 Estimated Time: 120 minutes
 
 
@@ -91,21 +82,23 @@ The main tasks for this exercise are as follows:
 
 1. From your lab computer, start a web browser, navigate to the [Azure portal](https://portal.azure.com), and sign in by providing credentials of a user account with the Owner role in the subscription you will be using in this lab.
 
-1. In the Azure portal, open the **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
+2. In the Azure portal, open the **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
-1. If prompted to select either **Bash** or **PowerShell**, select **Bash**. 
+3. If prompted to select either **Bash** or **PowerShell**, select **Bash**.
 
-    > **Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
-    
-1. From the Cloud Shell pane, run the following to register the Microsoft.Insights resource provider in preparation for the later exercises in this lab:
+    > **Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Show advanced settings**.
+
+4. Select **Use existing** under Resource Group then select **az30302a-labRG** and enter **shellstorageDeployment-id** for storage account name and Enter **filestorageDeployment-id** then click on **Create Storage**.
+
+5. From the Cloud Shell pane, run the following to register the Microsoft.Insights resource provider in preparation for the later exercises in this lab:
 
    ```Bash
    az provider register --namespace 'Microsoft.Insights'
    ```
 
-1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **\\\\AZ303\\AllFiles\\Labs\\05\\azuredeploy30305suba.json** into the Cloud Shell home directory.
+6. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **\C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05** into the Cloud Shell home directory.
 
-1. From the Cloud Shell pane, run the following to create a resource group (replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer):
+7. From the Cloud Shell pane, run the following to create a resource group (replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer):
 
    ```Bash
    LOCATION='<Azure region>'
@@ -115,18 +108,18 @@ The main tasks for this exercise are as follows:
    az deployment sub create \
    --location $LOCATION \
    --template-file azuredeploy30305suba.json \
-   --parameters rgName=az30305a-labRG rgLocation=$LOCATION
+   --parameters rgName=az30305a-labRG-deploymentId rgLocation=$LOCATION
    ```
 
       > **Note**: Ensure to use the proper notation for the Azure region (short name which does not include a space, e.g. **eastus** rather than **US East**)
       
       > **Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
       
-1. From the Cloud Shell pane, upload the Azure Resource Manager template **\\\\AZ303\\AllFiles\\Labs\\05\\azuredeploy30305rga.json**.
+8. From the Cloud Shell pane, upload the Azure Resource Manager template **\\\\AZ303\\AllFiles\\Labs\\05\\azuredeploy30305rga.json**.
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **\\\\AZ303\\AllFiles\\Labs\\05\\azuredeploy30305rga.parameters.json**.
+9. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **\\\\AZ303\\AllFiles\\Labs\\05\\azuredeploy30305rga.parameters.json**.
 
-1. From the Cloud Shell pane, run the following to deploy an Azure Load Balancer Basic with its backend pool consisting of a pair of Azure VMs hosting Windows Server 2019 Datacenter Core into the same availability set:
+10. From the Cloud Shell pane, run the following to deploy an Azure Load Balancer Basic with its backend pool consisting of a pair of Azure VMs hosting Windows Server 2019 Datacenter Core into the same availability set:
 
    ```Bash
    az deployment group create \
@@ -137,7 +130,7 @@ The main tasks for this exercise are as follows:
 
     > **Note**: Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
 
-1. In the Azure portal, close the **Cloud Shell** pane. 
+11. In the Azure portal, close the **Cloud Shell** pane. 
 
 
 #### Task 2: Analyze highly available Azure VMs deployed into an availability set behind an Azure Load Balancer Basic
