@@ -41,21 +41,21 @@ Estimated Time: 120 minutes
 
 ## Lab Files
 
--  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01azuredeploy30301suba.json
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05\azuredeploy30305suba.json
 
--  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rga.json
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05\azuredeploy30305rga.json
 
--  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rga.parameters.json
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05\azuredeploy30305rga.parameters.json
 
--  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rgb.json
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05\azuredeploy30305rgb.json
 
--  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rgb.parameters.json
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05\azuredeploy30305rgb.parameters.json
 
--  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rgc.json
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05\azuredeploy30305rgc.json
 
--  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rgc.parameters.json
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05\azuredeploy30305rgc.parameters.json
 
--  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\az30301e-configure_VMSS_with_data_disk.ps1
+-  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05\az30305e-configure_VMSS_with_data_disk.ps1
 
 
 ## Instructions
