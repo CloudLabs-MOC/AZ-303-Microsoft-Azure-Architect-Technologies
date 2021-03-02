@@ -1,14 +1,8 @@
----
-lab:
-    title: '1: Implementing Highly Available Azure IaaS Compute Architecture'
-    module: 'Module 1: Implement Load Balancing and Network Security'
----
-
 # Lab: Implementing Highly Available Azure IaaS Compute Architecture
 # Student lab manual
 
 ## Lab scenario
-  
+ 
 Adatum Corporation has several on-premises workloads running on a mix of physical servers and virtual machines. Most of the workloads require some level of resiliency, including a range of high availability SLAs. Most of the workloads leverage either Windows Server Failover Clustering or Linux Corosync clusters and Pacemaker resource manager, with synchronous replication between cluster nodes. Adatum is trying to determine how the equivalent functionality can be implemented in Azure. In particular, the Adatum Enterprise Architecture team is exploring the Azure platform capabilities that accommodate high availability requirements within the same data center and between data centers in the same region.
 
 In addition, the Adatum Enterprise Architecture team realizes that resiliency alone might not be sufficient to provide the level of availability expected by its business operations. Some of the workloads have highly dynamic usage patterns, which are currently addressed based on continuous monitoring and custom scripting solutions, automatically provisioning and deprovisioning additional cluster nodes. Usage patterns of others are more predictable, but also need to be occasionally adjusted to account for increase demand for disk space, memory, or processing resources.
@@ -21,7 +15,7 @@ To accomplish these objectives, the Architecture team wants to test a range of h
 
 -  Zone-redundant deployment of Azure VM scale sets behind an Azure Application Gateway
 
--  Automatic horizontal scaling of Azure VM scale sets (autoscaling) 
+-  Automatic horizontal scaling of Azure VM scale sets (autoscaling)
 
 -  Manual vertical scaling (compute and storage) of Azure VM scale sets
 
@@ -43,14 +37,7 @@ After completing this lab, you will be able to:
 
 -  Describe characteristics of manual vertical scaling of Azure VM Scale Sets
 
-
-## Lab Environment
-  
-
-
-
 Estimated Time: 120 minutes
-
 
 ## Lab Files
 
@@ -90,17 +77,20 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, open the **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
-1. If prompted to select either **Bash** or **PowerShell**, select **Bash**. 
+1. If prompted to select either **Bash** or **PowerShell**, select **Bash**.
 
-    > **Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
-    
+    > **Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**.
+
+1. Select **Use existing** under Resource Group then select **az30302a-labRG** and enter **shellstorageDeployment-id** for storage account name and Enter **filestorageDeployment-id** then click on **Show advanced settings**.
+
+   >**Note**: You can find the Deployment-id from the environment details tab.
+
 1. From the Cloud Shell pane, run the following to register the Microsoft.Insights resource provider in preparation for the later exercises in this lab:
 
    ```Bash
    az provider register --namespace 'Microsoft.Insights'
    ```
-
-
+   
 1.From the Cloud Shell pane, run the following to create variables storing the values of location which will be used to host the resources(replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer): (**Note:- just go through the command, as the resource groups are pre-created**)
 
    ```Bash
@@ -114,12 +104,12 @@ The main tasks for this exercise are as follows:
    ```
 
       > **Note**: Ensure to use the proper notation for the Azure region (short name which does not include a space, e.g. **eastus** rather than **US East**)
-      
-      > **Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
-      
-1.  In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the Azure Resource Manager template **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rga.json**.
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **\\C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rga.parameters.json**.
+      > **Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
+
+1.  In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the Azure Resource Manager template **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05\azuredeploy30301rga.json**.
+
+1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05\azuredeploy30301rga.parameters.json**.
 
 1. From the Cloud Shell pane, run the following to deploy an Azure Load Balancer Basic with its backend pool consisting of a pair of Azure VMs hosting Windows Server 2019 Datacenter Core into the same availability set:
 
@@ -130,11 +120,9 @@ The main tasks for this exercise are as follows:
    --parameters @azuredeploy30301rga.parameters.json
    ```
 
-    
  > **Note**: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
 
-1. In the Azure portal, close the **Cloud Shell** pane. 
-
+1. In the Azure portal, close the **Cloud Shell** pane.
 
 #### Task 2: Analyze highly available Azure VMs deployed into an availability set behind an Azure Load Balancer Basic
 
@@ -142,7 +130,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Network Watcher \| Topology** blade, specify the following settings:
 
-    | Setting | Value | 
+    | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource Group | **az30301a-labRG-Deployment-id** |
@@ -445,17 +433,15 @@ The main tasks for this exercise are as follows:
 #### Task 1: Deploy a highly available Azure VM Scale Set into availability zones behind an Azure Application Gateway by using Azure Resource Manager templates
 
 
-1. If prompted to select either **Bash** or **PowerShell**, select **Bash**. 
-
-
+1. If prompted to select either **Bash** or **PowerShell**, select **Bash**.
 
    ```Bash
-   az deployment sub create --location '<Azure region>' --template-file azuredeploy30305subc.json --parameters rgName=az30301c-labRG-Deployment-id rgLocation='<Azure region>'
+ az deployment sub create --location '<Azure region>' --template-file azuredeploy30305subc.json --parameters rgName=az30301c-labRG-Deployment-id rgLocation='<Azure region>'
    ```
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager template **\\C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rgc.json**.
+1. From the Cloud Shell pane, upload the Azure Resource Manager template **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05\azuredeploy30301rgc.json**.
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **\\C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rgc.parameters.json**.
+1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **\C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05\azuredeploy30301rgc.parameters.json**.
 
 1. From the Cloud Shell pane, run the following to deploy an Azure Application Gateway with its backend pool consisting of a pair of Azure VMs hosting Windows Server 2019 Datacenter Core across different availability zones:
 
@@ -463,10 +449,9 @@ The main tasks for this exercise are as follows:
    az deployment group create --resource-group az30301c-labRG-Deployment-id --template-file azuredeploy30301rgc.json --parameters @azuredeploy30301rgc.parameters.json
    ```
 
-    
  > **Note**: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
 
-1. In the Azure portal, close the Cloud Shell pane. 
+1. In the Azure portal, close the Cloud Shell pane.
 
 
 #### Task 2: Analyze a highly available Azure VM Scale Set deployed across availability zones behind an Azure Application Gateway
@@ -475,33 +460,33 @@ The main tasks for this exercise are as follows:
 
 1. On the **Network Watcher \| Topology** blade, specify the following settings:
 
-    | Setting | Value | 
+    | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource Group | **az30301c-labRG-Deployment-id** |
     | Virtual Network | **az30301c-vnet** |
 
-1. Review the resulting topology diagram, noting the connections between the public IP address, load balancer, and the network adapters of Azure VM instances in the Azure Virtual Machine Scale Set in its backend pool. 
+1. Review the resulting topology diagram, noting the connections between the public IP address, load balancer, and the network adapters of Azure VM instances in the Azure Virtual Machine Scale Set in its backend pool.
 
     > **Note**: In addition, deployment of an Azure Application Gateway requires a dedicated subnet, included in the diagram (although the gateway is not displayed).
 
     > **Note**: In this configuration, it is not possible to use Network Watcher to view the effective network security rules (that is one of distinctions between Azure VMs and instances of an Azure VM Scale Set). Similarly, you cannot rely on using **Connection troubleshoot** to test network connectivity from Azure VM Scale Set instances, although it is possible to use it to test connectivity from the Azure Application Gateway.
 
-1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade, in the list of resources, and select the **az30301c-vmss** virtual machine scale set entry. 
+1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade, in the list of resources, and select the **az30301c-vmss** virtual machine scale set entry.
 
-1. On the **az30301c-vmss** blade, note the **Location** and **Fault domains** entries. 
+1. On the **az30301c-vmss** blade, note the **Location** and **Fault domains** entries.
 
-    > **Note**: Unlike Azure VMs, individual instances of Azure VM scale sets deploy into separate fault domains, including instances deployed into the same zone. In addition, they support 5 fault domains (unlike Azure VMs, which can use up to 3 fault domains). 
+    > **Note**: Unlike Azure VMs, individual instances of Azure VM scale sets deploy into separate fault domains, including instances deployed into the same zone. In addition, they support 5 fault domains (unlike Azure VMs, which can use up to 3 fault domains).
 
-1. On the **az30301c-vmss** blade, select **Instances**, on the **az30301c-vmss \| Instances** blade, select the first instance, and identify its availability zone by reviewing the value of the **Location** property. 
+1. On the **az30301c-vmss** blade, select **Instances**, on the **az30301c-vmss \| Instances** blade, select the first instance, and identify its availability zone by reviewing the value of the **Location** property.
 
-1. Navigate back to the **az30301c-vmss \| Instances** blade, select the second instance, and identify its availability zone by reviewing the value of the **Location** property. 
+1. Navigate back to the **az30301c-vmss \| Instances** blade, select the second instance, and identify its availability zone by reviewing the value of the **Location** property.
 
     > **Note**: Verify that each instance resides in a different availability zone.
 
 1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade and, in the list of resources, select the **az30301c-appgw** load balancer entry, and on the **az30301c-appgw** blade, note the public IP address entry.
 
-1. In the Azure portal, start a new **Bash** session in the Cloud Shell pane. 
+1. In the Azure portal, start a new **Bash** session in the Cloud Shell pane.
 
 1. From the Cloud Shell pane, run the following to test load balancing of HTTP traffic to the Azure VM Scale Set instances in the backend pool of the Azure Application Gateway (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the gateway you identified earlier):
 
@@ -511,7 +496,7 @@ The main tasks for this exercise are as follows:
 
     > **Note**: Verify that the returned messages indicate that the requests are being delivered in the round robin manner to the backend Azure VMs
 
-1. On the **az30301c-appgw** blade, select the **HTTP settings** entry and, on the **az30305c-appgw \| HTTP settings** blade, select the **appGwBackentHttpSettings** entry representing the load balancing rule handling HTTP traffic. 
+1. On the **az30301c-appgw** blade, select the **HTTP settings** entry and, on the **az30305c-appgw \| HTTP settings** blade, select the **appGwBackentHttpSettings** entry representing the load balancing rule handling HTTP traffic.
 
 1. On the **appGwBackentHttpSettings** blade, review the existing settings without making any changes and note that you can enable **Cookie-based affinity**.
 
@@ -519,9 +504,8 @@ The main tasks for this exercise are as follows:
 
     > **Note**: You cannot use Azure Application Gateway to implement NAT for RDP connectivity to instances of an Azure VM Scale Set. Azure Application Gateway supports only HTTP/HTTPS traffic.
 
+### Exercise 4: Implementing autoscaling of Azure VM Scale Sets using availability zones and Azure Application Gateway
 
-### Exercise 4: Implementing autoscaling of Azure VM Scale Sets using availability zones and Azure Application Gateway.
-  
 The main tasks for this exercise are as follows:
 
 1. Configuring autoscaling of an Azure VM Scale Set
@@ -530,13 +514,13 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Configure autoscaling of an Azure VM Scale Set
 
-1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301c-vmss** virtual machine scale set entry, and on the **az30301c-vmss** blade, select **Scaling**. 
+1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301c-vmss** virtual machine scale set entry, and on the **az30301c-vmss** blade, select **Scaling**.
 
 1. On the **az30301c-vmss \| Scaling** blade, select the **Custom autoscale** option.
 
 1. In the **Custom autoscale** section, specify the following settings (leave others with their default values):
 
-    | Setting | Value | 
+    | Setting | Value |
     | --- | --- |
     | Scaling mode | **Scale based on a metric** |
     | Instance limits Minimum | **1** |
@@ -547,7 +531,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Scale rule** blade, specify the following settings and select **Add** (leave others with their default values):
 
-    | Setting | Value | 
+    | Setting | Value |
     | --- | --- |
     | Time aggregation | **Maximum** |
     | Metric namespace | **Virtual Machine Host** |
@@ -563,13 +547,13 @@ The main tasks for this exercise are as follows:
     | Instance count | **1** |
     | Cool down (minutes) | **5** |
 
-    > **Note**: These values are selected strictly for lab purposes to trigger scaling as soon as possible. For guidance regarding Azure VM Scale Set scaling, refer to [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview) . 
+    > **Note**: These values are selected strictly for lab purposes to trigger scaling as soon as possible. For guidance regarding Azure VM Scale Set scaling, refer to [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview).
 
 1. Back on the **az30301c-vmss \| Scaling** blade, select **+ Add a rule**.
 
 1. On the **Scale rule** blade, specify the following settings and select **Add** (leave others with their default values):
 
-    | Setting | Value | 
+    | Setting | Value|
     | --- | --- |
     | Time aggregation | **Average** |
     | Metric namespace | **Virtual Machine Host** |
@@ -587,10 +571,9 @@ The main tasks for this exercise are as follows:
 
 1. Back on the **az30301c-vmss | Scaling** blade, select **Save**.
 
-
 #### Task 2: Test autoscaling of an Azure VM Scale Set
 
-1. In the Azure portal, start a new **Bash** session in the Cloud Shell pane. 
+1. In the Azure portal, start a new **Bash** session in the Cloud Shell pane.
 
 1. From the Cloud Shell pane, run the following to trigger autoscaling of the Azure VM Scale Set instances in the backend pool of the Azure Application Gateway (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the gateway you identified earlier):
 
@@ -605,11 +588,11 @@ The main tasks for this exercise are as follows:
 
     > **Note**: You might need to refresh the **az30301c-vmss \| Instances** blade.
 
-    > **Note**: You might see the number of instances increasing by 2 (rather than 1). 
+    > **Note**: You might see the number of instances increasing by 2 (rather than 1).
 
-1. In the Azure portal, close the **Cloud Shell** pane. 
+1. In the Azure portal, close the **Cloud Shell** pane.
 
-1. In the Azure portal, on the **az30301c-vmss** blade, review the **CPU (average)** chart and verify that the CPU utilization of the Application Gateway decreased sufficiently to trigger scaling in. 
+1. In the Azure portal, on the **az30301c-vmss** blade, review the **CPU (average)** chart and verify that the CPU utilization of the Application Gateway decreased sufficiently to trigger scaling in.
 
     > **Note**: You might need to wait a few minutes.
 
@@ -617,11 +600,11 @@ The main tasks for this exercise are as follows:
 
     > **Note**: You might need to refresh the **az30301c-vmss \| Instances** blade.
 
-1. On the **az30301c-vmss** blade, select **Scaling**. 
+1. On the **az30301c-vmss** blade, select **Scaling**.
 
 1. On the **az30301c-vmss \| Scaling** blade, select the **Manual scale** option and select **Save**.
 
-    > **Note**: This will prevent any undesired autoscaling during the next exercise. 
+    > **Note**: This will prevent any undesired autoscaling during the next exercise.
 
 
 ### Exercise 5: Implementing vertical scaling of Azure VM Scale Sets
@@ -646,11 +629,11 @@ The main tasks for this exercise are as follows:
 1. Wait until the instances are updated and running.
 
 
-#### Task 2: Scale storage resources of Azure virtual machine scale sets instances.
+#### Task 2: Scale storage resources of Azure virtual machine scale sets instances
 
 1. On the **az30301c-vmss** blade, select **Disks**, select **+ Add data disk**, attach a new managed disk with the following settings (leave others with their default values), and select **Save**:
 
-    | Setting | Value | 
+    | Setting | Value |
     | --- | --- |
     | LUN | **0** |
     | Size | **32** |
@@ -664,13 +647,13 @@ The main tasks for this exercise are as follows:
 
     > **Note**: Wait for uninstallation to complete.
 
-1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade, in the list of resources, select the storage account resource. 
+1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade, in the list of resources, select the storage account resource.
 
-1. On the storage account blade, select **Containers** and then select **+ Container**. 
+1. On the storage account blade, select **Containers** and then select **+ Container**.
 
 1. On the **New container** blade, specify the following settings (leave others with their default values) and select **Create**:
 
-    | Setting | Value | 
+    | Setting | Value |
     | --- | --- |
     | Name | **scripts** |
     | Public access level | **Private (no anonymous access**) |
@@ -679,22 +662,20 @@ The main tasks for this exercise are as follows:
 
 1. On the **scripts** blade, select **Upload**.
 
-1. On the **Upload blob** blade, select the folder icon, in the **Open** dialog box, navigate to the **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01** folder, select **az30301e-configure_VMSS_with_data_disk.ps1**, select **Open**, and back on the **Upload blob** blade, select **Upload**. 
+1. On the **Upload blob** blade, select the folder icon, in the **Open** dialog box, navigate to the **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05** folder, select **az30301e-configure_VMSS_with_data_disk.ps1**, select **Open**, and back on the **Upload blob** blade, select **Upload**.
 
-1. In the Azure portal, navigate back to the **az30301c-vmss** virtual machine scale set blade. 
+1. In the Azure portal, navigate back to the **az30301c-vmss** virtual machine scale set blade.
 
 1. On the **az30301c-vmss** blade, select **Extensions**, on the **az30301c-vmss \| Extensions** blade, select **+ Add** and then, select the **customScriptExtension** entry on the **Extensions** blade.
 
 1. On the **New resource** blade, select **Custom Script Extension** and then select **Create**.
 
-1. From the **Install extension** blade, select **Browse**. 
+1. From the **Install extension** blade, select **Browse**.
 
-1. On the **Storage accounts** blade, select the name of the storage account into which you uploaded the **az30301e-configure_VMSS_with_data_disk.ps1** script, on the **Containers** blade, select **scripts**, on the **scripts** blade, select **az30301e-configure_VMSS_with_data_disk.ps1**, and then select **Select**. 
+1. On the **Storage accounts** blade, select the name of the storage account into which you uploaded the **az30301e-configure_VMSS_with_data_disk.ps1** script, on the **Containers** blade, select **scripts**, on the **scripts** blade, select **az30301e-configure_VMSS_with_data_disk.ps1**, and then select **Select**.
 
 1. Back on the **Install extension** blade, select **OK**.
 
 1. On the **az30301c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss | Instances** blade, observe the process of updating existing instances.
 
     > **Note**: You might need to refresh the **az30301c-vmss \| Instances** blade.
-
-
