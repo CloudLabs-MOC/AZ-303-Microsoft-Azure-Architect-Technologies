@@ -79,35 +79,35 @@ The main tasks for this exercise are as follows:
 
 1. If prompted to select either **Bash** or **PowerShell**, select **Bash**.
 
-    > **Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**.
+1. If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Show advanced settings**.
 
-1. Select **Use existing** under Resource Group then select **az30302a-labRG** and enter **shellstorageDeployment-id** for storage account name and Enter **filestorageDeployment-id** then click on **Show advanced settings**.
+1. Select **Use existing** under Resource Group then select **az30302a-labRG-Deployment-id** and enter **shellstorageDeployment-id** for storage account name and Enter **filestorageDeployment-id** then click on **Show advanced settings**.
 
-   >**Note**: You can find the Deployment-id from the environment details tab.
+   >Note: You can find the Deployment-id from the environment details tab.
 
 1. From the Cloud Shell pane, run the following to register the Microsoft.Insights resource provider in preparation for the later exercises in this lab:
 
    ```Bash
    az provider register --namespace 'Microsoft.Insights'
    ```
-   
-1.From the Cloud Shell pane, run the following to create variables storing the values of location which will be used to host the resources(replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer): (**Note:- just go through the command, as the resource groups are pre-created**)
+
+1. From the Cloud Shell pane, run the following to create variables storing the values of location which will be used to host the resources(replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer): (Note:- just go through the command, as the resource groups are pre-created**)
 
    ```Bash
    LOCATION='<Azure region>'
    ```
-   
+
    ```Bash
    az deployment sub create \
    --location $LOCATION \
    --template-file azuredeploy30305suba.json \
    ```
 
-      > **Note**: Ensure to use the proper notation for the Azure region (short name which does not include a space, e.g. **eastus** rather than **US East**)
+      > Note: Ensure to use the proper notation for the Azure region (short name which does not include a space, e.g. **eastus** rather than **US East**)
 
-      > **Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
+      > Note: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
 
-1.  In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the Azure Resource Manager template **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05\azuredeploy30301rga.json**.
+1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the Azure Resource Manager template **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05\azuredeploy30301rga.json**.
 
 1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05\azuredeploy30301rga.parameters.json**.
 
@@ -120,7 +120,7 @@ The main tasks for this exercise are as follows:
    --parameters @azuredeploy30301rga.parameters.json
    ```
 
- > **Note**: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
+ > Note: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
 
 1. In the Azure portal, close the **Cloud Shell** pane.
 
@@ -142,7 +142,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Network Watcher \| Effective security rules** blade, specify the following settings:
 
- >**Note**: If you are not able to select the **Network interface**, click on **Virtual machine** field and select the **az30301b-vm0** again.
+ >*Note: If you are not able to select the **Network interface**, click on **Virtual machine** field and select the **az30301b-vm0** again.
 
     | Setting | Value | 
     | --- | --- |
@@ -156,7 +156,7 @@ The main tasks for this exercise are as follows:
     
 1. On the **Network Watcher** blade, select **Connection troubleshoot**.
 
-    > **Note**: The intention is to verify the proximity (in the networking terms) of the two Azure VMs in the same availability set.
+    > Note: The intention is to verify the proximity (in the networking terms) of the two Azure VMs in the same availability set.
 
 1. On the **Network Watcher \| Connection troubleshoot** blade, specify the following settings and select **Check** :
 
@@ -172,11 +172,11 @@ The main tasks for this exercise are as follows:
     | Protocol | **TCP** |
     | Destination port| **80** |
 
-    > **Note**: You will need to wait a few minutes for the results in order for the **Azure Network Watcher Agent** VM extension to be installed on the Azure VMs.
+    > Note: You will need to wait a few minutes for the results in order for the **Azure Network Watcher Agent** VM extension to be installed on the Azure VMs.
 
 1. Review the results and note the latency of the network connection between the Azure VMs.
 
-    > **Note**: The latency should be about 1 millisecond, since both VMs are in the same availability set (within the same Azure datacenter).
+    > Note: The latency should be about 1 millisecond, since both VMs are in the same availability set (within the same Azure datacenter).
 
 1. In the Azure portal, navigate to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301a-avset** availability set entry, and on the **az30301a-avset** blade, note the fault domain and update domain values of the assigned Azure VMs.
 
@@ -190,7 +190,7 @@ The main tasks for this exercise are as follows:
    for i in {1..4}; do curl <lb_IP_address>; done
    ```
 
-    > **Note**: Verify that the returned messages indicate that the requests are being delivered in the round robin manner to the backend Azure VMs
+    > Note: Verify that the returned messages indicate that the requests are being delivered in the round robin manner to the backend Azure VMs
 
 1. On the **az30301a-lb** blade, select the **Load balancing rules** entry and, on the **az30301a-lb \| Load balancing rules** blade, select the **az303001a-lbruletcp80** entry representing the load balancing rule handling HTTP traffic. 
 
@@ -202,7 +202,7 @@ The main tasks for this exercise are as follows:
    for i in {1..4}; do curl <lb_IP_address>; done
    ```
 
-    > **Note**: Verify that the returned messages indicate that the requests are being delivered to the same backend Azure VMs
+    > Note: Verify that the returned messages indicate that the requests are being delivered to the same backend Azure VMs
 
 1. In the Azure portal, navigate back to the **az30301a-lb** blade, select the **Inbound NAT rules** entry and note the two rules that allow for connecting to the first and the second of the backend pool VMs via Remote Desktop over TCP ports 33890 and 33891, respectively. 
 
@@ -212,7 +212,7 @@ The main tasks for this exercise are as follows:
    curl -v telnet://<lb_IP_address>:33890
    ```
 
-    > **Note**: Verify that the returned message indicates that you are successfully connected. 
+    > Note: Verify that the returned message indicates that you are successfully connected. 
 
 1. Press the **Ctrl+C** key combination to return to the Bash shell prompt and run the following to test Remote Desktop connectivity via NAT to the second Azure VM in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
@@ -220,13 +220,10 @@ The main tasks for this exercise are as follows:
    curl -v telnet://<lb_IP_address>:33891
    ```
 
-    > **Note**: Verify that the returned message indicates that you are successfully connected. 
+    > Note: Verify that the returned message indicates that you are successfully connected. 
 
 1. Press the **Ctrl+C** key combination to return to the Bash shell prompt.
-
-
-
-
+2. 
 ### Exercise 2: Implement and analyze highly available Azure VM deployments using availability zones and Azure Load Balancer Standard
   
 The main tasks for this exercise are as follows:
@@ -241,14 +238,12 @@ The main tasks for this exercise are as follows:
 #### Task 1: Deploy highly available Azure VMs into availability zones behind an Azure Load Balancer Standard by using Azure Resource Manager templates
 
 
-1. If prompted to select either **Bash** or **PowerShell**, select **Bash**. 
-
-
+1. If prompted to select either **Bash** or **PowerShell**, select **Bash**.
 
    ```Bash
    LOCATION='<Azure region>'
    ```
-   
+
    ```Bash
    az deployment sub create \
    --location $LOCATION \
@@ -269,10 +264,9 @@ The main tasks for this exercise are as follows:
    --parameters @azuredeploy30301rgb.parameters.json
    ```
 
-    
- > **Note**: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
+ > Note: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
 
-1. In the Azure portal, close the Cloud Shell pane. 
+1. In the Azure portal, close the Cloud Shell pane.
 
 
 #### Task 2: Analyze highly available Azure VMs deployed across availability zones behind an Azure Load Balancer Standard
@@ -281,7 +275,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Network Watcher \| Topology** blade, specify the following settings:
 
-    | Setting | Value | 
+    | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource Group | **az30301b-labRG-Deployment-id** |
@@ -289,15 +283,15 @@ The main tasks for this exercise are as follows:
 
 1. Review the resulting topology diagram, noting the connections between the public IP address, load balancer, and the network adapters of Azure VMs in its backend pool.
 
-    > **Note**: This diagram is practically identical to the one you viewed in the previous exercise, since, despite being in different zones (and effectively Azure data centers), the Azure VMs reside on the same subnet.
+    > Note: This diagram is practically identical to the one you viewed in the previous exercise, since, despite being in different zones (and effectively Azure data centers), the Azure VMs reside on the same subnet.
     
 1. On the **Network Watcher** blade, select **Effective security rules**.
 
 1. On the **Network Watcher \| Effective security rules** blade, specify the following settings:
 
- >**Note**: If you are not able to select the **Network interface**, click on **Virtual machine** field and select the **az30301b-vm0** again.
+ >Note: If you are not able to select the **Network interface**, click on **Virtual machine** field and select the **az30301b-vm0** again.
 
-    | Setting | Value | 
+    | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource group | **az30301b-labRG-Deployment-id** |
@@ -306,16 +300,15 @@ The main tasks for this exercise are as follows:
 
 1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP. 
 
-    > **Note**: This listing is also practically identical to the one you viewed in the previous exercise, with network-level protection implemented by using a network security group associated with the subnet to which both Azure VMs are connected. Keep in mind, however, that the network security group is, in this case, required for the HTTP and RDP traffic to reach the backend pool Azure VMs, due to the usage of the Azure Load Balancer Standard SKU (NSGs are optional when using the Basic SKU).  
-    
+    > Note: This listing is also practically identical to the one you viewed in the previous exercise, with network-level protection implemented by using a network security group associated with the subnet to which both Azure VMs are connected. Keep in mind, however, that the network security group is, in this case, required for the HTTP and RDP traffic to reach the backend pool Azure VMs, due to the usage of the Azure Load Balancer Standard SKU (NSGs are optional when using the Basic SKU).
 
 1. On the **Network Watcher** blade, select **Connection troubleshoot**.
 
-    > **Note**: The intention is to verify the proximity (in the networking terms) of the two Azure VMs in the same availability set.
+    > Note: The intention is to verify the proximity (in the networking terms) of the two Azure VMs in the same availability set.
 
-1. On the **Network Watcher \| Connection troubleshoot** blade, specify the following settings and select **Check** :
+1. On the **Network Watcher \| Connection troubleshoot** blade, specify the following settings and select **Check**:
 
-    | Setting | Value | 
+    | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource group | **az30301b-labRG-Deployment-id** |
@@ -327,21 +320,21 @@ The main tasks for this exercise are as follows:
     | Protocol | **TCP** |
     | Destination port| **80** |
 
-    > **Note**: You will need to wait a few minutes for the results in order for the **Azure Network Watcher Agent** VM extension to be installed on the Azure VMs.
+    > Note: You will need to wait a few minutes for the results in order for the **Azure Network Watcher Agent** VM extension to be installed on the Azure VMs.
 
 1. Review the results and note the latency of the network connection between the Azure VMs.
 
-    > **Note**: The latency might be slightly higher than the one you observed in the previous exercise, since the two VMs are in different zones (within different Azure datacenters).
+    > Note: The latency might be slightly higher than the one you observed in the previous exercise, since the two VMs are in different zones (within different Azure datacenters).
 
-1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301b-vm0** virtual machine entry, and on the **az30301b-vm0** blade, note the **Location** and **Availability zone** entries. 
+1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301b-vm0** virtual machine entry, and on the **az30301b-vm0** blade, note the **Location** and **Availability zone** entries.
 
-1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301b-vm1** virtual machine entry, and on the **az30301b-vm1** blade, note the **Location** and **Availability zone** entries. 
+1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301b-vm1** virtual machine entry, and on the **az30301b-vm1** blade, note the **Location** and **Availability zone** entries.
 
-    > **Note**: The entries you reviewed confirm that each Azure VM resides in a different availability zone.
+    > Note: The entries you reviewed confirm that each Azure VM resides in a different availability zone.
 
 1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade and, in the list of resources, select the **az30301b-lb** load balancer entry, and on the **az30301b-lb** blade, note the public IP address entry.
 
-1. In the Azure portal, start a new **Bash** session in the Cloud Shell pane. 
+1. In the Azure portal, start a new **Bash** session in the Cloud Shell pane.
 
 1. From the Cloud Shell pane, run the following to test load balancing of HTTP traffic to the Azure VMs in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
@@ -349,9 +342,9 @@ The main tasks for this exercise are as follows:
    for i in {1..4}; do curl <lb_IP_address>; done
    ```
 
-    > **Note**: Verify that the returned messages indicate that the requests are being delivered in the round robin manner to the backend Azure VMs
+    > Note: Verify that the returned messages indicate that the requests are being delivered in the round robin manner to the backend Azure VMs
 
-1. On the **az30301b-lb** blade, select the **Load balancing rules** entry and, on the **az30301b-lb \| Load balancing rules** blade, select the **az303001b-lbruletcp80** entry representing the load balancing rule handling HTTP traffic. 
+1. On the **az30301b-lb** blade, select the **Load balancing rules** entry and, on the **az30301b-lb \| Load balancing rules** blade, select the **az303001b-lbruletcp80** entry representing the load balancing rule handling HTTP traffic.
 
 1. On the **az303001b-lbruletcp80** blade, in the **Session persistence** drop-down list, select **Client IP** and then select **Save**.
 
@@ -361,9 +354,9 @@ The main tasks for this exercise are as follows:
    for i in {1..4}; do curl <lb_IP_address>; done
    ```
 
-    > **Note**: Verify that the returned messages indicate that the requests are being delivered to the same backend Azure VMs
+    > Note: Verify that the returned messages indicate that the requests are being delivered to the same backend Azure VMs
 
-1. In the Azure portal, navigate back to the **az30301b-lb** blade, select the **Inbound NAT rules** entry and note the two rules that allow for connecting to the first and the second of the backend pool VMs via Remote Desktop over TCP ports 33890 and 33891, respectively. 
+1. In the Azure portal, navigate back to the **az30301b-lb** blade, select the **Inbound NAT rules** entry and note the two rules that allow for connecting to the first and the second of the backend pool VMs via Remote Desktop over TCP ports 33890 and 33891, respectively.
 
 1. From the Cloud Shell pane, run the following to test Remote Desktop connectivity via NAT to the first Azure VM in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
@@ -371,7 +364,7 @@ The main tasks for this exercise are as follows:
    curl -v telnet://<lb_IP_address>:33890
    ```
 
-    > **Note**: Verify that the returned message indicates that you are successfully connected. 
+    > Note Verify that the returned message indicates that you are successfully connected.
 
 1. Press the **Ctrl+C** key combination to return to the Bash shell prompt and run the following to test Remote Desktop connectivity via NAT to the second Azure VM in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
@@ -379,11 +372,11 @@ The main tasks for this exercise are as follows:
    curl -v telnet://<lb_IP_address>:33891
    ```
 
-    > **Note**: Verify that the returned message indicates that you are successfully connected. 
+    > Note: Verify that the returned message indicates that you are successfully connected.
 
 1. Press the **Ctrl+C** key combination to return to the Bash shell prompt and close the Cloud Shell pane.
 
-1. On the **az30301b-lb** blade, select the **Load balancing rules** entry and, on the **az30301b-lb \| Load balancing rules** blade, select the **az303001b-lbruletcp80** entry representing the load balancing rule handling HTTP traffic. 
+1. On the **az30301b-lb** blade, select the **Load balancing rules** entry and, on the **az30301b-lb \| Load balancing rules** blade, select the **az303001b-lbruletcp80** entry representing the load balancing rule handling HTTP traffic.
 
 1. On the **az303001b-lbruletcp80** blade, in the **Outbound source network address translation (SNAT)** section, select **(Recommended) Use outbound rules to provide backend pool members access to the internet**, and then select **Save**.
 
@@ -391,7 +384,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Add outbound rule** blade, specify the following settings and select **Add** (leave all other settings with their default values):
 
-    | Setting | Value | 
+    | Setting | Value |
     | --- | --- |
     | Name | **az303001b-obrule** | 
     | Frontend IP address | the name of the existing frontend IP address of the **az30301b-lb** load balancer |
@@ -400,11 +393,11 @@ The main tasks for this exercise are as follows:
     | Choose by | **Maximum number of backend instances** |
     | Maximum number of backend instances | **3** |
 
-    > **Note**: Azure Load Balancer Standard allows you to designate a dedicated frontend IP address for outbound traffic (in cases where multiple frontend IP addresses are assigned).
+    > Note: Azure Load Balancer Standard allows you to designate a dedicated frontend IP address for outbound traffic (in cases where multiple frontend IP addresses are assigned).
 
 1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301b-vm0** virtual machine entry, and on the **az30301b-vm0** blade, in the **Operations** blade, select **Run command**.
 
-1. On the **az30301b-vm0 \| Run command** blade, select **RunPowerShellScript**. 
+1. On the **az30301b-vm0 \| Run command** blade, select **RunPowerShellScript**.
 
 1. On the **Run Command Script** blade, in the **PowerShell Script** text box, type the following and select **Run**.
 
@@ -412,14 +405,12 @@ The main tasks for this exercise are as follows:
    (Invoke-RestMethod -Uri "http://ipinfo.io").IP
    ```
 
-    > **Note**: This command returns the public IP address from which the web request originates.
+    > Note: This command returns the public IP address from which the web request originates.
 
 1. Review the output and verify that it matches the public IP address assigned to the frontend of the Azure Load Balancer Standard, which you assigned to the outbound load balancing rule.
 
 
-
-
-### Exercise 3: Implement and analyze highly available Azure VM Scale Set deployments using availability zones and Azure Application Gateway.
+### Exercise 3: Implement and analyze highly available Azure VM Scale Set deployments using availability zones and Azure Application Gateway
   
 The main tasks for this exercise are as follows:
 
@@ -449,7 +440,7 @@ The main tasks for this exercise are as follows:
    az deployment group create --resource-group az30301c-labRG-Deployment-id --template-file azuredeploy30301rgc.json --parameters @azuredeploy30301rgc.parameters.json
    ```
 
- > **Note**: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
+ > Note: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
 
 1. In the Azure portal, close the Cloud Shell pane.
 
@@ -468,21 +459,21 @@ The main tasks for this exercise are as follows:
 
 1. Review the resulting topology diagram, noting the connections between the public IP address, load balancer, and the network adapters of Azure VM instances in the Azure Virtual Machine Scale Set in its backend pool.
 
-    > **Note**: In addition, deployment of an Azure Application Gateway requires a dedicated subnet, included in the diagram (although the gateway is not displayed).
+    > Note: In addition, deployment of an Azure Application Gateway requires a dedicated subnet, included in the diagram (although the gateway is not displayed).
 
-    > **Note**: In this configuration, it is not possible to use Network Watcher to view the effective network security rules (that is one of distinctions between Azure VMs and instances of an Azure VM Scale Set). Similarly, you cannot rely on using **Connection troubleshoot** to test network connectivity from Azure VM Scale Set instances, although it is possible to use it to test connectivity from the Azure Application Gateway.
+    > Note: In this configuration, it is not possible to use Network Watcher to view the effective network security rules (that is one of distinctions between Azure VMs and instances of an Azure VM Scale Set). Similarly, you cannot rely on using **Connection troubleshoot** to test network connectivity from Azure VM Scale Set instances, although it is possible to use it to test connectivity from the Azure Application Gateway.
 
 1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade, in the list of resources, and select the **az30301c-vmss** virtual machine scale set entry.
 
 1. On the **az30301c-vmss** blade, note the **Location** and **Fault domains** entries.
 
-    > **Note**: Unlike Azure VMs, individual instances of Azure VM scale sets deploy into separate fault domains, including instances deployed into the same zone. In addition, they support 5 fault domains (unlike Azure VMs, which can use up to 3 fault domains).
+    > Note: Unlike Azure VMs, individual instances of Azure VM scale sets deploy into separate fault domains, including instances deployed into the same zone. In addition, they support 5 fault domains (unlike Azure VMs, which can use up to 3 fault domains).
 
 1. On the **az30301c-vmss** blade, select **Instances**, on the **az30301c-vmss \| Instances** blade, select the first instance, and identify its availability zone by reviewing the value of the **Location** property.
 
 1. Navigate back to the **az30301c-vmss \| Instances** blade, select the second instance, and identify its availability zone by reviewing the value of the **Location** property.
 
-    > **Note**: Verify that each instance resides in a different availability zone.
+    > Note: Verify that each instance resides in a different availability zone.
 
 1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade and, in the list of resources, select the **az30301c-appgw** load balancer entry, and on the **az30301c-appgw** blade, note the public IP address entry.
 
@@ -494,15 +485,15 @@ The main tasks for this exercise are as follows:
    for i in {1..4}; do curl <lb_IP_address>; done
    ```
 
-    > **Note**: Verify that the returned messages indicate that the requests are being delivered in the round robin manner to the backend Azure VMs
+    > Note: Verify that the returned messages indicate that the requests are being delivered in the round robin manner to the backend Azure VMs
 
 1. On the **az30301c-appgw** blade, select the **HTTP settings** entry and, on the **az30305c-appgw \| HTTP settings** blade, select the **appGwBackentHttpSettings** entry representing the load balancing rule handling HTTP traffic.
 
 1. On the **appGwBackentHttpSettings** blade, review the existing settings without making any changes and note that you can enable **Cookie-based affinity**.
 
-    > **Note**: This feature requires that the client supports the use of cookies.
+    > Note: This feature requires that the client supports the use of cookies.
 
-    > **Note**: You cannot use Azure Application Gateway to implement NAT for RDP connectivity to instances of an Azure VM Scale Set. Azure Application Gateway supports only HTTP/HTTPS traffic.
+    > Note: You cannot use Azure Application Gateway to implement NAT for RDP connectivity to instances of an Azure VM Scale Set. Azure Application Gateway supports only HTTP/HTTPS traffic.
 
 ### Exercise 4: Implementing autoscaling of Azure VM Scale Sets using availability zones and Azure Application Gateway
 
@@ -547,7 +538,7 @@ The main tasks for this exercise are as follows:
     | Instance count | **1** |
     | Cool down (minutes) | **5** |
 
-    > **Note**: These values are selected strictly for lab purposes to trigger scaling as soon as possible. For guidance regarding Azure VM Scale Set scaling, refer to [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview).
+    > Note: These values are selected strictly for lab purposes to trigger scaling as soon as possible. For guidance regarding Azure VM Scale Set scaling, refer to [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview).
 
 1. Back on the **az30301c-vmss \| Scaling** blade, select **+ Add a rule**.
 
@@ -582,29 +573,29 @@ The main tasks for this exercise are as follows:
    ```
 1. In the Azure portal, on the **az30301c-vmss** blade, review the **CPU (average)** chart and verify that the CPU utilization of the Application Gateway increased sufficiently to trigger scaling out.
 
-    > **Note**: You might need to wait a few minutes.
+    > Note: You might need to wait a few minutes.
 
 1. On the **az30301c-vmss** blade, select the **Instances** entry and verify that the number of instances has increased.
 
-    > **Note**: You might need to refresh the **az30301c-vmss \| Instances** blade.
+    > Note: You might need to refresh the **az30301c-vmss \| Instances** blade.
 
-    > **Note**: You might see the number of instances increasing by 2 (rather than 1).
+    > Note: You might see the number of instances increasing by 2 (rather than 1).
 
 1. In the Azure portal, close the **Cloud Shell** pane.
 
 1. In the Azure portal, on the **az30301c-vmss** blade, review the **CPU (average)** chart and verify that the CPU utilization of the Application Gateway decreased sufficiently to trigger scaling in.
 
-    > **Note**: You might need to wait a few minutes.
+    > Note: You might need to wait a few minutes.
 
 1. On the **az30301c-vmss** blade, select the **Instances** entry and verify that the number of instances has decreased to 2.
 
-    > **Note**: You might need to refresh the **az30301c-vmss \| Instances** blade.
+    > Note: You might need to refresh the **az30301c-vmss \| Instances** blade.
 
 1. On the **az30301c-vmss** blade, select **Scaling**.
 
 1. On the **az30301c-vmss \| Scaling** blade, select the **Manual scale** option and select **Save**.
 
-    > **Note**: This will prevent any undesired autoscaling during the next exercise.
+    > Note: This will prevent any undesired autoscaling during the next exercise.
 
 
 ### Exercise 5: Implementing vertical scaling of Azure VM Scale Sets
@@ -624,7 +615,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30301c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss \| Instances** blade, observe the process of replacing existing instances with new ones of the desired size.
 
-    > **Note**: You might need to refresh the **az30301c-vmss \| Instances** blade.
+    > Note: You might need to refresh the **az30301c-vmss \| Instances** blade.
 
 1. Wait until the instances are updated and running.
 
@@ -641,11 +632,11 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30301c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss \| Instances** blade, observe the process of updating the existing instances.
 
-    > **Note**: The disk attached in the previous step is a raw disk. Before it can be used, it is necessary to create a partition, format it, and mount it. To accomplish this, you will deploy a PowerShell script to Azure VM scale set instances via the Custom Script extension. First, however, you will need to remove it.
+    > Note: The disk attached in the previous step is a raw disk. Before it can be used, it is necessary to create a partition, format it, and mount it. To accomplish this, you will deploy a PowerShell script to Azure VM scale set instances via the Custom Script extension. First, however, you will need to remove it.
 
 1. On the **az30301c-vmss** blade, select **Extensions**, on the **az30301c-vmss \| Extensions** blade, select the **customScriptExtension** entry, and then, on the **Extensions** blade, select **Uninstall**.
 
-    > **Note**: Wait for uninstallation to complete.
+    > Note: Wait for uninstallation to complete.
 
 1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade, in the list of resources, select the storage account resource.
 
@@ -678,4 +669,4 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30301c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss | Instances** blade, observe the process of updating existing instances.
 
-    > **Note**: You might need to refresh the **az30301c-vmss \| Instances** blade.
+    > Not*: You might need to refresh the **az30301c-vmss \| Instances** blade.
