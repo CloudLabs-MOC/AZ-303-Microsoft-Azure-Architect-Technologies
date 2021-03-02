@@ -148,8 +148,8 @@ The main tasks for this exercise are as follows:
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource group | **az30301a-labRG-(Deployment-id)** |
-    | Virtual machine | **az30301a-vm0** |
-    | Network interface | **az30301a-nic0** |
+    | Virtual machine | **az30301a-vm1** |
+    | Network interface | **az30301a-nic1** |
 
 1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP.
 
