@@ -142,25 +142,24 @@ The main tasks for this exercise are as follows:
 
 1. On the **Network Watcher \| Effective security rules** blade, specify the following settings:
 
- >*Note: If you are not able to select the **Network interface**, click on **Virtual machine** field and select the **az30301b-vm0** again.
+ > Note: If you are not able to select the **Network interface**, click on **Virtual machine** field and select the **az30301b-vm0** again.
 
-    | Setting | Value | 
+    | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource group | **az30301a-labRG-Deployment-id** |
     | Virtual machine | **az30301a-vm0** |
     | Network interface | **az30301a-nic0** |
 
-1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP.  
+1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP.
 
-    
 1. On the **Network Watcher** blade, select **Connection troubleshoot**.
 
     > Note: The intention is to verify the proximity (in the networking terms) of the two Azure VMs in the same availability set.
 
 1. On the **Network Watcher \| Connection troubleshoot** blade, specify the following settings and select **Check** :
 
-    | Setting | Value | 
+    | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource group | **az30301a-labRG-Deployment-id** |
@@ -182,7 +181,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate back to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301a-lb** load balancer entry, and on the **az30301a-lb** blade, note the public IP address entry.
 
-1. In the Azure portal, start a **Bash** session in the Cloud Shell pane. 
+1. In the Azure portal, start a **Bash** session in the Cloud Shell pane.
 
 1. From the Cloud Shell pane, run the following to test load balancing of HTTP traffic to the Azure VMs in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
@@ -192,7 +191,7 @@ The main tasks for this exercise are as follows:
 
     > Note: Verify that the returned messages indicate that the requests are being delivered in the round robin manner to the backend Azure VMs
 
-1. On the **az30301a-lb** blade, select the **Load balancing rules** entry and, on the **az30301a-lb \| Load balancing rules** blade, select the **az303001a-lbruletcp80** entry representing the load balancing rule handling HTTP traffic. 
+1. On the **az30301a-lb** blade, select the **Load balancing rules** entry and, on the **az30301a-lb \| Load balancing rules** blade, select the **az303001a-lbruletcp80** entry representing the load balancing rule handling HTTP traffic.
 
 1. On the **az303001a-lbruletcp80** blade, in the **Session persistence** drop-down list, select **Client IP** and then select **Save**.
 
@@ -204,7 +203,7 @@ The main tasks for this exercise are as follows:
 
     > Note: Verify that the returned messages indicate that the requests are being delivered to the same backend Azure VMs
 
-1. In the Azure portal, navigate back to the **az30301a-lb** blade, select the **Inbound NAT rules** entry and note the two rules that allow for connecting to the first and the second of the backend pool VMs via Remote Desktop over TCP ports 33890 and 33891, respectively. 
+1. In the Azure portal, navigate back to the **az30301a-lb** blade, select the **Inbound NAT rules** entry and note the two rules that allow for connecting to the first and the second of the backend pool VMs via Remote Desktop over TCP ports 33890 and 33891, respectively.
 
 1. From the Cloud Shell pane, run the following to test Remote Desktop connectivity via NAT to the first Azure VM in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
@@ -212,7 +211,7 @@ The main tasks for this exercise are as follows:
    curl -v telnet://<lb_IP_address>:33890
    ```
 
-    > Note: Verify that the returned message indicates that you are successfully connected. 
+    > Note: Verify that the returned message indicates that you are successfully connected.
 
 1. Press the **Ctrl+C** key combination to return to the Bash shell prompt and run the following to test Remote Desktop connectivity via NAT to the second Azure VM in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
@@ -220,10 +219,11 @@ The main tasks for this exercise are as follows:
    curl -v telnet://<lb_IP_address>:33891
    ```
 
-    > Note: Verify that the returned message indicates that you are successfully connected. 
+    > Note: Verify that the returned message indicates that you are successfully connected.
 
 1. Press the **Ctrl+C** key combination to return to the Bash shell prompt.
-2. 
+
+
 ### Exercise 2: Implement and analyze highly available Azure VM deployments using availability zones and Azure Load Balancer Standard
   
 The main tasks for this exercise are as follows:
@@ -669,4 +669,4 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30301c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss | Instances** blade, observe the process of updating existing instances.
 
-    > Not*: You might need to refresh the **az30301c-vmss \| Instances** blade.
+    > Not*: You might need to refresh the az30301c-vmss \| Instances blade.
