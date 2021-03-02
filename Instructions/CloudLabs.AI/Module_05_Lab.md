@@ -271,9 +271,9 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Deploy highly available Azure VMs into availability zones behind an Azure Load Balancer Standard by using Azure Resource Manager templates
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager template **\\C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rgb.json**.
+1. From the Cloud Shell pane, upload the Azure Resource Manager template **\\C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30305rgb.json**.
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **\\C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30301rgb.parameters.json**.
+1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **\\C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\01\azuredeploy30305rgb.parameters.json**.
 
 1. From the Cloud Shell pane, run the following to deploy an Azure Load Balancer Standard with its backend pool consisting of a pair of Azure VMs hosting Windows Server 2019 Datacenter Core across two availability zones:
 
@@ -335,7 +335,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az30301b-labRG-Deployment-id** |
+    | Resource group | **az30301b-labRG-(Deployment-id)** |
     | Source type | **Virtual machine** |
     | Virtual machine | **az30301b-vm0** |
     | Destination | **Select a virtual machine** |
@@ -478,9 +478,9 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Deploy a highly available Azure VM Scale Set into availability zones behind an Azure Application Gateway by using Azure Resource Manager templates
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager template **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05\azuredeploy30301rgc.json**.
+1. From the Cloud Shell pane, upload the Azure Resource Manager template **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05\azuredeploy30305rgc.json**.
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **\C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05\azuredeploy30301rgc.parameters.json**.
+1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **\C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05\azuredeploy30305rgc.parameters.json**.
 
 1. From the Cloud Shell pane, run the following to deploy an Azure Application Gateway with its backend pool consisting of a pair of Azure VMs hosting Windows Server 2019 Datacenter Core across different availability zones:
 
