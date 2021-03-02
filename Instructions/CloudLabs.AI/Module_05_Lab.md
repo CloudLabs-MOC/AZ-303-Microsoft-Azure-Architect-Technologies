@@ -114,8 +114,8 @@ The main tasks for this exercise are as follows:
    ```Bash
    az deployment group create \
    --resource-group az30301a-labRG-(Deployment-id) \
-   --template-file azuredeploy30301rga.json  \
-   --parameters @azuredeploy30301rga.parameters.json
+   --template-file azuredeploy30305rga.json  \
+   --parameters @azuredeploy30305rga.parameters.json
    ```
 
  > Note: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
@@ -280,8 +280,8 @@ The main tasks for this exercise are as follows:
    ```Bash
    az deployment group create \
    --resource-group az30301b-labRG-Deployment-id \
-   --template-file azuredeploy30301rgb.json \
-   --parameters @azuredeploy30301rgb.parameters.json
+   --template-file azuredeploy30305rgb.json \
+   --parameters @azuredeploy30305rgb.parameters.json
    ```
 
  > Note: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
@@ -485,7 +485,7 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to deploy an Azure Application Gateway with its backend pool consisting of a pair of Azure VMs hosting Windows Server 2019 Datacenter Core across different availability zones:
 
    ```
-   az deployment group create --resource-group az30301c-labRG-Deployment-id --template-file azuredeploy30301rgc.json --parameters @azuredeploy30301rgc.parameters.json
+   az deployment group create --resource-group az30301c-labRG-Deployment-id --template-file azuredeploy30305rgc.json --parameters @azuredeploy30305rgc.parameters.json
    ```
 
  > Note: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
@@ -729,7 +729,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **scripts** blade, select **Upload**.
 
-1. On the **Upload blob** blade, select the folder icon, in the **Open** dialog box, navigate to the **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05** folder, select **az30301e-configure_VMSS_with_data_disk.ps1**, select **Open**, and back on the **Upload blob** blade, select **Upload**.
+1. On the **Upload blob** blade, select the folder icon, in the **Open** dialog box, navigate to the **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05** folder, select **az30305e-configure_VMSS_with_data_disk.ps1**, select **Open**, and back on the **Upload blob** blade, select **Upload**.
 
 1. In the Azure portal, navigate back to the **az30301c-vmss** virtual machine scale set blade.
 
@@ -746,7 +746,7 @@ The main tasks for this exercise are as follows:
 
    ![](Images/lab4/e5_t2_s13.png)
 
-1. On the **Storage accounts** blade, select the name of the storage account into which you uploaded the **az30301e-configure_VMSS_with_data_disk.ps1** script, on the **Containers** blade, select **scripts**, on the **scripts** blade, select **az30301e-configure_VMSS_with_data_disk.ps1**, and then select **Select**.
+1. On the **Storage accounts** blade, select the name of the storage account into which you uploaded the **az30305e-configure_VMSS_with_data_disk.ps1** script, on the **Containers** blade, select **scripts**, on the **scripts** blade, select **az30305e-configure_VMSS_with_data_disk.ps1**, and then select **Select**.
 
    ![](Images/lab4/e5_t2_s15.png)
 
