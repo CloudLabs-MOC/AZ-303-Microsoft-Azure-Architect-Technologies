@@ -74,11 +74,11 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex0_task1_step3.png)
     
-1. From the Cloud Shell pane, upload the file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\AllFiles\Labs\02\azuredeploy30306rga.json** into the Cloud Shell home directory.
+1. From the Cloud Shell pane, upload the file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\AllFiles\Labs\06\azuredeploy30306rga.json** into the Cloud Shell home directory.
 
    ![](Images/lab5/ex0_task1_step4.png)
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\AllFiles\Labs\02\azuredeploy30306rga.parameters.json**.
+1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\AllFiles\Labs\06\azuredeploy30306rga.parameters.json**.
 
    ![](Images/lab5/ex0_task1_step5.png)
 
@@ -310,7 +310,7 @@ The main tasks for this exercise are as follows:
    ```powershell
    New-Item -Path './az30302ablob.html'
 
-   Set-Content './az30302ablob.html' '<h3>Hello from az30302ablob via SAS</h3>'
+   Set-Content './az30306ablob.html' '<h3>Hello from az30302ablob via SAS</h3>'
    ```
 
    ![](Images/lab5/ex1_task5_step6.png)
