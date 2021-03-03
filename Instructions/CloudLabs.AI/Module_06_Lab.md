@@ -404,7 +404,7 @@ The main tasks for this exercise are as follows:
    (Get-AzureADUser -Filter "MailNickName eq 'aduserDeployment-ID'").UserPrincipalName
    ```
 
-    > *ote: Make sure you replace the value of Deployment-id. You can find the deployment-id from the environment detail page
+    > Note: Make sure you replace the value of Deployment-id. You can find the deployment-id from the environment detail page
 
 1. Note the user principal name. You will need it later in this exercise. 
 
