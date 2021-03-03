@@ -76,8 +76,6 @@ The main tasks for this exercise are as follows:
     
 1. From the Cloud Shell pane, upload the file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\AllFiles\Labs\06\azuredeploy30306rga.json** into the Cloud Shell home directory.
 
-   ![](Images/lab5/ex0_task1_step4.png)
-
 1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\AllFiles\Labs\06\azuredeploy30306rga.parameters.json**.
 
    ![](Images/lab5/ex0_task1_step5.png)
