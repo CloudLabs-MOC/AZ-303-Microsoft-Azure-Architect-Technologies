@@ -194,7 +194,7 @@ The main tasks for this exercise are as follows:
 
    >**Note**: You can find the Azure Credentials from the environment details tab.
 
-1. Navigate to the blade of the newly created storage account**azstoreDeployment-ID**, select **Access keys** and review the settings of the target blade.
+1. Navigate to the blade of the newly created storage account **azstoreDeployment-ID**, select **Access keys** and review the settings of the target blade.
 
    ![](Images/lab5/ex1_task3_step2.png)
 
