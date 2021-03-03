@@ -144,8 +144,6 @@ The main tasks for this exercise are as follows:
 
     > Note: Wait for the Storage account to be created. This should take about 2 minutes.
 
-    ![](Images/lab5/ex1_task1_step4.png)
-
 #### Task 2: Install Storage Explorer
 
    > Note: Ensure that the deployment of the Azure VM you initiated at the beginning of this lab has completed before you proceed.
