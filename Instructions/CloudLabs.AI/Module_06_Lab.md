@@ -507,12 +507,6 @@ The main tasks for this exercise are as follows:
 
       ![](Images/lab5/ex2_tsk3_stp10.png)
 
-1. Within the Remote Desktop session to **az30302a-vm0**, in the browser window, navigate back to **container1**.
-
-1. On the **container1** blade, verify that **az30306bblob.html** appears in the list of blobs.
-
-    ![](Images/lab5/ex2_tsk3_stp12.png)
-
 1. On the **container1** blade, select **Change access level**, set the public access level to **Blob (anonymous read access for blobs only)** and select **OK**.
 
     ![](Images/lab5/ex2_task3_step13.png)
@@ -520,7 +514,7 @@ The main tasks for this exercise are as follows:
 1. Switch back to the Windows PowerShell prompt and re-run the following command to verify that now you can access the uploaded blob anonymously (replace the `<storage_account_name>` placeholder with the name of the storage account you created in Exercise 1 -> Task 1: Create an Azure Storage account and please do not use the storage account created in exercise 0 here):
 
    ```powershell
-   Invoke-WebRequest -Uri 'https://<storage_account_name>.blob.core.windows.net/container1/az30306bblob.html'
+   Invoke-WebRequest -Uri 'https://<storage_account_name>.blob.core.windows.net/container1/az30306ablob.html'
    ```
   ![](Images/lab5/ex2_task3_step14.png)
 
