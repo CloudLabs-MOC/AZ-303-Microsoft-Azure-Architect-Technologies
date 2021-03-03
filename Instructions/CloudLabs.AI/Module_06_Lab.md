@@ -1,9 +1,3 @@
----
-lab:
-    title: '2: Implementing and Configuring Azure Storage File and Blob Services'
-    module: 'Module 2: Implement Storage Accounts'
----
-
 # Lab: Implementing and Configuring Azure Storage File and Blob Services
 # Student lab manual
 
