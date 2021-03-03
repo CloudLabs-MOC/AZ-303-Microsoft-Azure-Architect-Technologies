@@ -302,9 +302,9 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to create a file and add a line of text into it:
 
    ```powershell
-   New-Item -Path './az30302ablob.html'
+   New-Item -Path './az30306ablob.html'
 
-   Set-Content './az30306ablob.html' '<h3>Hello from az30302ablob via SAS</h3>'
+   Set-Content './az30306ablob.html' '<h3>Hello from az30306ablob via SAS</h3>'
    ```
 
    ![](Images/lab5/ex1_task5_step6.png)
@@ -312,7 +312,7 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to upload the newly created file as a blob into container1 of the Azure Storage account you created earlier in this exercise (replace the `<sas_token>` placeholder with the value of the shared access signature you copied to Clipboard earlier in this task):(**Please provide the name of the storage account that you created in Exercise 1 -> Task 1: Create an Azure Storage account and please do not use the storage account created in exercise 0 here**)
 
    ```powershell
-   $storageAccountName = (Get-AzStorageAccount -ResourceGroupName 'az30302a-labRG' -AccountName "azstore**Deployment-ID"
+   $storageAccountName = Get-AzStorageAccount -ResourceGroupName 'az30302a-labRG' -AccountName "azstore**Deployment-ID"
 
    azcopy cp './az30306ablob.html' "https://$storageAccountName.blob.core.windows.net/container1/az30306ablob.html<sas_token>"
    ```
@@ -327,7 +327,7 @@ The main tasks for this exercise are as follows:
 
 1. In the list of containers, select **container1**.
 
-1. On the **container1** blade, verify that **az30302ablob.html** appears in the list of blobs. **If not able to find please refresh and check**
+1. On the **container1** blade, verify that **az30306ablob.html** appears in the list of blobs. **If not able to find please refresh and check**
 
     ![](Images/lab5/ex5_tsk5_stp12.png)
 
