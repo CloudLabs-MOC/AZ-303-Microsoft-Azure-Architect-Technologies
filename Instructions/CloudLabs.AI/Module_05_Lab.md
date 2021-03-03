@@ -196,7 +196,6 @@ The main tasks for this exercise are as follows:
    ```Bash
    for i in {1..4}; do curl <lb_IP_address>; done
    ```
-   ![](Images/lab4/e1_t2_s13.png)
 
     > Note: Verify that the returned messages indicate that the requests are being delivered in the round robin manner to the backend Azure VMs
 
@@ -213,8 +212,6 @@ The main tasks for this exercise are as follows:
    ```
 
     > Note: Verify that the returned messages indicate that the requests are being delivered to the same backend Azure VMs
-
-   ![](Images/lab4/e1_t2_s16.png)
 
 1. In the Azure portal, navigate back to the **az30301a-lb** blade, select the **Inbound NAT rules** entry and note the two rules that allow for connecting to the first and the second of the backend pool VMs via Remote Desktop over TCP ports 33890 and 33891, respectively.
 
