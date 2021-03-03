@@ -312,7 +312,7 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to upload the newly created file as a blob into container1 of the Azure Storage account you created earlier in this exercise (replace the `<sas_token>` placeholder with the value of the shared access signature you copied to Clipboard earlier in this task):(**Please provide the name of the storage account that you created in Exercise 1 -> Task 1: Create an Azure Storage account and please do not use the storage account created in exercise 0 here**)
 
    ```powershell
-   $storageAccountName = (Get-AzStorageAccount -ResourceGroupName 'az30302a-labRG')[0].StorageAccountName
+   $storageAccountName = (Get-AzStorageAccount -ResourceGroupName 'az30302a-labRG' -AccountName "azstore**Deployment-ID"
 
    azcopy cp './az30306ablob.html' "https://$storageAccountName.blob.core.windows.net/container1/az30306ablob.html<sas_token>"
    ```
