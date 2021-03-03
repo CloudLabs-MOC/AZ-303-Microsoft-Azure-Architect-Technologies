@@ -181,7 +181,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab5/ex1_task2_step4.png)
 
-1. Within the Remote Desktop session to **az30302a-vm0**, start Internet Explorer and navigate to the download page of [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)
+1. Within the Remote Desktop session to **az30302a-vm0**, start Internet Explorer and download from [Azure Storage Explorer](https://github.com/microsoft/AzureStorageExplorer/releases/download/v1.15.1/Windows_StorageExplorer.exe)
 
     ![](Images/lab5/ex1_task2_step5.png)
 
