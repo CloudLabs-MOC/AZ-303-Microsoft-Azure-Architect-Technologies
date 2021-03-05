@@ -1,9 +1,3 @@
----
-lab:
-    title: '4: Protecting Hyper-V VMs by using Azure Site Recovery'
-    module: 'Module 4: Protecting Hyper-V VMs by using Azure Site Recovery'
----
-
 # Lab: Protecting Hyper-V VMs by using Azure Site Recovery
 # Student lab manual
 
