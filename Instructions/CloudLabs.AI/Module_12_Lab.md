@@ -106,13 +106,19 @@ The main tasks for this exercise are as follows:
 
 10. Within the Remote Desktop session to **az30307a-hv-vm**, start Internet Explorer, browse to this link https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019, and download the Windows Server 2019 **VHD** file and move the file from downloads to **F:\\VHDs** folder. (Please follow the below images if any doubts)
 
- i) **Enter the details and Continue**
+    ![](Images/lab9/new/ex0_task2_step10_1.png)
+    
+    i) **Enter the details and Continue**
+    ![](Images/lab9/new/ex0_task2_step10_2.png)
 
- ii) **Click Save and find the file in Downloads**.
-  ![](Images/lab9/Ex0_task2_step7_2.png)
+    ii) **Click Save and find the file in Downloads**
+    ![](Images/lab9/Ex0_task2_step7_2.png
 
- iii) **Moved from downloads to F:\VHDs**
-   ![](Images/lab5/az303.png)
+    ![](Images/lab9/new/ex0_task2_step10_3.png)
+
+    ii) **Moved from downloads to F:\VHDs**
+    ![](Images/lab5/az303.png)
+
 
 11. Within the Remote Desktop session to **az30307a-hv-vm**, start **Hyper-V Manager**.
 
@@ -395,7 +401,7 @@ The main tasks for this exercise are as follows:
 
    ![](Images/lab9/new/ex2_task2_step24.png)
 
-1.On the **Target Environment** blade, specify the following settings (leave others with their default values) and select **Next**:
+1. On the **Target Environment** blade, specify the following settings (leave others with their default values) and select **Next**:
 
     | Setting | Value |
     | --- | --- |
@@ -411,23 +417,23 @@ The main tasks for this exercise are as follows:
 
 1. On the **Virtual machine selection** blade, select **az30307a-vm1** and select **Next**:
 
-    ![](Images/lab9/new/ex2_task2_step26.png)
+   ![](Images/lab9/new/ex2_task2_step26.png)
 
-1.On the **Configure properties** blade, in the **Defaults** row and **OS type** column, select **Windows** from the drop-down list and select **Next**:
+1. On the **Configure properties** blade, in the **Defaults** row and **OS type** column, select **Windows** from the drop-down list and select **Next**:
 
-    ![](Images/lab9/new/ex2_task2_step27.png)
+   ![](Images/lab9/new/ex2_task2_step27.png)
 
 1. On the **Configure replication settings** blade, accept the default settings and select **Next**:
 
-    ![](Images/lab9/new/ex2_task2_step28.png)
+   ![](Images/lab9/new/ex2_task2_step28.png)
 
 1. Back on the **Enable replication** blade, select **Enable replication**.
 
-    ![](Images/lab9/new/ex2_task2_step29.png)
+   ![](Images/lab9/new/ex2_task2_step29.png)
 
-    ![](Images/lab9/new2/ex2_task2_step22_1.png)
+   ![](Images/lab9/new2/ex2_task2_step22_1.png)
 
-    ![](Images/lab9/new2/ex2_task2_step22_2.png)
+   ![](Images/lab9/new2/ex2_task2_step22_2.png)
 
 
 #### Task 3: Review Azure VM replication settings
