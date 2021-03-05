@@ -106,8 +106,6 @@ The main tasks for this exercise are as follows:
 
 10. Within the Remote Desktop session to **az30307a-hv-vm**, start Internet Explorer, browse to this link https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019, and download the Windows Server 2019 **VHD** file and move the file from downloads to **F:\\VHDs** folder. (Please follow the below images if any doubts)
 
-   ![](Images/lab9/new/ex0_task2_step10_1.png)
-
  i) **Enter the details and Continue**
 
  ii) **Click Save and find the file in Downloads**.
