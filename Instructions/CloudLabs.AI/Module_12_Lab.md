@@ -57,7 +57,6 @@ The main tasks for this exercise are as follows:
     | Host Admin Username | **Student** |
     | Host Admin Password | **Pa55w.rd1234** |
 
-
 4. On the **Hyper-V Host Virtual Machine with nested VMs** blade, select **Review + create** and then select **Create**.
 
     > Note: Wait for the deployment to complete. The deployment might take about 10 minutes.
@@ -94,7 +93,7 @@ The main tasks for this exercise are as follows:
 
 1. Open the RDP file, and when prompted sign in with the following credentials:
 
-- User Name: **Student** 
+- User Name: **Student**
 - Password: **Pa55w.rd1234**
 
 1. Within the Remote Desktop session to **az30307a-hv-vm**, in the Server Manager window, click **Local Server**, click the **On** link next to the **IE Enhanced Security Configuration** label, and, in the **IE Enhanced Security Configuration** dialog box, select both **Off** options.
