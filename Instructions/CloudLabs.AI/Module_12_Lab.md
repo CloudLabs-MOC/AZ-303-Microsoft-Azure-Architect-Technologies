@@ -93,46 +93,46 @@ The main tasks for this exercise are as follows:
 
 1. Open the RDP file, and when prompted sign in with the following credentials:
 
-- User Name: **Student**
-- Password: **Pa55w.rd1234**
+* User Name: **Student**
+* Password: **Pa55w.rd1234**
 
-1. Within the Remote Desktop session to **az30307a-hv-vm**, in the Server Manager window, click **Local Server**, click the **On** link next to the **IE Enhanced Security Configuration** label, and, in the **IE Enhanced Security Configuration** dialog box, select both **Off** options.
+8. Within the Remote Desktop session to **az30307a-hv-vm**, in the Server Manager window, click **Local Server**, click the **On** link next to the **IE Enhanced Security Configuration** label, and, in the **IE Enhanced Security Configuration** dialog box, select both **Off** options.
 
     ![](Images/lab9/Ex0_task2_step7_1.png)
 
-1. Please Create Two Folders in F: Drive with Names **VHDs** and **VMs**.
+9. Please Create Two Folders in F: Drive with Names **VHDs** and **VMs**.
 
     ![](Images/lab9/Ex0_task2_step7_2_1.png)
 
-1. Within the Remote Desktop session to **az30307a-hv-vm**, start Internet Explorer, browse to this link https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019, and download the Windows Server 2019 **VHD** file and move the file from downloads to **F:\\VHDs** folder. (Please follow the below images if any doubts)
+10. Within the Remote Desktop session to **az30307a-hv-vm**, start Internet Explorer, browse to this link https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019, and download the Windows Server 2019 **VHD** file and move the file from downloads to **F:\\VHDs** folder. (Please follow the below images if any doubts)
 
     ![](Images/lab9/new/ex0_task2_step10_1.png)
 
  i) **Enter the details and Continue**
 
-    ![](Images/lab9/new/ex0_task2_step10_2.png)
+   ![](Images/lab9/new/ex0_task2_step10_2.png)
 
  ii) **Click Save and find the file in Downloads**
 
-    ![](Images/lab9/Ex0_task2_step7_2.png)
+   ![](Images/lab9/Ex0_task2_step7_2.png)
 
-    ![](Images/lab9/new/ex0_task2_step10_3.png)
+   ![](Images/lab9/new/ex0_task2_step10_3.png)
 
  iii) **Moved from downloads to F:\VHDs**
 
-    ![](Images/lab5/az303.png)
+   ![](Images/lab5/az303.png)
 
-1. Within the Remote Desktop session to **az30307a-hv-vm**, start **Hyper-V Manager**.
+11. Within the Remote Desktop session to **az30307a-hv-vm**, start **Hyper-V Manager**.
 
-    ![](Images/lab9/Ex0_task2_step7_3.png)
+   ![](Images/lab9/Ex0_task2_step7_3.png)
 
-1. In the **Hyper-V Manager** console, select the **az30307a-hv-vm** node, select **New** and, in the cascading menu, select **Virtual Machine**. This will start the **New Virtual Machine Wizard**.
+12. In the **Hyper-V Manager** console, select the **az30307a-hv-vm** node, select **New** and, in the cascading menu, select **Virtual Machine**. This will start the **New Virtual Machine Wizard**.
 
     ![](Images/lab9/Ex0_task2_step4.png)
 
-1. On the **Before You Begin** page of the **New Virtual Machine Wizard**, select **Next >**.
+13. On the **Before You Begin** page of the **New Virtual Machine Wizard**, select **Next >**.
 
-1. On the **Specify Name and Location** page of the **New Virtual Machine Wizard**, specify the following settings and select **Next >**:
+14. On the **Specify Name and Location** page of the **New Virtual Machine Wizard**, specify the following settings and select **Next >**:
 
     | Setting | Value |
     | --- | --- |
@@ -142,37 +142,37 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex0_task2_step7_6.png)
 
-1. On the **Specify Generation** page of the **New Virtual Machine Wizard**, ensure that the **Generation 1** option is selected and select **Next >**:
+15. On the **Specify Generation** page of the **New Virtual Machine Wizard**, ensure that the **Generation 1** option is selected and select **Next >**:
 
-1. On the **Assign Memory** page of the **New Virtual Machine Wizard**, set **Startup memory** to **2048** and select **Next >**.
+16. On the **Assign Memory** page of the **New Virtual Machine Wizard**, set **Startup memory** to **2048** and select **Next >**.
 
-1. On the **Configure Networking** page of the **New Virtual Machine Wizard**, in the **Connection** drop-down list select **NestedSwitch** and select **Next >**.
+17. On the **Configure Networking** page of the **New Virtual Machine Wizard**, in the **Connection** drop-down list select **NestedSwitch** and select **Next >**.
 
-1. On the **Connect Virtual Hard Disk** page of the **New Virtual Machine Wizard**, select the option **Use an existing virtual hard disk**, set location to the VHD file you downloaded to the **F:\VHDs** folder, and select **Next >**.
+18. On the **Connect Virtual Hard Disk** page of the **New Virtual Machine Wizard**, select the option **Use an existing virtual hard disk**, set location to the VHD file you downloaded to the **F:\VHDs** folder, and select **Next >**.
 
     ![](Images/lab9/Ex0_task2_step7_10.png)
 
-1. On the **Summary** page of the **New Virtual Machine Wizard**, select **Finish**.
+19. On the **Summary** page of the **New Virtual Machine Wizard**, select **Finish**.
 
-1. In the **Hyper-V Manager** console, select the newly created virtual machine and select **Start**.
+20. In the **Hyper-V Manager** console, select the newly created virtual machine and select **Start**.
 
     ![](Images/lab9/Ex0_task2_step7_12.png)
 
-1. In the **Hyper-V Manager** console, verify that the virtual machine is running and select **Connect**.
+21. In the **Hyper-V Manager** console, verify that the virtual machine is running and select **Connect**.
 
-1. In the Virtual Machine Connection window to **az30307a-vm1**, on the **Hi there** page, select **Next**.
+22. In the Virtual Machine Connection window to **az30307a-vm1**, on the **Hi there** page, select **Next**.
 
-1. In the Virtual Machine Connection window to **az30307a-vm1**, on the **License terms** page, select **Accept**.
+23. In the Virtual Machine Connection window to **az30307a-vm1**, on the **License terms** page, select **Accept**.
 
-1. In the Virtual Machine Connection window to **az30307a-vm1**, on the **Customize settings** page, set the password of the built-in Administrator account to **Pa55w.rd1234** , please type the password and select **Finish**.
+24. In the Virtual Machine Connection window to **az30307a-vm1**, on the **Customize settings** page, set the password of the built-in Administrator account to **Pa55w.rd1234** , please type the password and select **Finish**.
 
    ![](Images/lab9/new/ex0_task2_step24.png)
 
-1. In the Virtual Machine Connection window to **az30307a-vm1**, sign in by using the newly set password. Use CTRL+ALT+DELETE button to login.
+25. In the Virtual Machine Connection window to **az30307a-vm1**, sign in by using the newly set password. Use CTRL+ALT+DELETE button to login.
 
     ![](Images/lab9/Ex0_task2_step7_17_1.png)
 
-1. In the Virtual Machine Connection window to **az30307a-vm1**, start Windows PowerShell and, in the **Administrator: Windows PowerShell** window run the following to set the computer name.
+26. In the Virtual Machine Connection window to **az30307a-vm1**, start Windows PowerShell and, in the **Administrator: Windows PowerShell** window run the following to set the computer name.
 
    ```powershell
    Rename-Computer -NewName 'az30307a-vm1' -Restart
