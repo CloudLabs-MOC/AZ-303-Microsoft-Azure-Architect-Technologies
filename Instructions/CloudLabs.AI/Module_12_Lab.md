@@ -3,14 +3,14 @@
 
 ## Lab scenario
 
-While Adatum Corporation has, over the years, implemented a number of high availability provisions for their on-premises workloads, its disaster recovery capabilities are still insufficient to address the Recovery Point Objectives (RPOs) and Recovery Time Objectives (RTOs) demanded by its business. Maintaining the existing secondary on-premises site requires an extensive effort and incurs significant costs. The failover and failback procedures are, for the most part, manual and are poorly documented. 
+While Adatum Corporation has, over the years, implemented a number of high availability provisions for their on-premises workloads, its disaster recovery capabilities are still insufficient to address the Recovery Point Objectives (RPOs) and Recovery Time Objectives (RTOs) demanded by its business. Maintaining the existing secondary on-premises site requires an extensive effort and incurs significant costs. The failover and failback procedures are, for the most part, manual and are poorly documented.
 
 To address these shortcomings, the Adatum Enterprise Architecture team decided to explore capabilities of Azure Site Recovery, with Azure taking on the role of the hoster of the secondary site. Azure Site Recovery automatically and continuously replicates workloads running on physical and virtual machines from the primary to the secondary site. Site Recovery uses storage-based replication mechanism, without intercepting application data. With Azure as the secondary site, data is stored in Azure Storage, with built-in resilience and low cost. The target Azure VMs are hydrated following a failover by using the replicated data. The Recovery Time Objectives (RTO) and Recovery Point objectives are minimized since Site Recovery provides continuous replication for VMware VMs and replication frequency as low as 30 seconds for Hyper-V VMs. In addition, Azure Site Recovery also handles orchestration of failover and failback processes, which, to large extent, can be automated. It is also possible to use Azure Site Recovery for migrations to Azure, although the recommended approach relies on Azure Migrate instead.
 
 The Adatum Enterprise Architecture team wants to evaluate the use of Azure Site Recovery for protecting on-premises Hyper-V virtual machines to Azure VM.
 
 ## Objectives
-  
+
 After completing this lab, you will be able to:
 
 -  Configure Azure Site Recovery
@@ -23,11 +23,9 @@ After completing this lab, you will be able to:
 
 Estimated Time: 120 minutes
 
-
 ## Lab Files
 
 -  C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\12\azuredeploy30312suba.json
-
 
 ### Exercise 0: Prepare the lab environment
 
@@ -36,7 +34,6 @@ The main tasks for this exercise are as follows:
 1. Deploy an Azure VM by using an Azure Resource Manager QuickStart template
 
 1. Configure nested virtualization in the Azure VM
-
 
 #### Task 1: Deploy an Azure VM by using an Azure Resource Manager QuickStart template
 
@@ -60,7 +57,8 @@ The main tasks for this exercise are as follows:
     | Host Admin Username | **Student** |
     | Host Admin Password | **Pa55w.rd1234** |
 
-1. On the **Hyper-V Host Virtual Machine with nested VMs** blade, select **Review + create** and then select **Create**.
+
+4. On the **Hyper-V Host Virtual Machine with nested VMs** blade, select **Review + create** and then select **Create**.
 
     > Note: Wait for the deployment to complete. The deployment might take about 10 minutes.
 
