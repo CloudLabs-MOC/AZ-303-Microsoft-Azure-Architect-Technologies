@@ -66,7 +66,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, search for and select **Virtual machines** and, on the **Virtual machines** blade, select **az30307a-hv-vm**.
 
-1. On the **az30307a-hv-vm** blade, select **Networking**. 
+1. On the **az30307a-hv-vm** blade, select **Networking**.
 
 1. On the **az30307a-hv-vm | Networking** blade, select **az30307a-hv-vm-nic1** and then select **Add inbound port rule**.
 
@@ -94,14 +94,14 @@ The main tasks for this exercise are as follows:
 
 1. Open the RDP file, and when prompted sign in with the following credentials:
 
- - User Name: **Student** 
- - Password: **Pa55w.rd1234**
+- User Name: **Student** 
+- Password: **Pa55w.rd1234**
 
 1. Within the Remote Desktop session to **az30307a-hv-vm**, in the Server Manager window, click **Local Server**, click the **On** link next to the **IE Enhanced Security Configuration** label, and, in the **IE Enhanced Security Configuration** dialog box, select both **Off** options.
 
     ![](Images/lab9/Ex0_task2_step7_1.png)
 
-1. Please Create Two Folders in F: Drive with Names **VHDs** and **VMs** .
+1. Please Create Two Folders in F: Drive with Names **VHDs** and **VMs**.
 
     ![](Images/lab9/Ex0_task2_step7_2_1.png)
 
@@ -135,10 +135,10 @@ The main tasks for this exercise are as follows:
 
 1. On the **Specify Name and Location** page of the **New Virtual Machine Wizard**, specify the following settings and select **Next >**:
 
-    | Setting | Value | 
+    | Setting | Value |
     | --- | --- |
-    | Name | **az30307a-vm1** | 
-    | Store the virtual machine in a different location | selected | 
+    | Name | **az30307a-vm1** |
+    | Store the virtual machine in a different location | selected |
     | Location | **F:\VMs** |
 
     ![](Images/lab9/Ex0_task2_step7_6.png)
@@ -180,7 +180,7 @@ The main tasks for this exercise are as follows:
    ```
 
 ### Exercise 1: Create and configure an Azure Site Recovery vault
-  
+
 The main tasks for this exercise are as follows:
 
 1. Create an Azure Site Recovery vault
@@ -198,7 +198,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Basics** tab of the **Create Recovery Services vault** blade, specify the following settings (**leave others with their default values**) and select **Review + create**:
 
-    | Setting | Value | 
+    | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource group | the name of a new resource group **az30307b-labRG-deploymentID** |
@@ -231,8 +231,9 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex1_task2_step4.png)
 
+
 ### Exercise 2: Implement Hyper-V protection by using Azure Site Recovery vault
-  
+
 The main tasks for this exercise are as follows:
 
 1. Implement the target Azure environment
@@ -304,7 +305,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Basics** tab of the **Create storage account** blade, specify the following settings (**leave others with their default values**):
 
-    | Setting | Value | 
+    | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource group | **az30307c-labRG-deploymentID** |
@@ -319,7 +320,6 @@ The main tasks for this exercise are as follows:
     ![](Images/lab9/Ex2_task1_step14.png)
 
 1. On the **Review + create** tab of the **Create storage account** blade, select **Create**.
-
 
 #### Task 2: Implement protection of a Hyper-V virtual machine
 
@@ -381,7 +381,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/new/ex2_task2_step18.png)
 
-1. On the **Replication policy** blade, select **Create new policy and associate**.. 
+1. On the **Replication policy** blade, select **Create new policy and associate**.
 
     ![](Images/lab9/new/ex2_task2_step19.png)
 
@@ -396,7 +396,7 @@ The main tasks for this exercise are as follows:
 
 1. Back on the **Prepare infrastructure** blade, select **Prepare**.
 
-1. Back on the **az30307b-rsvault | Site Recovery** blade, Under **Hyper-V machines to Azure** section, select **2: Enable replication**. 
+1. Back on the **az30307b-rsvault | Site Recovery** blade, Under **Hyper-V machines to Azure** section, select **2: Enable replication**.
 
      ![](Images/lab9/new/ex2_task2_step23.png)
 
@@ -433,9 +433,9 @@ The main tasks for this exercise are as follows:
 1. Back on the **Enable replication** blade, select **Enable replication**.
 
     ![](Images/lab9/new/ex2_task2_step29.png)
-    
+
     ![](Images/lab9/new2/ex2_task2_step22_1.png)
-    
+
     ![](Images/lab9/new2/ex2_task2_step22_2.png)
 
 
@@ -471,8 +471,8 @@ The main tasks for this exercise are as follows:
 
     | Setting | Value |
     | --- | --- |
-    | Choose a recovery point | the default option | 
-    | Azure virtual network | **az30307c-test-vnet** | 
+    | Choose a recovery point | the default option |
+    | Azure virtual network | **az30307c-test-vnet** |
 
    ![](Images/lab9/new2/ex2_task4_step2.png)
 
