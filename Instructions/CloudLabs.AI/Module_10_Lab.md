@@ -111,7 +111,7 @@ The main tasks for this exercise are as follows:
 
      > Note: Make sure you replace the value of Deployment-id and record the user principal name of the newly created Azure AD user. You will need it later in this lab.
 
-1. Close the Cloud Shell pane.
+   Close the Cloud Shell pane.
 
 
 ### Exercise 1: Define a custom RBAC role
