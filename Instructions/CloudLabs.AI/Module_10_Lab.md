@@ -191,8 +191,6 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to verify that the role was created successfully:
 
-* Please make sure to replace the Deployment-id, you can find the `Deployment-id` from the environment details page.
-
    ```powershell
    Get-AzRoleDefinition -Name 'Virtual Machine Operator (Custom)'
    ```
