@@ -87,14 +87,15 @@ The main tasks for this exercise are as follows:
    Connect-AzureAD
    ```
    
-1. From the Cloud Shell pane, run the following to identify the Azure AD DNS domain name:
+2. From the Cloud Shell pane, run the following to identify the Azure AD DNS domain name:
 
    ```powershell
    $domainName = ((Get-AzureAdTenantDetail).VerifiedDomains)[0].Name
    ```
 
-1. From the Cloud Shell pane, run the following to create a new Azure AD user:
-  **Note: Make sure you replace the value of Deployment-Id and record the user principal name of the newly created Azure AD user. You will need it later in this lab.**
+3. From the Cloud Shell pane, run the following to create a new Azure AD user:
+
+4. Note: Make sure you replace the value of Deployment-Id and record the user principal name of the newly created Azure AD user. You will need it later in this lab.
 
    ```powershell
    $passwordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
@@ -103,7 +104,7 @@ The main tasks for this exercise are as follows:
    New-AzureADUser -AccountEnabled $true -DisplayName 'aduserDeployment-id' -PasswordProfile $passwordProfile -MailNickName 'aduserDeployment-id' -UserPrincipalName "aduserDeployment-id@$domainName"
    ```
 
-4. From the Cloud Shell pane, run the following to identify the user principal name of the newly created Azure AD user:
+5. From the Cloud Shell pane, run the following to identify the user principal name of the newly created Azure AD user:
 
    ```powershell
    (Get-AzureADUser -Filter "MailNickName eq 'aduser(Deployment-id)'").UserPrincipalName
@@ -111,7 +112,7 @@ The main tasks for this exercise are as follows:
 
      > Note: Make sure you replace the value of Deployment-id and record the user principal name of the newly created Azure AD user. You will need it later in this lab.
 
- 5. Close the Cloud Shell pane.
+ 6. Close the Cloud Shell pane.
 
 
 ### Exercise 1: Define a custom RBAC role
