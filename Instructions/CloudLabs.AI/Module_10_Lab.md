@@ -94,7 +94,7 @@ The main tasks for this exercise are as follows:
    ```
 
 1. From the Cloud Shell pane, run the following to create a new Azure AD user:
-> Note: Make sure you replace the value of Deployment-Id and record the user principal name of the newly created Azure AD user. You will need it later in this lab.
+  **Note: Make sure you replace the value of Deployment-Id and record the user principal name of the newly created Azure AD user. You will need it later in this lab.**
 
    ```powershell
    $passwordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
