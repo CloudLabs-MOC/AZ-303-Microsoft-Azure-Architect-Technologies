@@ -234,7 +234,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate to the **Resource groups** blade. Note that you are not able to see any resource groups. 
 
-1. In the Azure portal, navigate to the **All resources** blade. Note that you are able to see only the **az30311a-vm0** and its managed disk.
+1. In the Azure portal, navigate to the **All resources** blade. Note that you are able to see only the **az30310a-vm0** and its managed disk.
 
 1. In the Azure portal, navigate to the **az30310a-vm0** blade. Try stopping the virtual machine. Review the error message in the notification area and note that this action failed because the current user is not authorized to carry it out.
 
