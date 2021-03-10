@@ -103,7 +103,7 @@ The main tasks for this exercise are as follows:
    New-AzureADUser -AccountEnabled $true -DisplayName 'aduserDeployment-id' -PasswordProfile $passwordProfile -MailNickName 'aduserDeployment-id' -UserPrincipalName "aduserDeployment-id@$domainName"
    ```
 
-1. From the Cloud Shell pane, run the following to identify the user principal name of the newly created Azure AD user:
+4. From the Cloud Shell pane, run the following to identify the user principal name of the newly created Azure AD user:
 
    ```powershell
    (Get-AzureADUser -Filter "MailNickName eq 'aduser(Deployment-id)'").UserPrincipalName
@@ -111,7 +111,7 @@ The main tasks for this exercise are as follows:
 
      > Note: Make sure you replace the value of Deployment-id and record the user principal name of the newly created Azure AD user. You will need it later in this lab.
 
-   Close the Cloud Shell pane.
+ 5. Close the Cloud Shell pane.
 
 
 ### Exercise 1: Define a custom RBAC role
