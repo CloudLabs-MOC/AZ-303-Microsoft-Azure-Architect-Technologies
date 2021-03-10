@@ -70,7 +70,7 @@ The main tasks for this exercise are as follows:
    ```powershell
    New-AzResourceGroupDeployment `
      -Name az30311rgaDeployment `
-     -ResourceGroupName 'az30310a-labRG' `
+     -ResourceGroupName 'az30311a-labRG' `
      -TemplateFile $HOME/azuredeploy30310rga.json `
      -TemplateParameterFile $HOME/azuredeploy30310rga.parameters.json `
      -AsJob
