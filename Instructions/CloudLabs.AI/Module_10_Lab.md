@@ -59,7 +59,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex0_task1_step1_2.png)
 
-1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **\\\\AZ303\\AllFiles\Labs\\10\\azuredeploy30310suba.json** into the Cloud Shell home directory.
+1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **\\\\AZ303\\AllFiles\Labs\\10\\azuredeploy30310rga.json** into the Cloud Shell home directory.
 
    ![](Images/lab9/Ex0_task1_step3.png)
 
