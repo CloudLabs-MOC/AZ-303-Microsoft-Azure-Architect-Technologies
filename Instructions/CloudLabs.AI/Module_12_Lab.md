@@ -124,7 +124,7 @@ The main tasks for this exercise are as follows:
 
    ![](Images/lab9/Ex0_task2_step7_3.png)
 
-12. In the **Hyper-V Manager** console, select the **az30307a-hv-vm** node, select **New** and, in the cascading menu, select **Virtual Machine**. This will start the **New Virtual Machine Wizard**.
+12. In the **Hyper-V Manager** console, select the **AZ30307A-HV-VM** node, select **New** and, in the cascading menu, select **Virtual Machine**. This will start the **New Virtual Machine Wizard**.
 
     ![](Images/lab9/Ex0_task2_step4.png)
 
