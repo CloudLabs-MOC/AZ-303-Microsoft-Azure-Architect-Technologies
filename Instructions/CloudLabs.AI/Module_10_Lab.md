@@ -194,7 +194,7 @@ The main tasks for this exercise are as follows:
 * Please make sure to replace the Deployment-id, you can find the `Deployment-id` from the environment details page.
 
    ```powershell
-   Get-AzRoleDefinition -Name 'Virtual Machine Operator Deployment-id (Custom)'
+   Get-AzRoleDefinition -Name 'Virtual Machine Operator (Custom)'
    ```
 
 8. Close the Cloud Shell pane.
