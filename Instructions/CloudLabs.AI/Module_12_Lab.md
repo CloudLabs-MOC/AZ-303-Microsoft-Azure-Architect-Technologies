@@ -198,7 +198,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | the name of a new resource group **az30307b-labRG-deploymentID** |
+    | Resource group | select existing  resource group **az30307b-labRG-deploymentID** |
     | Vault name | **az30307b-rsvault** |
     | Location | the name of the Azure region into which you deployed the virtual machine earlier in this lab |
 
@@ -253,7 +253,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | the name of a new resource group **az30307c-labRG-deploymentID** |
+    | Resource group | select existing resource group **az30307c-labRG-deploymentID** |
     | Name | **az30307c-dr-vnet** |
     | Region | the name of the Azure region into which you deployed the virtual machine earlier in this lab |
 
