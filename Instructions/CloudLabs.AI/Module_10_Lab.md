@@ -59,11 +59,11 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex0_task1_step1_2.png)
 
-1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **\\\\AZ303\\AllFiles\Labs\\10\\azuredeploy30310rga.json** into the Cloud Shell home directory.
+1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\10\azuredeploy30310rga.json** into the Cloud Shell home directory.
 
    ![](Images/lab9/Ex0_task1_step3.png)
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\AllFiles\Labs\11\azuredeploy30311rga.parameters.json**..
+1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\10\azuredeploy30310rga.parameters.json**..
 
 1. From the Cloud Shell pane, run the following to deploy a Azure VM running Windows Server 2019 that you will be using in this lab:
 
@@ -144,7 +144,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Create a custom RBAC role in an Azure AD tenant
 
-1. On the lab computer, open the file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\AllFiles\Labs\10\roledefinition30310.json** and review its content:
+1. On the lab computer, open the file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\10\roledefinition30310.json** and review its content:
 
    ```json
    {
@@ -167,7 +167,7 @@ The main tasks for this exercise are as follows:
 
 1. On the lab computer, in the browser window displaying the Azure portal, start a **PowerShell** session within the **Cloud Shell**. 
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager template **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\AllFiles\Labs\10\roledefinition30310.json** into the home directory.
+1. From the Cloud Shell pane, upload the Azure Resource Manager template **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\10\roledefinition30310.json** into the home directory.
 
 1. From the Cloud Shell pane, run the following to replace the `SUBSCRIPTION_ID` placeholder with the ID value of the Azure subscription:
 
@@ -196,7 +196,7 @@ The main tasks for this exercise are as follows:
    Get-AzRoleDefinition -Name 'Virtual Machine Operator Deployment-id (Custom)'
    ```
 
-1. Close the Cloud Shell pane.
+8. Close the Cloud Shell pane.
 
 
 ### Exercise 2: Assign and test a custom RBAC role
