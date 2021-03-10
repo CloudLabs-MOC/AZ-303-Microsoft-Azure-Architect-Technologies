@@ -63,7 +63,7 @@ The main tasks for this exercise are as follows:
 
    ![](Images/lab9/Ex0_task1_step3.png)
 
-1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\10\azuredeploy30310rga.parameters.json**..
+1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\10\azuredeploy30310rga.parameters.json**.
 
 1. From the Cloud Shell pane, run the following to deploy a Azure VM running Windows Server 2019 that you will be using in this lab:
 
