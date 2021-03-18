@@ -60,13 +60,13 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
-1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**.
+1. If prompted to select either **Bash** or **PowerShell**, select **Bash**.
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Show Advanced Settings**..
-
- 1. **While selecting the resource group please select az30309b-labrg-DEPLOYMENTID**.
+    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Show Advanced Settings**. Under resource group select the exisiting resource group **az-30309a-labRG-deploymentID** and enter a unique name for the storage account name and file share. and then click on create storage.
 
 1. From the Cloud Shell pane, run the following to generate a pseudo-random string of characters that will be used as a prefix for names of resources you will provision in this exercise:
+
+   >**Note**: Please run all the following commands one by one.
 
    ```sh
    export PREFIX=$(echo `openssl rand -base64 5 | cut -c1-7 | tr '[:upper:]' '[:lower:]' | tr -cd '[[:alnum:]]._-'`)
@@ -79,7 +79,7 @@ The main tasks for this exercise are as follows:
    ```
 
 1. From the Cloud Shell pane, run the following to create a variable storing the value of resource group that will host all resources that you will provision in this lab:
- `Note : Replace the Deployment-id with your deploymnet id given in environment detail page`
+ `Note : Replace the Deployment-ID with your deployment id given in environment details page`
 
    ```sh
    export RESOURCE_GROUP_NAME='az30309a-labRG-Deployment-ID'
@@ -141,9 +141,7 @@ The main tasks for this exercise are as follows:
 
 1. On the Azure Function app blade, select **Functions** and then, select **+ Add**.
 
-1. On the **New Function** blade, select **Azure Blob Storage trigger** template.
-
-1.  On the **Add Function** blade, specify the following and select **Create Function** to create a new function within the Azure function:
+1. On the **Add Function** blade, search for **Azure Blob Storage trigger** template in the filter and scroll down to provide the following details under **template details**. and then click on **Add**
 
     | Setting | Value |
     | --- | --- |
@@ -302,7 +300,7 @@ The main tasks for this exercise are as follows:
    az storage blob upload --file "${WORKITEM}" --container-name "${CONTAINER_NAME}" --name "${WORKITEM}" --auth-mode key --account-key "${AZURE_STORAGE_ACCESS_KEY}" --account-name "${STORAGE_ACCOUNT_NAME}"
    ```
 
-1. In the Azure portal, navigate to the blade displaying the Azure Storage account you created in the previous task of this exercise.
+1. In the Azure portal, navigate to the blade displaying the Azure Storage account you created in the previous task of this exercise. Find for the storage account starting with **az30309b**.
 
 1. On the blade of the Azure Storage account, select **Queues** to display the list of its queues.
 
@@ -310,5 +308,5 @@ The main tasks for this exercise are as follows:
 
 1. Note that the queue contains a single message. Select its entry to display the **Message properties** blade.
 
-1. In the **MESSAGE BODY**, note the value of the **url** property, representing the URL of the Azure Storage blob you uploaded in the previous task.
+1. In the **MESSAGE BODY**, note details of the Azure Storage blob you uploaded in the previous task.
 
