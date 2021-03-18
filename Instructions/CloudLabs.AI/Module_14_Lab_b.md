@@ -83,7 +83,7 @@ The main tasks for this exercise are as follows:
    ```
 
 1. From the Cloud Shell pane, run the following to create a variable storing the value of resource group that will host all resources that you will provision in this lab:
- `Note : Replace the Deployment-id with your deploymnet id given in environment detail page`
+ `Note : Replace the Deployment-ID with your deployment id given in environment details page`
 
    ```sh
    export RESOURCE_GROUP_NAME='az30309a-labRG-Deployment-ID'
