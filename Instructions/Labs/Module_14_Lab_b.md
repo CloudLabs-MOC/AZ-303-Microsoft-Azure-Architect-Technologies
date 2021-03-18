@@ -1,9 +1,3 @@
----
-lab:
-    title: '14B: Configuring a Message-Based Integration Architecture'
-    module: 'Module 14: Implement an Application Infrastructure'
----
-
 # Lab: Configuring a Message-Based Integration Architecture
 
 # Student lab manual
