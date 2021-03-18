@@ -1,9 +1,3 @@
----
-lab:
-    title: '14A: Implementing an Azure App Service Web App with a Staging Slot'
-    module: 'Module 14: Implement an Application Infrastructure'
----
-
 # Lab: Implementing an Azure App Service Web App with a Staging Slot
 # Student lab manual
 
