@@ -66,11 +66,9 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
-1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**.
+1. If prompted to select either **Bash** or **PowerShell**, select **Bash**.
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Show Advanced Settings**..
-
- 1. **While selecting the resource group please select az30309b-labrg-DEPLOYMENTID**.
+    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Show Advanced Settings**. Under resource group select the exisiting resource group **az-3039a-labRG-deploymentID** and enter a unique name for the storage account name and file share. and then click on create storage.
 
 1. From the Cloud Shell pane, run the following to generate a pseudo-random string of characters that will be used as a prefix for names of resources you will provision in this exercise:
 
