@@ -1,9 +1,3 @@
----
-lab:
-    title: '6: Configuring a Message-Based Integration Architecture'
-    module: 'Module 6: Implement an Application Infrastructure'
----
-
 # Lab: Configuring a Message-Based Integration Architecture
 
 # Student lab manual
@@ -68,7 +62,7 @@ The main tasks for this exercise are as follows:
 
 1. If prompted to select either **Bash** or **PowerShell**, select **Bash**.
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Show Advanced Settings**. Under resource group select the exisiting resource group **az-3039a-labRG-deploymentID** and enter a unique name for the storage account name and file share. and then click on create storage.
+    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Show Advanced Settings**. Under resource group select the exisiting resource group **az-30309a-labRG-deploymentID** and enter a unique name for the storage account name and file share. and then click on create storage.
 
 1. From the Cloud Shell pane, run the following to generate a pseudo-random string of characters that will be used as a prefix for names of resources you will provision in this exercise:
 
@@ -312,5 +306,5 @@ The main tasks for this exercise are as follows:
 
 1. Note that the queue contains a single message. Select its entry to display the **Message properties** blade.
 
-1. In the **MESSAGE BODY**, note the value of the **url** property, representing the URL of the Azure Storage blob you uploaded in the previous task.
+1. In the **MESSAGE BODY**, note details of the Azure Storage blob you uploaded in the previous task.
 
