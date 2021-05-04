@@ -112,10 +112,7 @@ The main tasks for this exercise are as follows:
 * Replace Deployment-id with your deploymnet id given in environment detail page
 
    ```Bash
-   az deployment group create \
-   --resource-group az30301a-labRG-(Deployment-id) \
-   --template-file azuredeploy30305rga.json  \
-   --parameters azuredeploy30305rga.parameters.json
+   az deployment group create --resource-group az30301a-labRG-(Deployment-id) --template-file azuredeploy30305rga.json --parameters azuredeploy30305rga.parameters.json
    ```
 
  > Note: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
@@ -276,10 +273,7 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to deploy an Azure Load Balancer Standard with its backend pool consisting of a pair of Azure VMs hosting Windows Server 2019 Datacenter Core across two availability zones:
 
    ```Bash
-   az deployment group create \
-   --resource-group az30301b-labRG-Deployment-id \
-   --template-file azuredeploy30305rgb.json \
-   --parameters azuredeploy30305rgb.parameters.json
+   az deployment group create --resource-group az30301b-labRG-Deployment-id --template-file azuredeploy30305rgb.json --parameters azuredeploy30305rgb.parameters.json
    ```
 
  > Note: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
