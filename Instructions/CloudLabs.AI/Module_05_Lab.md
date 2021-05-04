@@ -279,7 +279,7 @@ The main tasks for this exercise are as follows:
    az deployment group create \
    --resource-group az30301b-labRG-Deployment-id \
    --template-file azuredeploy30305rgb.json \
-   --parameters @azuredeploy30305rgb.parameters.json
+   --parameters azuredeploy30305rgb.parameters.json
    ```
 
  > Note: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
@@ -317,7 +317,7 @@ The main tasks for this exercise are as follows:
     | Network interface | **az30305b-nic1** |
 
 
-   ![](Images/lab4/e2_t2_s5.png)
+   ![](Images/lab5/33.png)
 
 1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP. 
 
@@ -484,7 +484,7 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to deploy an Azure Application Gateway with its backend pool consisting of a pair of Azure VMs hosting Windows Server 2019 Datacenter Core across different availability zones:
 
    ```
-   az deployment group create --resource-group az30301c-labRG-Deployment-id --template-file azuredeploy30305rgc.json --parameters @azuredeploy30305rgc.parameters.json
+   az deployment group create --resource-group az30301c-labRG-Deployment-id --template-file azuredeploy30305rgc.json --parameters azuredeploy30305rgc.parameters.json
    ```
 
  > Note: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
