@@ -87,9 +87,9 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex0_task1_step1_1.png)
 
-1. Select **Use existing** under Resource Group then select **az30302a-labRG-Deployment-id** and enter **shellstorageDeployment-id** for storage account name and Enter **filestorageDeployment-id** then click on **Create Storage**.
+1. Select **Use existing** under Resource Group then select **az30301a-labRG-Deployment-id** and enter **shellstorageDeployment-id** for storage account name and Enter **filestorageDeployment-id** then click on **Create Storage**.
 
-   ![](Images/lab5/ex0_task1_step3.2.png)
+   ![](Images/lab5/303.png)
 
    >Note: You can find the Deployment-id from the environment details tab.
 
