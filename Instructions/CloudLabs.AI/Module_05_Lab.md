@@ -503,7 +503,7 @@ The main tasks for this exercise are as follows:
     | Resource Group | **az30301c-labRG-Deployment-id** |
     | Virtual Network | **az30305c-vnet** |
  
-   ![](Images/lab4/e3_t2_s3.png)
+   ![](Images/lab5/15.png)
 
 1. Review the resulting topology diagram, noting the connections between the public IP address, load balancer, and the network adapters of Azure VM instances in the Azure Virtual Machine Scale Set in its backend pool.
 
@@ -513,11 +513,11 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade, in the list of resources, and select the **az30305c-vmss** virtual machine scale set entry.
 
-   ![](Images/lab4/e3_t2_s5.png)
+   ![](Images/lab5/19.png)
 
 1. On the **az30305c-vmss** blade, note the **Location** and **Fault domains** entries.
 
-   ![](Images/lab4/e3_t2_s6.png)
+   ![](Images/lab5/20.png)
 
     > Note: Unlike Azure VMs, individual instances of Azure VM scale sets deploy into separate fault domains, including instances deployed into the same zone. In addition, they support 5 fault domains (unlike Azure VMs, which can use up to 3 fault domains).
 
@@ -529,7 +529,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade and, in the list of resources, select the **az30305c-appgw** load balancer entry, and on the **az30305c-appgw** blade, note the public IP address entry.
 
-   ![](Images/lab4/e3_t2_s8.png)
+   ![](Images/lab5/16.png)
 
 1. In the Azure portal, start a new **Bash** session in the Cloud Shell pane.
 
@@ -543,11 +543,11 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30305c-appgw** blade, select the **HTTP settings** entry and, on the **az30305c-appgw \| HTTP settings** blade, select the **appGwBackentHttpSettings** entry representing the load balancing rule handling HTTP traffic.
 
-   ![](Images/lab4/e3_t2_s11.png)
+   ![](Images/lab5/17.png)
 
 1. On the **appGwBackentHttpSettings** blade, review the existing settings without making any changes and note that you can enable **Cookie-based affinity**.
 
-   ![](Images/lab4/e3_t2_s12.png)
+   ![](Images/lab5/18.png)
 
     > Note: This feature requires that the client supports the use of cookies.
 
@@ -565,9 +565,9 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30305c-vmss** virtual machine scale set entry, and on the **az30305c-vmss** blade, select **Scaling**.
 
-1. On the **az30301c-vmss \| Scaling** blade, select the **Custom autoscale** option.
+1. On the **az30305c-vmss \| Scaling** blade, select the **Custom autoscale** option.
 
-   ![](Images/lab4/e4_t1_s2.png)
+   ![](Images/lab5/21.png)
 
 1. In the **Custom autoscale** section, specify the following settings (leave others with their default values):
 
@@ -578,7 +578,7 @@ The main tasks for this exercise are as follows:
     | Instance limits Maximum | **3** |
     | Instance limits Default | **1** |
 
-   ![](Images/lab4/e4_t1_s3.png)
+   ![](Images/lab5/22.png)
 
 1. Select **+ Add a rule**.
 
@@ -626,7 +626,7 @@ The main tasks for this exercise are as follows:
 
    ![](Images/lab4/e1t1s5.png)
 
-1. Back on the **az30301c-vmss | Scaling** blade, select **Save**.
+1. Back on the **az30305c-vmss | Scaling** blade, select **Save**.
 
 #### Task 2: Test autoscaling of an Azure VM Scale Set
 
@@ -679,7 +679,7 @@ The main tasks for this exercise are as follows:
 
 1. In the list of available sizes, select any available size other than currently configured and select **Resize**.
 
-   ![](Images/lab4/e5_t1_s2.png)
+   ![](Images/lab5/23.png)
 
 1. On the **az30305c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss \| Instances** blade, observe the process of replacing existing instances with new ones of the desired size.
 
@@ -690,7 +690,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Scale storage resources of Azure virtual machine scale sets instances
 
-1. On the **az30305c-vmss** blade, select **Disks**, select **+ Add data disk**, attach a new managed disk with the following settings (leave others with their default values), and select **Save**:
+1. On the **az30305c-vmss** blade, select **Disks**, select **+ Create and attach a new disk**, attach a new managed disk with the following settings (leave others with their default values), and select **Save**:
 
     | Setting | Value |
     | --- | --- |
@@ -698,15 +698,15 @@ The main tasks for this exercise are as follows:
     | Size | **32** |
     | Storage account type | **Standard HDD** |
 
-   ![](Images/lab4/e5t2s2.png)
+   ![](Images/lab5/24.png)
 
-1. On the **az30305c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss \| Instances** blade, observe the process of updating the existing instances.
+1. On the **az30305c-vmss** blade, select the **Instances** entry and, on the **az30305c-vmss \| Instances** blade, observe the process of updating the existing instances.
 
     > Note: The disk attached in the previous step is a raw disk. Before it can be used, it is necessary to create a partition, format it, and mount it. To accomplish this, you will deploy a PowerShell script to Azure VM scale set instances via the Custom Script extension. First, however, you will need to remove it.
 
 1. On the **az30305c-vmss** blade, select **Extensions**, on the **az30301c-vmss \| Extensions** blade, select the **customScriptExtension** entry, and then, on the **Extensions** blade, select **Uninstall**.
 
-   ![](Images/lab4/e5t2s3.png)
+   ![](Images/lab5/25.png)
 
     > Note: Wait for uninstallation to complete.
 
@@ -721,7 +721,7 @@ The main tasks for this exercise are as follows:
     | Name | **scripts** |
     | Public access level | **Private (no anonymous access**) |
 
-   ![](Images/lab4/e5_t2_s6.png)
+   ![](Images/lab5/26.png)
 
 1. Back on the storage account blade displaying the list of containers, select **scripts**.
 
@@ -733,23 +733,23 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30305c-vmss** blade, select **Extensions**, on the **az30301c-vmss \| Extensions** blade, select **+ Add** and then, select the **customScriptExtension** entry on the **Extensions** blade.
 
-   ![](Images/lab4/e5st2s4.png)
-   ![](Images/lab4/e5_t2_s11.png)
+   ![](Images/lab5/27.png)
+   ![](Images/lab5/28.png)
 
 1. On the **New resource** blade, select **Custom Script Extension** and then select **Create**.
 
-   ![](Images/lab4/e5_t2_s12.png)
+   ![](Images/lab5/29.png)
 
 1. From the **Install extension** blade, select **Browse**.
 
-   ![](Images/lab4/e5_t2_s13.png)
+   ![](Images/lab5/30.png)
 
 1. On the **Storage accounts** blade, select the name of the storage account into which you uploaded the **az30305e-configure_VMSS_with_data_disk.ps1** script, on the **Containers** blade, select **scripts**, on the **scripts** blade, select **az30305e-configure_VMSS_with_data_disk.ps1**, and then select **Select**.
 
-   ![](Images/lab4/e5_t2_s15.png)
+   ![](Images/lab5/31.png)
 
 1. Back on the **Install extension** blade, select **OK**.
 
-1. On the **az30301c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss | Instances** blade, observe the process of updating existing instances.
+1. On the **az30305c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss | Instances** blade, observe the process of updating existing instances.
 
     > Not*: You might need to refresh the az30301c-vmss \| Instances blade.
