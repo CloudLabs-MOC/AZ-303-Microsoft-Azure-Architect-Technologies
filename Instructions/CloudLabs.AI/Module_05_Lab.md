@@ -132,7 +132,7 @@ The main tasks for this exercise are as follows:
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource Group | **az30301a-labRG-(Deployment-id)** |
-    | Virtual Network | **az30301a-vnet** |
+    | Virtual Network | **az30305a-vnet** |
 
    ![](Images/lab4/e1_t2_s3.png)
    
@@ -142,14 +142,14 @@ The main tasks for this exercise are as follows:
 
 1. On the **Network Watcher \| Effective security rules** blade, specify the following settings:
 
- > Note: If you are not able to select the **Network interface**, click on **Virtual machine** field and select the **az30301b-vm0** again.
+ > Note: If you are not able to select the **Network interface**, click on **Virtual machine** field and select the **az30305b-vm0** again.
 
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource group | **az30301a-labRG-(Deployment-id)** |
-    | Virtual machine | **az30301a-vm1** |
-    | Network interface | **az30301a-nic1** |
+    | Virtual machine | **az30305a-vm1** |
+    | Network interface | **az30305a-nic1** |
 
 1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP.
 
@@ -166,10 +166,10 @@ The main tasks for this exercise are as follows:
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource group | **az30301a-labRG-Deployment-id** |
     | Source type | **Virtual machine** |
-    | Virtual machine | **az30301a-vm0** |
+    | Virtual machine | **az30305a-vm0** |
     | Destination | **Select a virtual machine** |
     | Resource group | **az30301a-labRG-Deployment-id** |
-    | Virtual machine | **az30301a-vm1** |
+    | Virtual machine | **az30305a-vm1** |
     | Protocol | **TCP** |
     | Destination port| **80** |
 
@@ -183,9 +183,9 @@ The main tasks for this exercise are as follows:
 
     > Note: The latency should be about 1 millisecond, since both VMs are in the same availability set (within the same Azure datacenter).
 
-1. In the Azure portal, navigate to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301a-avset** availability set entry, and on the **az30301a-avset** blade, note the fault domain and update domain values of the assigned Azure VMs.
+1. In the Azure portal, navigate to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301a-avset** availability set entry, and on the **az30305a-avset** blade, note the fault domain and update domain values of the assigned Azure VMs.
 
-1. In the Azure portal, navigate back to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301a-lb** load balancer entry, and on the **az30301a-lb** blade, note the public IP address entry.
+1. In the Azure portal, navigate back to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30305a-lb** load balancer entry, and on the **az30305a-lb** blade, note the public IP address entry.
 
    ![](Images/lab4/e1_t2_s11.png)
 
@@ -199,9 +199,9 @@ The main tasks for this exercise are as follows:
 
     > Note: Verify that the returned messages indicate that the requests are being delivered in the round robin manner to the backend Azure VMs
 
-1. On the **az30301a-lb** blade, select the **Load balancing rules** entry and, on the **az30301a-lb \| Load balancing rules** blade, select the **az303001a-lbruletcp80** entry representing the load balancing rule handling HTTP traffic.
+1. On the **az30301a-lb** blade, select the **Load balancing rules** entry and, on the **az30305a-lb \| Load balancing rules** blade, select the **az303005a-lbruletcp80** entry representing the load balancing rule handling HTTP traffic.
 
-1. On the **az303001a-lbruletcp80** blade, in the **Session persistence** drop-down list, select **Client IP** and then select **Save**.
+1. On the **az303005a-lbruletcp80** blade, in the **Session persistence** drop-down list, select **Client IP** and then select **Save**.
 
    ![](Images/lab4/e1_t2_s15.png)
 
@@ -213,7 +213,7 @@ The main tasks for this exercise are as follows:
 
     > Note: Verify that the returned messages indicate that the requests are being delivered to the same backend Azure VMs
 
-1. In the Azure portal, navigate back to the **az30301a-lb** blade, select the **Inbound NAT rules** entry and note the two rules that allow for connecting to the first and the second of the backend pool VMs via Remote Desktop over TCP ports 33890 and 33891, respectively.
+1. In the Azure portal, navigate back to the **az30305a-lb** blade, select the **Inbound NAT rules** entry and note the two rules that allow for connecting to the first and the second of the backend pool VMs via Remote Desktop over TCP ports 33890 and 33891, respectively.
 
    ![](Images/lab4/e1_t2_s17.png)
 
