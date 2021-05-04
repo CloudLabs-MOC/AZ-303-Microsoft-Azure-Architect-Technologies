@@ -316,7 +316,8 @@ The main tasks for this exercise are as follows:
     | Virtual machine | **az30305b-vm1** |
     | Network interface | **az30305b-nic1** |
 
-    ![](Images/lab4/e2_t2_s5.png)
+
+   ![](Images/lab4/e2_t2_s5.png)
 
 1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP. 
 
