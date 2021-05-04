@@ -372,7 +372,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **az303005b-lbruletcp80** blade, in the **Session persistence** drop-down list, select **Client IP** and then select **Save**.
 
-   ![](Images/lab4/e2_t2_s16.png)
+   ![](Images/lab5/9.png)
 
 1. Wait for the update to complete and, from the Cloud Shell pane, re-run the following to test load balancing of HTTP traffic to the Azure VMs in the backend pool of the Azure load balancer without session persistence (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
@@ -385,7 +385,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate back to the **az30305b-lb** blade, select the **Inbound NAT rules** entry and note the two rules that allow for connecting to the first and the second of the backend pool VMs via Remote Desktop over TCP ports 33890 and 33891, respectively.
 
-   ![](Images/lab4/e2_t2_s18.png)
+   ![](Images/lab5/10.png)
 
 1. From the Cloud Shell pane, run the following to test Remote Desktop connectivity via NAT to the first Azure VM in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
@@ -422,13 +422,13 @@ The main tasks for this exercise are as follows:
     | Choose by | **Maximum number of backend instances** |
     | Maximum number of backend instances | **3** |
 
-   ![](Images/lab4/e2_t2_s25.png)
+   ![](Images/lab5/11.png)
 
     > Note: Azure Load Balancer Standard allows you to designate a dedicated frontend IP address for outbound traffic (in cases where multiple frontend IP addresses are assigned).
 
 1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30305b-vm0** virtual machine entry, and on the **az30305b-vm0** blade, in the **Operations** blade, select **Run command**.
 
-   ![](Images/lab4/e2_t2_s27.png)
+   ![](Images/lab5/12.png)
 
 1. On the **az30305b-vm0 \| Run command** blade, select **RunPowerShellScript**.
 
@@ -437,7 +437,7 @@ The main tasks for this exercise are as follows:
    ```powershell
    (Invoke-RestMethod -Uri "http://ipinfo.io").IP
    ```
-   ![](Images/lab4/e2_t2_s28.png)
+   ![](Images/lab5/13.png)
 
     > Note: This command returns the public IP address from which the web request originates.
 
