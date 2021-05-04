@@ -184,7 +184,7 @@ The main tasks for this exercise are as follows:
 
     > Note: The latency should be about 1 millisecond, since both VMs are in the same availability set (within the same Azure datacenter).
 
-1. In the Azure portal, navigate to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301a-avset** availability set entry, and on the **az30305a-avset** blade, note the fault domain and update domain values of the assigned Azure VMs.
+1. In the Azure portal, navigate to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30305a-avset** availability set entry, and on the **az30305a-avset** blade, note the fault domain and update domain values of the assigned Azure VMs.
 
 1. In the Azure portal, navigate back to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30305a-lb** load balancer entry, and on the **az30305a-lb** blade, note the public IP address entry.
 
@@ -307,7 +307,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Network Watcher \| Effective security rules** blade, specify the following settings:
 
- >Note: If you are not able to select the **Network interface**, click on **Virtual machine** field and select the **az30301b-vm0** again.
+ >Note: If you are not able to select the **Network interface**, click on **Virtual machine** field and select the **az30305b-vm0** again.
 
     | Setting | Value |
     | --- | --- |
@@ -416,7 +416,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Name | **az303005b-obrule** | 
-    | Frontend IP address | the name of the existing frontend IP address of the **az30301b-lb** load balancer |
+    | Frontend IP address | the name of the existing frontend IP address of the **az30305b-lb** load balancer |
     | Backend pool | **az30305b-bepool** |
     | Port allocation | **Manually choose number of outbound ports** |
     | Choose by | **Maximum number of backend instances** |
@@ -521,7 +521,7 @@ The main tasks for this exercise are as follows:
 
     > Note: Unlike Azure VMs, individual instances of Azure VM scale sets deploy into separate fault domains, including instances deployed into the same zone. In addition, they support 5 fault domains (unlike Azure VMs, which can use up to 3 fault domains).
 
-1. On the **az30305c-vmss** blade, select **Instances**, on the **az30301c-vmss \| Instances** blade, select the first instance, and identify its availability zone by reviewing the value of the **Location** property.
+1. On the **az30305c-vmss** blade, select **Instances**, on the **az30305c-vmss \| Instances** blade, select the first instance, and identify its availability zone by reviewing the value of the **Location** property.
 
 1. Navigate back to the **az30305c-vmss \| Instances** blade, select the second instance, and identify its availability zone by reviewing the value of the **Location** property.
 
@@ -681,9 +681,9 @@ The main tasks for this exercise are as follows:
 
    ![](Images/lab5/23.png)
 
-1. On the **az30305c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss \| Instances** blade, observe the process of replacing existing instances with new ones of the desired size.
+1. On the **az30305c-vmss** blade, select the **Instances** entry and, on the **az30305c-vmss \| Instances** blade, observe the process of replacing existing instances with new ones of the desired size.
 
-    > Note: You might need to refresh the **az30301c-vmss \| Instances** blade.
+    > Note: You might need to refresh the **az30305c-vmss \| Instances** blade.
 
 1. Wait until the instances are updated and running.
 
@@ -704,13 +704,13 @@ The main tasks for this exercise are as follows:
 
     > Note: The disk attached in the previous step is a raw disk. Before it can be used, it is necessary to create a partition, format it, and mount it. To accomplish this, you will deploy a PowerShell script to Azure VM scale set instances via the Custom Script extension. First, however, you will need to remove it.
 
-1. On the **az30305c-vmss** blade, select **Extensions**, on the **az30301c-vmss \| Extensions** blade, select the **customScriptExtension** entry, and then, on the **Extensions** blade, select **Uninstall**.
+1. On the **az30305c-vmss** blade, select **Extensions**, on the **az30305c-vmss \| Extensions** blade, select the **customScriptExtension** entry, and then, on the **Extensions** blade, select **Uninstall**.
 
    ![](Images/lab5/25.png)
 
     > Note: Wait for uninstallation to complete.
 
-1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade, in the list of resources, select the storage account resource.
+1. In the Azure portal, navigate to the **az30305c-labRG-Deployment-id** resource group blade, in the list of resources, select the storage account resource.
 
 1. On the storage account blade, select **Containers** and then select **+ Container**.
 
@@ -729,9 +729,9 @@ The main tasks for this exercise are as follows:
 
 1. On the **Upload blob** blade, select the folder icon, in the **Open** dialog box, navigate to the **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\05** folder, select **az30305e-configure_VMSS_with_data_disk.ps1**, select **Open**, and back on the **Upload blob** blade, select **Upload**.
 
-1. In the Azure portal, navigate back to the **az30301c-vmss** virtual machine scale set blade.
+1. In the Azure portal, navigate back to the **az30305c-vmss** virtual machine scale set blade.
 
-1. On the **az30305c-vmss** blade, select **Extensions**, on the **az30301c-vmss \| Extensions** blade, select **+ Add** and then, select the **customScriptExtension** entry on the **Extensions** blade.
+1. On the **az30305c-vmss** blade, select **Extensions**, on the **az30305c-vmss \| Extensions** blade, select **+ Add** and then, select the **customScriptExtension** entry on the **Extensions** blade.
 
    ![](Images/lab5/27.png)
    ![](Images/lab5/28.png)
@@ -750,6 +750,6 @@ The main tasks for this exercise are as follows:
 
 1. Back on the **Install extension** blade, select **OK**.
 
-1. On the **az30305c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss | Instances** blade, observe the process of updating existing instances.
+1. On the **az30305c-vmss** blade, select the **Instances** entry and, on the **az30305c-vmss | Instances** blade, observe the process of updating existing instances.
 
-    > Not*: You might need to refresh the az30301c-vmss \| Instances blade.
+    > Not*: You might need to refresh the az30305c-vmss \| Instances blade.
