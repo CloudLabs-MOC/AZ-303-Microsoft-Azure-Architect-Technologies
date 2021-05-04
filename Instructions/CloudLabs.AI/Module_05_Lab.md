@@ -115,7 +115,7 @@ The main tasks for this exercise are as follows:
    az deployment group create \
    --resource-group az30301a-labRG-(Deployment-id) \
    --template-file azuredeploy30305rga.json  \
-   --parameters @azuredeploy30305rga.parameters.json
+   --parameters azuredeploy30305rga.parameters.json
    ```
 
  > Note: Replace the Deployment-id with your deploymnet id given in environment detail page. Wait for the deployment to complete before proceeding to the next task. This should take about 10 minutes.
@@ -134,7 +134,7 @@ The main tasks for this exercise are as follows:
     | Resource Group | **az30301a-labRG-(Deployment-id)** |
     | Virtual Network | **az30305a-vnet** |
 
-   ![](Images/lab4/e1_t2_s3.png)
+   ![](Images/lab5/1.png)
    
 1. Review the resulting topology diagram, noting the connections between the public IP address, load balancer, and the network adapters of Azure VMs in its backend pool.
 
@@ -170,16 +170,17 @@ The main tasks for this exercise are as follows:
     | Destination | **Select a virtual machine** |
     | Resource group | **az30301a-labRG-Deployment-id** |
     | Virtual machine | **az30305a-vm1** |
+    | Preferred IP Version| **Both**  |
     | Protocol | **TCP** |
     | Destination port| **80** |
 
-   ![](Images/lab4/e1_t2_s8.png)
+   ![](Images/lab5/2.png)
 
     > Note: You will need to wait a few minutes for the results in order for the **Azure Network Watcher Agent** VM extension to be installed on the Azure VMs.
 
 1. Review the results and note the latency of the network connection between the Azure VMs.
 
-   ![](Images/lab4/e1_t2_s9.png)
+   ![](Images/lab5/3.png)
 
     > Note: The latency should be about 1 millisecond, since both VMs are in the same availability set (within the same Azure datacenter).
 
@@ -187,7 +188,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate back to the **az30301a-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30305a-lb** load balancer entry, and on the **az30305a-lb** blade, note the public IP address entry.
 
-   ![](Images/lab4/e1_t2_s11.png)
+   ![](Images/lab5/3.png)
 
 1. In the Azure portal, start a **Bash** session in the Cloud Shell pane.
 
@@ -199,11 +200,11 @@ The main tasks for this exercise are as follows:
 
     > Note: Verify that the returned messages indicate that the requests are being delivered in the round robin manner to the backend Azure VMs
 
-1. On the **az30301a-lb** blade, select the **Load balancing rules** entry and, on the **az30305a-lb \| Load balancing rules** blade, select the **az303005a-lbruletcp80** entry representing the load balancing rule handling HTTP traffic.
+1. On the **az30305a-lb** blade, select the **Load balancing rules** entry and, on the **az30305a-lb \| Load balancing rules** blade, select the **az303005a-lbruletcp80** entry representing the load balancing rule handling HTTP traffic.
 
 1. On the **az303005a-lbruletcp80** blade, in the **Session persistence** drop-down list, select **Client IP** and then select **Save**.
 
-   ![](Images/lab4/e1_t2_s15.png)
+   ![](Images/lab5/5.png)
 
 1. Wait for the update to complete and, from the Cloud Shell pane, re-run the following to test load balancing of HTTP traffic to the Azure VMs in the backend pool of the Azure load balancer without session persistence (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
@@ -215,7 +216,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate back to the **az30305a-lb** blade, select the **Inbound NAT rules** entry and note the two rules that allow for connecting to the first and the second of the backend pool VMs via Remote Desktop over TCP ports 33890 and 33891, respectively.
 
-   ![](Images/lab4/e1_t2_s17.png)
+   ![](Images/lab5/4.png)
 
 1. From the Cloud Shell pane, run the following to test Remote Desktop connectivity via NAT to the first Azure VM in the backend pool of the Azure load balancer (replace the `<lb_IP_address>` placeholder with the IP address of the front end of the load balancer you identified earlier):
 
