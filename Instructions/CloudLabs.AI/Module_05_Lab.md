@@ -180,7 +180,7 @@ The main tasks for this exercise are as follows:
 
 1. Review the results and note the latency of the network connection between the Azure VMs.
 
-   ![](Images/lab5/3.png)
+   ![](Images/lab5/6.png)
 
     > Note: The latency should be about 1 millisecond, since both VMs are in the same availability set (within the same Azure datacenter).
 
@@ -297,7 +297,7 @@ The main tasks for this exercise are as follows:
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource Group | **az30301b-labRG-Deployment-id** |
-    | Virtual Network | **az30301b-vnet** |
+    | Virtual Network | **az30305b-vnet** |
 
 1. Review the resulting topology diagram, noting the connections between the public IP address, load balancer, and the network adapters of Azure VMs in its backend pool.
 
@@ -313,14 +313,14 @@ The main tasks for this exercise are as follows:
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource group | **az30301b-labRG-Deployment-id** |
-    | Virtual machine | **az30301b-vm0** |
-    | Network interface | **az30301b-nic0** |
+    | Virtual machine | **az30305b-vm1** |
+    | Network interface | **az30305b-nic1** |
 
     ![](Images/lab4/e2_t2_s5.png)
 
 1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP. 
 
-    ![](Images/lab4/e2_t2_s6.png)
+    ![](Images/lab5/7.png)
 
     > Note: This listing is also practically identical to the one you viewed in the previous exercise, with network-level protection implemented by using a network security group associated with the subnet to which both Azure VMs are connected. Keep in mind, however, that the network security group is, in this case, required for the HTTP and RDP traffic to reach the backend pool Azure VMs, due to the usage of the Azure Load Balancer Standard SKU (NSGs are optional when using the Basic SKU).
 
@@ -335,10 +335,10 @@ The main tasks for this exercise are as follows:
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource group | **az30301b-labRG-(Deployment-id)** |
     | Source type | **Virtual machine** |
-    | Virtual machine | **az30301b-vm0** |
+    | Virtual machine | **az30305b-vm0** |
     | Destination | **Select a virtual machine** |
     | Resource group | **az30301b-labRG-Deployment-id** |
-    | Virtual machine | **az30301b-vm1** |
+    | Virtual machine | **az30305b-vm1** |
     | Protocol | **TCP** |
     | Destination port| **80** |
 
@@ -350,13 +350,13 @@ The main tasks for this exercise are as follows:
 
     > Note: The latency might be slightly higher than the one you observed in the previous exercise, since the two VMs are in different zones (within different Azure datacenters).
 
-1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301b-vm0** virtual machine entry, and on the **az30301b-vm0** blade, note the **Location** and **Availability zone** entries.
+1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30305b-vm0** virtual machine entry, and on the **az30305b-vm0** blade, note the **Location** and **Availability zone** entries.
 
-1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301b-vm1** virtual machine entry, and on the **az30301b-vm1** blade, note the **Location** and **Availability zone** entries.
+1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30305b-vm1** virtual machine entry, and on the **az30305b-vm1** blade, note the **Location** and **Availability zone** entries.
 
     > Note: The entries you reviewed confirm that each Azure VM resides in a different availability zone.
 
-1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade and, in the list of resources, select the **az30301b-lb** load balancer entry, and on the **az30301b-lb** blade, note the public IP address entry.
+1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade and, in the list of resources, select the **az30305b-lb** load balancer entry, and on the **az30305b-lb** blade, note the public IP address entry.
 
 1. In the Azure portal, start a new **Bash** session in the Cloud Shell pane.
 
@@ -368,9 +368,9 @@ The main tasks for this exercise are as follows:
 
     > Note: Verify that the returned messages indicate that the requests are being delivered in the round robin manner to the backend Azure VMs
 
-1. On the **az30301b-lb** blade, select the **Load balancing rules** entry and, on the **az30301b-lb \| Load balancing rules** blade, select the **az303001b-lbruletcp80** entry representing the load balancing rule handling HTTP traffic.
+1. On the **az30305b-lb** blade, select the **Load balancing rules** entry and, on the **az30305b-lb \| Load balancing rules** blade, select the **az303005b-lbruletcp80** entry representing the load balancing rule handling HTTP traffic.
 
-1. On the **az303001b-lbruletcp80** blade, in the **Session persistence** drop-down list, select **Client IP** and then select **Save**.
+1. On the **az303005b-lbruletcp80** blade, in the **Session persistence** drop-down list, select **Client IP** and then select **Save**.
 
    ![](Images/lab4/e2_t2_s16.png)
 
@@ -383,7 +383,7 @@ The main tasks for this exercise are as follows:
 
     > Note: Verify that the returned messages indicate that the requests are being delivered to the same backend Azure VMs
 
-1. In the Azure portal, navigate back to the **az30301b-lb** blade, select the **Inbound NAT rules** entry and note the two rules that allow for connecting to the first and the second of the backend pool VMs via Remote Desktop over TCP ports 33890 and 33891, respectively.
+1. In the Azure portal, navigate back to the **az30305b-lb** blade, select the **Inbound NAT rules** entry and note the two rules that allow for connecting to the first and the second of the backend pool VMs via Remote Desktop over TCP ports 33890 and 33891, respectively.
 
    ![](Images/lab4/e2_t2_s18.png)
 
@@ -405,19 +405,19 @@ The main tasks for this exercise are as follows:
 
 1. Press the **Ctrl+C** key combination to return to the Bash shell prompt and close the Cloud Shell pane.
 
-1. On the **az30301b-lb** blade, select the **Load balancing rules** entry and, on the **az30301b-lb \| Load balancing rules** blade, select the **az303001b-lbruletcp80** entry representing the load balancing rule handling HTTP traffic.
+1. On the **az30305b-lb** blade, select the **Load balancing rules** entry and, on the **az30305b-lb \| Load balancing rules** blade, select the **az303005b-lbruletcp80** entry representing the load balancing rule handling HTTP traffic.
 
-1. On the **az303001b-lbruletcp80** blade, in the **Outbound source network address translation (SNAT)** section, select **(Recommended) Use outbound rules to provide backend pool members access to the internet**, and then select **Save**.
+1. On the **az303005b-lbruletcp80** blade, in the **Outbound source network address translation (SNAT)** section, select **(Recommended) Use outbound rules to provide backend pool members access to the internet**, and then select **Save**.
 
-1. Navigate back to the **az30301b-lb** blade, select the **Outbound rules** entry, and on the **az30301b-lb \| Outbound rules** blade, select **+ Add**.
+1. Navigate back to the **az30305b-lb** blade, select the **Outbound rules** entry, and on the **az30305b-lb \| Outbound rules** blade, select **+ Add**.
 
 1. On the **Add outbound rule** blade, specify the following settings and select **Add** (leave all other settings with their default values):
 
     | Setting | Value |
     | --- | --- |
-    | Name | **az303001b-obrule** | 
+    | Name | **az303005b-obrule** | 
     | Frontend IP address | the name of the existing frontend IP address of the **az30301b-lb** load balancer |
-    | Backend pool | **az30301b-bepool** |
+    | Backend pool | **az30305b-bepool** |
     | Port allocation | **Manually choose number of outbound ports** |
     | Choose by | **Maximum number of backend instances** |
     | Maximum number of backend instances | **3** |
@@ -426,11 +426,11 @@ The main tasks for this exercise are as follows:
 
     > Note: Azure Load Balancer Standard allows you to designate a dedicated frontend IP address for outbound traffic (in cases where multiple frontend IP addresses are assigned).
 
-1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301b-vm0** virtual machine entry, and on the **az30301b-vm0** blade, in the **Operations** blade, select **Run command**.
+1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30305b-vm0** virtual machine entry, and on the **az30305b-vm0** blade, in the **Operations** blade, select **Run command**.
 
    ![](Images/lab4/e2_t2_s27.png)
 
-1. On the **az30301b-vm0 \| Run command** blade, select **RunPowerShellScript**.
+1. On the **az30305b-vm0 \| Run command** blade, select **RunPowerShellScript**.
 
 1. On the **Run Command Script** blade, in the **PowerShell Script** text box, type the following and select **Run**.
 
