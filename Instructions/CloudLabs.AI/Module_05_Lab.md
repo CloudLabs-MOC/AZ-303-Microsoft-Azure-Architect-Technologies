@@ -501,7 +501,7 @@ The main tasks for this exercise are as follows:
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource Group | **az30301c-labRG-Deployment-id** |
-    | Virtual Network | **az30301c-vnet** |
+    | Virtual Network | **az30305c-vnet** |
  
    ![](Images/lab4/e3_t2_s3.png)
 
@@ -511,23 +511,23 @@ The main tasks for this exercise are as follows:
 
     > Note: In this configuration, it is not possible to use Network Watcher to view the effective network security rules (that is one of distinctions between Azure VMs and instances of an Azure VM Scale Set). Similarly, you cannot rely on using **Connection troubleshoot** to test network connectivity from Azure VM Scale Set instances, although it is possible to use it to test connectivity from the Azure Application Gateway.
 
-1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade, in the list of resources, and select the **az30301c-vmss** virtual machine scale set entry.
+1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade, in the list of resources, and select the **az30305c-vmss** virtual machine scale set entry.
 
    ![](Images/lab4/e3_t2_s5.png)
 
-1. On the **az30301c-vmss** blade, note the **Location** and **Fault domains** entries.
+1. On the **az30305c-vmss** blade, note the **Location** and **Fault domains** entries.
 
    ![](Images/lab4/e3_t2_s6.png)
 
     > Note: Unlike Azure VMs, individual instances of Azure VM scale sets deploy into separate fault domains, including instances deployed into the same zone. In addition, they support 5 fault domains (unlike Azure VMs, which can use up to 3 fault domains).
 
-1. On the **az30301c-vmss** blade, select **Instances**, on the **az30301c-vmss \| Instances** blade, select the first instance, and identify its availability zone by reviewing the value of the **Location** property.
+1. On the **az30305c-vmss** blade, select **Instances**, on the **az30301c-vmss \| Instances** blade, select the first instance, and identify its availability zone by reviewing the value of the **Location** property.
 
-1. Navigate back to the **az30301c-vmss \| Instances** blade, select the second instance, and identify its availability zone by reviewing the value of the **Location** property.
+1. Navigate back to the **az30305c-vmss \| Instances** blade, select the second instance, and identify its availability zone by reviewing the value of the **Location** property.
 
     > Note: Verify that each instance resides in a different availability zone.
 
-1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade and, in the list of resources, select the **az30301c-appgw** load balancer entry, and on the **az30301c-appgw** blade, note the public IP address entry.
+1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade and, in the list of resources, select the **az30305c-appgw** load balancer entry, and on the **az30305c-appgw** blade, note the public IP address entry.
 
    ![](Images/lab4/e3_t2_s8.png)
 
@@ -541,7 +541,7 @@ The main tasks for this exercise are as follows:
 
     > Note: Verify that the returned messages indicate that the requests are being delivered in the round robin manner to the backend Azure VMs
 
-1. On the **az30301c-appgw** blade, select the **HTTP settings** entry and, on the **az30305c-appgw \| HTTP settings** blade, select the **appGwBackentHttpSettings** entry representing the load balancing rule handling HTTP traffic.
+1. On the **az30305c-appgw** blade, select the **HTTP settings** entry and, on the **az30305c-appgw \| HTTP settings** blade, select the **appGwBackentHttpSettings** entry representing the load balancing rule handling HTTP traffic.
 
    ![](Images/lab4/e3_t2_s11.png)
 
@@ -563,7 +563,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Configure autoscaling of an Azure VM Scale Set
 
-1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30301c-vmss** virtual machine scale set entry, and on the **az30301c-vmss** blade, select **Scaling**.
+1. In the Azure portal, navigate to the **az30301c-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30305c-vmss** virtual machine scale set entry, and on the **az30305c-vmss** blade, select **Scaling**.
 
 1. On the **az30301c-vmss \| Scaling** blade, select the **Custom autoscale** option.
 
@@ -604,7 +604,7 @@ The main tasks for this exercise are as follows:
 
     > Note: These values are selected strictly for lab purposes to trigger scaling as soon as possible. For guidance regarding Azure VM Scale Set scaling, refer to [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview).
 
-1. Back on the **az30301c-vmss \| Scaling** blade, select **+ Add a rule**.
+1. Back on the **az30305c-vmss \| Scaling** blade, select **+ Add a rule**.
 
 1. On the **Scale rule** blade, specify the following settings and select **Add** (leave others with their default values):
 
@@ -637,29 +637,29 @@ The main tasks for this exercise are as follows:
    ```Bash
    for (( ; ; )); do curl -s <lb_IP_address>?[1-10]; done
    ```
-1. In the Azure portal, on the **az30301c-vmss** blade, review the **CPU (average)** chart and verify that the CPU utilization of the Application Gateway increased sufficiently to trigger scaling out.
+1. In the Azure portal, on the **az30305c-vmss** blade, review the **CPU (average)** chart and verify that the CPU utilization of the Application Gateway increased sufficiently to trigger scaling out.
 
     > Note: You might need to wait a few minutes.
 
-1. On the **az30301c-vmss** blade, select the **Instances** entry and verify that the number of instances has increased.
+1. On the **az30305c-vmss** blade, select the **Instances** entry and verify that the number of instances has increased.
 
-    > Note: You might need to refresh the **az30301c-vmss \| Instances** blade.
+    > Note: You might need to refresh the **az30305c-vmss \| Instances** blade.
 
     > Note: You might see the number of instances increasing by 2 (rather than 1).
 
 1. In the Azure portal, close the **Cloud Shell** pane.
 
-1. In the Azure portal, on the **az30301c-vmss** blade, review the **CPU (average)** chart and verify that the CPU utilization of the Application Gateway decreased sufficiently to trigger scaling in.
+1. In the Azure portal, on the **az30305c-vmss** blade, review the **CPU (average)** chart and verify that the CPU utilization of the Application Gateway decreased sufficiently to trigger scaling in.
 
     > Note: You might need to wait a few minutes.
 
-1. On the **az30301c-vmss** blade, select the **Instances** entry and verify that the number of instances has decreased to 2.
+1. On the **az30305c-vmss** blade, select the **Instances** entry and verify that the number of instances has decreased to 2.
 
-    > Note: You might need to refresh the **az30301c-vmss \| Instances** blade.
+    > Note: You might need to refresh the **az30305c-vmss \| Instances** blade.
 
-1. On the **az30301c-vmss** blade, select **Scaling**.
+1. On the **az30305c-vmss** blade, select **Scaling**.
 
-1. On the **az30301c-vmss \| Scaling** blade, select the **Manual scale** option and select **Save**.
+1. On the **az30305c-vmss \| Scaling** blade, select the **Manual scale** option and select **Save**.
 
     > Note: This will prevent any undesired autoscaling during the next exercise.
 
@@ -675,13 +675,13 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Scale compute resources of Azure virtual machine scale set instances.
 
-1. In the Azure Portal, on the **az30301c-vmss** blade, select **Size**.
+1. In the Azure Portal, on the **az30305c-vmss** blade, select **Size**.
 
 1. In the list of available sizes, select any available size other than currently configured and select **Resize**.
 
    ![](Images/lab4/e5_t1_s2.png)
 
-1. On the **az30301c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss \| Instances** blade, observe the process of replacing existing instances with new ones of the desired size.
+1. On the **az30305c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss \| Instances** blade, observe the process of replacing existing instances with new ones of the desired size.
 
     > Note: You might need to refresh the **az30301c-vmss \| Instances** blade.
 
@@ -690,7 +690,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Scale storage resources of Azure virtual machine scale sets instances
 
-1. On the **az30301c-vmss** blade, select **Disks**, select **+ Add data disk**, attach a new managed disk with the following settings (leave others with their default values), and select **Save**:
+1. On the **az30305c-vmss** blade, select **Disks**, select **+ Add data disk**, attach a new managed disk with the following settings (leave others with their default values), and select **Save**:
 
     | Setting | Value |
     | --- | --- |
@@ -700,11 +700,11 @@ The main tasks for this exercise are as follows:
 
    ![](Images/lab4/e5t2s2.png)
 
-1. On the **az30301c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss \| Instances** blade, observe the process of updating the existing instances.
+1. On the **az30305c-vmss** blade, select the **Instances** entry and, on the **az30301c-vmss \| Instances** blade, observe the process of updating the existing instances.
 
     > Note: The disk attached in the previous step is a raw disk. Before it can be used, it is necessary to create a partition, format it, and mount it. To accomplish this, you will deploy a PowerShell script to Azure VM scale set instances via the Custom Script extension. First, however, you will need to remove it.
 
-1. On the **az30301c-vmss** blade, select **Extensions**, on the **az30301c-vmss \| Extensions** blade, select the **customScriptExtension** entry, and then, on the **Extensions** blade, select **Uninstall**.
+1. On the **az30305c-vmss** blade, select **Extensions**, on the **az30301c-vmss \| Extensions** blade, select the **customScriptExtension** entry, and then, on the **Extensions** blade, select **Uninstall**.
 
    ![](Images/lab4/e5t2s3.png)
 
@@ -731,7 +731,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate back to the **az30301c-vmss** virtual machine scale set blade.
 
-1. On the **az30301c-vmss** blade, select **Extensions**, on the **az30301c-vmss \| Extensions** blade, select **+ Add** and then, select the **customScriptExtension** entry on the **Extensions** blade.
+1. On the **az30305c-vmss** blade, select **Extensions**, on the **az30301c-vmss \| Extensions** blade, select **+ Add** and then, select the **customScriptExtension** entry on the **Extensions** blade.
 
    ![](Images/lab4/e5st2s4.png)
    ![](Images/lab4/e5_t2_s11.png)
