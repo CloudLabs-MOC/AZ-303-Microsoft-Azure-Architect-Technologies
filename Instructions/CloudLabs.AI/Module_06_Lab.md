@@ -64,7 +64,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex0_task1_step1_1.png)
     
-1. Select **Use existing** under Resource Group then select **az30302a-labRG** and enter **shellstorageDeployment-id** for storage account name and Enter **filestorageDeployment-id** then click on **Create Storage**. 
+1. Select **Use existing** under Resource Group then select **az30306a-labRG** and enter **shellstorageDeployment-id** for storage account name and Enter **filestorageDeployment-id** then click on **Create Storage**. 
     
    ![](Images/lab5/ex0_task1_step3.2.png)
 
@@ -82,8 +82,8 @@ The main tasks for this exercise are as follows:
 
    ```powershell
    New-AzResourceGroupDeployment `
-     -Name az30302rga  `
-     -ResourceGroupName 'az30302a-labRG' `
+     -Name az30306rga  `
+     -ResourceGroupName 'az30306a-labRG' `
      -TemplateFile $HOME/azuredeploy30306rga.json `
      -TemplateParameterFile $HOME/azuredeploy30306rga.parameters.json `
      -AsJob
@@ -123,7 +123,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | the name of a new resource group **az30302a-labRG** |
+    | Resource group | the name of a new resource group **az30306a-labRG** |
     | Storage account name | any globally unique name between 3 and 24 in length consisting of letters and digits, For eg: **azstore**Deployment-ID |
     | Location | the name of an Azure region where you can create an Azure Storage account  |
     | Performance | **Standard** |
@@ -148,13 +148,13 @@ The main tasks for this exercise are as follows:
 
    > Note: Ensure that the deployment of the Azure VM you initiated at the beginning of this lab has completed before you proceed.
 
-1. In the Azure portal, search for and select **Virtual machines**, and, on the **Virtual machines** blade, in the list of virtual machines, select **az30302a-vm0**.
+1. In the Azure portal, search for and select **Virtual machines**, and, on the **Virtual machines** blade, in the list of virtual machines, select **az30306a-vm0**.
 
     ![](Images/lab5/ex1_task2_step1.png)
     
     ![](Images/lab5/ex1_task2_step1_1.png)
 
-1. On the **az30302a-vm0** blade, select **Connect**, in the drop-down menu, select **RDP**, and then select **Download RDP File**.
+1. On the **az30306a-vm0** blade, select **Connect**, in the drop-down menu, select **RDP**, and then select **Download RDP File**.
 
     ![](Images/lab5/ex1_task2_step2.png)
 
@@ -177,20 +177,20 @@ The main tasks for this exercise are as follows:
    
    ![](Images/lab5/ex1_task2_step3_2.png)
 
-1. Within the Remote Desktop session to **az30302a-vm0**, in the Server Manager window, select **Local Server**, select the **On** link next to the **IE Enhanced Security Configuration** label, and, in the **IE Enhanced Security Configuration** dialog box, select both **Off** options.
+1. Within the Remote Desktop session to **az30306a-vm0**, in the Server Manager window, select **Local Server**, select the **On** link next to the **IE Enhanced Security Configuration** label, and, in the **IE Enhanced Security Configuration** dialog box, select both **Off** options.
 
     ![](Images/lab5/ex1_task2_step4.png)
 
-1. Within the Remote Desktop session to **az30302a-vm0**, start Internet Explorer and download from [Azure Storage Explorer](https://github.com/microsoft/AzureStorageExplorer/releases/download/v1.15.1/Windows_StorageExplorer.exe)
+1. Within the Remote Desktop session to **az30306a-vm0**, start Internet Explorer and download from [Azure Storage Explorer](https://github.com/microsoft/AzureStorageExplorer/releases/download/v1.15.1/Windows_StorageExplorer.exe)
 
     ![](Images/lab5/ex1_task2_step5.png)
 
-1. Within the Remote Desktop session to **az30302a-vm0**, download and install Azure Storage Explorer with the default settings. 
+1. Within the Remote Desktop session to **az30306a-vm0**, download and install Azure Storage Explorer with the default settings. 
 
 
 #### Task 3: Generate an account-level shared access signature
 
-1. Within the Remote Desktop session to **az30302a-vm0**, start Internet Explorer, navigate to the [Azure portal](https://portal.azure.com), and sign-in by providing credentials of the user account with the Owner role in the subscription you are using in this lab.
+1. Within the Remote Desktop session to **az30306a-vm0**, start Internet Explorer, navigate to the [Azure portal](https://portal.azure.com), and sign-in by providing credentials of the user account with the Owner role in the subscription you are using in this lab.
 
    >**Note**: You can find the Azure Credentials from the environment details tab.
 
@@ -227,13 +227,13 @@ The main tasks for this exercise are as follows:
 
 #### Task 4: Create a blob container by using Azure Storage Explorer
 
-1. Within the Remote Desktop session to **az30302a-vm0**, start Azure Storage Explorer.
+1. Within the Remote Desktop session to **az30306a-vm0**, start Azure Storage Explorer.
 
 1. In the Azure Storage Explorer window, in the **Connect to Azure Storage** window, select **Use a shared access signature (SAS) URI** and select **Next**.
 
     ![](Images/lab5/ex1_task4_step2.png)
 
-1. In the **Attach with SAS URI** window, in the **Display name** text box, type **az30302a-blobs**, in the **URI** text box, paste the value you copied into Clipboard, and select **Next**.
+1. In the **Attach with SAS URI** window, in the **Display name** text box, type **az30306a-blobs**, in the **URI** text box, paste the value you copied into Clipboard, and select **Next**.
 
     > Note: This should automatically populate the value of **Blob endpoint** text box.
 
@@ -243,11 +243,11 @@ The main tasks for this exercise are as follows:
 
    ![](Images/lab5/ex1_task4_step3_3.png)
 
-1. In the Azure Storage Explorer window, in the **EXPLORER** pane, navigate to the **az30302a-blobs** entry, expand it and note that you have access to **Blob Container** endpoint only.
+1. In the Azure Storage Explorer window, in the **EXPLORER** pane, navigate to the **az30306a-blobs** entry, expand it and note that you have access to **Blob Container** endpoint only.
 
    ![](Images/lab5/ex1_task4_step5.png)
 
-1. Right select the **az30302a-blobs** entry, in the right-click menu, select **Create Blob Container**, and use the empty text box to set the container name to **container1**.
+1. Right select the **az30306a-blobs** entry, in the right-click menu, select **Create Blob Container**, and use the empty text box to set the container name to **container1**.
 
     ![](Images/lab5/ex1_task4_step6_1.png)
     
@@ -276,7 +276,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 5: Upload a file to a blob container by using AzCopy
 
-1. Within the Remote Desktop session to **az30302a-vm0**, in the browser window, on the **Shared access signature** blade, specify the following settings (leave others with their default values):
+1. Within the Remote Desktop session to **az30306a-vm0**, in the browser window, on the **Shared access signature** blade, specify the following settings (leave others with their default values):
 
     | Setting | Value |
     | --- | --- |
@@ -312,7 +312,7 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to upload the newly created file as a blob into container1 of the Azure Storage account you created earlier in this exercise (replace the `<sas_token>` placeholder with the value of the shared access signature you copied to Clipboard earlier in this task):(**Please provide the name of the storage account that you created in Exercise 1 -> Task 1: Create an Azure Storage account and please do not use the storage account created in exercise 0 here**)
 
    ```powershell
-   $storageAccountName = Get-AzStorageAccount -ResourceGroupName 'az30302a-labRG' -AccountName "azstore**Deployment-ID"
+   $storageAccountName = Get-AzStorageAccount -ResourceGroupName 'az30306a-labRG' -AccountName "azstore**Deployment-ID"
 
    azcopy cp './az30306ablob.html' "https://$storageAccountName.blob.core.windows.net/container1/az30306ablob.html<sas_token>"
    ```
@@ -323,7 +323,7 @@ The main tasks for this exercise are as follows:
 
 1. Close the Cloud Shell pane.
 
-1. Within the Remote Desktop session to **az30302a-vm0**, in the browser window, on the storage account blade, in the **Blob service** section, select **Containers**.
+1. Within the Remote Desktop session to **az30306a-vm0**, in the browser window, on the storage account blade, in the **Blob service** section, select **Containers**.
 
 1. In the list of containers, select **container1**.
 
@@ -333,7 +333,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 6: Access a blob by using a blob-level shared access signature
 
-1. Within the Remote Desktop session to **az30302a-vm0**, in the browser window, on the **container1** blade, select **Change access level**, verify that is set to **Private (no anonymous access)**, and select **Cancel**.
+1. Within the Remote Desktop session to **az30306a-vm0**, in the browser window, on the **container1** blade, select **Change access level**, verify that is set to **Private (no anonymous access)**, and select **Cancel**.
 
    ![](Images/lab5/ex1_task6_step1.png)
    
@@ -343,7 +343,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **container1** blade, select **az30306ablob.html**.
 
-1. On the az30302ablob.html blade, right click on the file name and in the popup menu, select Generate SAS, review the available options without modifying them, and then select Generate SAS token and URL.
+1. On the az30306ablob.html blade, right click on the file name and in the popup menu, select Generate SAS, review the available options without modifying them, and then select Generate SAS token and URL.
 
     ![](Images/lab5/ex1_task6_step3.png)
     
@@ -357,7 +357,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab5/ex1_task6_step5.png)
 
-1. Verify that the message **Hello from az30302ablob via SAS** appears in the browser window.
+1. Verify that the message **Hello from az30306ablob via SAS** appears in the browser window.
 
     ![](Images/lab5/ex1_task6_step6.png)
 
@@ -374,7 +374,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Create an Azure AD user
 
-1. Within the Remote Desktop session to **az30302a-vm0**, in the browser window, open **PowerShell** session within a **Cloud Shell** pane.
+1. Within the Remote Desktop session to **az30306a-vm0**, in the browser window, open **PowerShell** session within a **Cloud Shell** pane.
 
 1. From the Cloud Shell pane, run the following to explicitly authenticate to your Azure AD tenant:
 
@@ -415,7 +415,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Enable Azure Active Directory authorization for Azure Storage blob service
 
-1. Within the Remote Desktop session to **az30302a-vm0**, in the browser window displaying the Azure portal, navigate back to the **container1** blade.
+1. Within the Remote Desktop session to **az30306a-vm0**, in the browser window displaying the Azure portal, navigate back to the **container1** blade.
 
 1. On the **container1** blade, select **Switch to Azure AD User Account**.
 
@@ -446,11 +446,11 @@ The main tasks for this exercise are as follows:
 
 #### Task 3: Upload a file to a blob container by using AzCopy
 
-1. Within the Remote Desktop session to **az30302a-vm0**, in the browser window, navigate to [Get started with AzCopy](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10) or navigate to (https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10).
+1. Within the Remote Desktop session to **az30306a-vm0**, in the browser window, navigate to [Get started with AzCopy](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10) or navigate to (https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10).
 
 1. Download the azcopy.zip file and extract azcopy.exe into the **C:\Labfiles** folder (create the folder if needed).
 
-1. Within the Remote Desktop session to **az30302a-vm0**, start Windows PowerShell.
+1. Within the Remote Desktop session to **az30306a-vm0**, start Windows PowerShell.
 
 1. From the Windows PowerShell prompt, run the following to download the **azcopy.zip** archive, extract its content, and switch to the location containing **azcopy.exe**:
 
@@ -528,7 +528,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Create an Azure Storage file share
 
-1. Within the Remote Desktop session to **az30302a-vm0**, in the browser window displaying the Azure portal, navigate back to the blade of the storage account you created in the first exercise of this lab and, in the **File service** section, select **File shares**.
+1. Within the Remote Desktop session to **az30306a-vm0**, in the browser window displaying the Azure portal, navigate back to the blade of the storage account you created in the first exercise of this lab and, in the **File service** section, select **File shares**.
 
     ![](Images/lab5/ex3_task1_step1.png)
     
@@ -538,7 +538,7 @@ The main tasks for this exercise are as follows:
 
     | Setting | Value|
     | --- | --- |
-    | Name | **az30302a-share** |
+    | Name | **az30306a-share** |
     | Quota | **1024** |
 
   ![](Images/lab5/ex3_task1_step2.png)
@@ -553,7 +553,7 @@ The main tasks for this exercise are as follows:
 
    ![](Images/lab5/ex3_task2_step2.png)
 
-1. Within the Remote Desktop session to **az30302a-vm0**, at the PowerShell prompt, paste and execute the script you copied.
+1. Within the Remote Desktop session to **az30306a-vm0**, at the PowerShell prompt, paste and execute the script you copied.
 
     ![](Images/lab5/ex3_task2_step3.png)
 
@@ -567,7 +567,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab5/ex3_task2_step6_1.png)
 
-1. Switch back to the browser window displaying the Azure portal, on the **az30302a-share** blade, select **Refresh**, and verify that **Folder1** appears in the list of folders.
+1. Switch back to the browser window displaying the Azure portal, on the **az30306a-share** blade, select **Refresh**, and verify that **Folder1** appears in the list of folders.
 
     ![](Images/lab5/ex3_task2_step7.png)
 
