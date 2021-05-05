@@ -55,7 +55,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex0_task1_step1_1.png)
 
-1. Select existing Resource Group as **az30311a-labRG** and enter unique names for **storage account name** and **File Share** and select **Create storage**.
+1. Select existing Resource Group as **az30310a-labRG** and enter unique names for **storage account name** and **File Share** and select **Create storage**.
 
     ![](Images/lab9/Ex0_task1_step1_2.png)
 
@@ -69,8 +69,8 @@ The main tasks for this exercise are as follows:
 
    ```powershell
    New-AzResourceGroupDeployment `
-     -Name az30311rgaDeployment `
-     -ResourceGroupName 'az30311a-labRG' `
+     -Name az30310rgaDeployment `
+     -ResourceGroupName 'az30310a-labRG' `
      -TemplateFile $HOME/azuredeploy30310rga.json `
      -TemplateParameterFile $HOME/azuredeploy30310rga.parameters.json `
      -AsJob
@@ -126,11 +126,11 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Identify actions to delegate via RBAC
 
-1. In the Azure portal, navigate to the **az30311a-labRG** blade.
+1. In the Azure portal, navigate to the **az30310a-labRG** blade.
 
-1. On the **az30311a-labRG** blade, select **Access Control (IAM)**.
+1. On the **az30310a-labRG** blade, select **Access Control (IAM)**.
 
-1. On the **az30311a-labRG - Access Control (IAM)** blade, select **Roles**.
+1. On the **az30310a-labRG - Access Control (IAM)** blade, select **Roles**.
 
 1. On the **Roles** blade, select **Owner**.
 
@@ -209,11 +209,11 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Create an RBAC role assignment
  
-1. In the Azure portal, navigate to the **az30311a-labRG** blade.
+1. In the Azure portal, navigate to the **az30310a-labRG** blade.
 
-1. On the **az30311a-labRG** blade, select **Access Control (IAM)**.
+1. On the **az30310a-labRG** blade, select **Access Control (IAM)**.
 
-1. On the **az30311a-labRG - Access Control (IAM)** blade, select **+ Add** and select the **Add role assignment** option.
+1. On the **az30310a-labRG - Access Control (IAM)** blade, select **+ Add** and select the **Add role assignment** option.
 
 1. On the **Add role assignment** blade, specify the following settings (leave others with their existing values) and select **Save**:
 > Note: replace the Deployment-id with your deployment id given in environment detail page and record the user principal name of the newly created Azure AD user. You will need it later in this lab.
