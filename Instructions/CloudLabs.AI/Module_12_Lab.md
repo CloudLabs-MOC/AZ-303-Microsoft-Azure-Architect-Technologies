@@ -48,12 +48,12 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group |  **az30307a-labRG-(deploymentID)** |
-    | Host Public IP Address Name | **az30307a-hv-vm-pip** |
-    | Virtual Network Name | **az30307a-hv-vnet** |
-    | Host Network Interface1Name | **az30307a-hv-vm-nic1** |
-    | Host Network Interface2Name | **az30307a-hv-vm-nic2** |
-    | Host Virtual Machine Name | **az30307a-hv-vm** |
+    | Resource group |  **az30312a-labRG-(deploymentID)** |
+    | Host Public IP Address Name | **az30312a-hv-vm-pip** |
+    | Virtual Network Name | **az30312a-hv-vnet** |
+    | Host Network Interface1Name | **az30312a-hv-vm-nic1** |
+    | Host Network Interface2Name | **az30312a-hv-vm-nic2** |
+    | Host Virtual Machine Name | **az30312a-hv-vm** |
     | Host Admin Username | **Student** |
     | Host Admin Password | **Pa55w.rd1234** |
 
@@ -63,15 +63,15 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Configure nested virtualization in the Azure VM
 
-1. In the Azure portal, search for and select **Virtual machines** and, on the **Virtual machines** blade, select **az30307a-hv-vm**.
+1. In the Azure portal, search for and select **Virtual machines** and, on the **Virtual machines** blade, select **az30312a-hv-vm**.
 
-1. On the **az30307a-hv-vm** blade, select **Networking**.
+1. On the **az30312a-hv-vm** blade, select **Networking**.
 
-1. On the **az30307a-hv-vm | Networking** blade, select **az30307a-hv-vm-nic1** and then select **Add inbound port rule**.
+1. On the **az30312a-hv-vm | Networking** blade, select **az30312a-hv-vm-nic1** and then select **Add inbound port rule**.
 
    ![](Images/lab9/Ex0_task2_step3.png)
 
-    > Note: Make sure that you modify the settings of **az30307a-hv-vm-nic1**, which has the public IP address assigned to it.
+    > Note: Make sure that you modify the settings of **az30312a-hv-vm-nic1**, which has the public IP address assigned to it.
 
 1. On the **Add inbound security rule** blade, specify the following settings (**leave others with their default values**) and select **Add**:
 
@@ -83,11 +83,11 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex0_task2_step4_1.png)
 
-1. On the **az30307a-hv-vm** blade, select **Overview**.
+1. On the **az30312a-hv-vm** blade, select **Overview**.
 
     ![](Images/lab9/Ex0_task2_step5.png)
 
-1. On the **az30307a-hv-vm** blade, select **Connect**, in the drop-down menu, select **RDP**, and then click **Download RDP File**.
+1. On the **az30312a-hv-vm** blade, select **Connect**, in the drop-down menu, select **RDP**, and then click **Download RDP File**.
 
     ![](Images/lab9/Ex0_task2_step6.png)
 
@@ -96,7 +96,7 @@ The main tasks for this exercise are as follows:
 * User Name: **Student**
 * Password: **Pa55w.rd1234**
 
-8. Within the Remote Desktop session to **az30307a-hv-vm**, in the Server Manager window, click **Local Server**, click the **On** link next to the **IE Enhanced Security Configuration** label, and, in the **IE Enhanced Security Configuration** dialog box, select both **Off** options.
+8. Within the Remote Desktop session to **az30312a-hv-vm**, in the Server Manager window, click **Local Server**, click the **On** link next to the **IE Enhanced Security Configuration** label, and, in the **IE Enhanced Security Configuration** dialog box, select both **Off** options.
 
     ![](Images/lab9/Ex0_task2_step7_1.png)
 
@@ -104,7 +104,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex0_task2_step7_2_1.png)
 
-10. Within the Remote Desktop session to **az30307a-hv-vm**, start Internet Explorer, browse to this link https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019, and download the Windows Server 2019 **VHD** file and move the file from downloads to **F:\\VHDs** folder. (Please follow the below images if any doubts)
+10. Within the Remote Desktop session to **az30312a-hv-vm**, start Internet Explorer, browse to this link https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019, and download the Windows Server 2019 **VHD** file and move the file from downloads to **F:\\VHDs** folder. (Please follow the below images if any doubts)
 
     ![](Images/lab9/new/ex0_task2_step10_1.png)
     
@@ -120,11 +120,11 @@ The main tasks for this exercise are as follows:
     ![](Images/lab5/az303.png)
 
 
-11. Within the Remote Desktop session to **az30307a-hv-vm**, start **Hyper-V Manager**.
+11. Within the Remote Desktop session to **az30312a-hv-vm**, start **Hyper-V Manager**.
 
    ![](Images/lab9/Ex0_task2_step7_3.png)
 
-12. In the **Hyper-V Manager** console, select the **AZ30307A-HV-VM** node, select **New** and, in the cascading menu, select **Virtual Machine**. This will start the **New Virtual Machine Wizard**.
+12. In the **Hyper-V Manager** console, select the **AZ30312A-HV-VM** node, select **New** and, in the cascading menu, select **Virtual Machine**. This will start the **New Virtual Machine Wizard**.
 
     ![](Images/lab9/Ex0_task2_step4.png)
 
@@ -134,7 +134,7 @@ The main tasks for this exercise are as follows:
 
     | Setting | Value |
     | --- | --- |
-    | Name | **az30307a-vm1** |
+    | Name | **az30312a-vm1** |
     | Store the virtual machine in a different location | selected |
     | Location | **F:\VMs** |
 
@@ -158,22 +158,22 @@ The main tasks for this exercise are as follows:
 
 21. In the **Hyper-V Manager** console, verify that the virtual machine is running and select **Connect**.
 
-22. In the Virtual Machine Connection window to **az30307a-vm1**, on the **Hi there** page, select **Next**.
+22. In the Virtual Machine Connection window to **az30312a-vm1**, on the **Hi there** page, select **Next**.
 
-23. In the Virtual Machine Connection window to **az30307a-vm1**, on the **License terms** page, select **Accept**.
+23. In the Virtual Machine Connection window to **az30312a-vm1**, on the **License terms** page, select **Accept**.
 
-24. In the Virtual Machine Connection window to **az30307a-vm1**, on the **Customize settings** page, set the password of the built-in Administrator account to **Pa55w.rd1234** , please type the password and select **Finish**.
+24. In the Virtual Machine Connection window to **az30312a-vm1**, on the **Customize settings** page, set the password of the built-in Administrator account to **Pa55w.rd1234** , please type the password and select **Finish**.
 
    ![](Images/lab9/new/ex0_task2_step24.png)
 
-25. In the Virtual Machine Connection window to **az30307a-vm1**, sign in by using the newly set password. Use CTRL+ALT+DELETE button to login.
+25. In the Virtual Machine Connection window to **az30312a-vm1**, sign in by using the newly set password. Use CTRL+ALT+DELETE button to login.
 
     ![](Images/lab9/Ex0_task2_step7_17_1.png)
 
-26. In the Virtual Machine Connection window to **az30307a-vm1**, start Windows PowerShell and, in the **Administrator: Windows PowerShell** window run the following to set the computer name.
+26. In the Virtual Machine Connection window to **az30312a-vm1**, start Windows PowerShell and, in the **Administrator: Windows PowerShell** window run the following to set the computer name.
 
    ```powershell
-   Rename-Computer -NewName 'az30307a-vm1' -Restart
+   Rename-Computer -NewName 'az30312a-vm1' -Restart
    ```
 
 ### Exercise 1: Create and configure an Azure Site Recovery vault
@@ -187,7 +187,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Create an Azure Site Recovery vault
 
-1. Within the Remote Desktop session to **az30307a-hv-vm**, start Internet Explorer, navigate to the [Azure portal](https://portal.azure.com), and sign in by providing credentials from environment details tab.
+1. Within the Remote Desktop session to **az30312a-hv-vm**, start Internet Explorer, navigate to the [Azure portal](https://portal.azure.com), and sign in by providing credentials from environment details tab.
 
 1. In the Azure portal, search for and select **Recovery Services vaults** and, on the **Recovery Services vaults** blade, select **+ Add**.
 
@@ -198,8 +198,8 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | select existing  resource group **az30307b-labRG-deploymentID** |
-    | Vault name | **az30307b-rsvault** |
+    | Resource group | select existing  resource group **az30312b-labRG-deploymentID** |
+    | Vault name | **az30312b-rsvault** |
     | Location | the name of the Azure region into which you deployed the virtual machine earlier in this lab |
 
 1. On the **Review + create** tab of the **Create Recovery Services vault** blade, select **Create**:
@@ -210,11 +210,11 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Configure the Azure Site Recovery vault
 
-1. In the Azure portal, search for and select **Recovery Services vaults** and, on the **Recovery Services vaults** blade, select **az30307b-rsvault**.
+1. In the Azure portal, search for and select **Recovery Services vaults** and, on the **Recovery Services vaults** blade, select **az30312b-rsvault**.
 
-1. On the **az30307b-rsvault** blade, select **Properties**.
+1. On the **az30312b-rsvault** blade, select **Properties**.
 
-1. On the **az30307b-rsvault | Properties** blade, select the **Update** link under the **Backup Configuration** label.
+1. On the **az30312b-rsvault | Properties** blade, select the **Update** link under the **Backup Configuration** label.
 
 1. On the **Backup Configuration** blade, set **Storage replication type** to **Locally-redundant**, select **Save** and close the **Backup Configuration** blade.
 
@@ -222,7 +222,7 @@ The main tasks for this exercise are as follows:
 
    ![](Images/lab9/Ex1_task2_step3_final.png)
 
-1. On the **az30307b-rsvault | Properties** blade, select the **Update** link under the **Security Settings** label.
+1. On the **az30312b-rsvault | Properties** blade, select the **Update** link under the **Security Settings** label.
 
 1. On the **Security Settings** blade, set **Soft Delete** to **Disable**, select **Save** and close the **Security Settings** blade.
 
@@ -253,8 +253,8 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | select existing resource group **az30307c-labRG-deploymentID** |
-    | Name | **az30307c-dr-vnet** |
+    | Resource group | select existing resource group **az30312c-labRG-deploymentID** |
+    | Name | **az30312c-dr-vnet** |
     | Region | the name of the Azure region into which you deployed the virtual machine earlier in this lab |
 
     ![](Images/lab9/Ex2_task1_step2.png)
@@ -281,8 +281,8 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az30307c-labRG-deploymentID** |
-    | Name | **az30307c-test-vnet** |
+    | Resource group | **az30312c-labRG-deploymentID** |
+    | Name | **az30312c-test-vnet** |
     | Region | the name of the Azure region into which you deployed the virtual machine earlier in this lab |
 
 1. On the **IP addresses** tab of the **Create virtual network** blade, in the **IPv4 address space** text box, remove the existing ip-address and type **10.7.0.0/16** and select **+ Add subnet**.
@@ -305,7 +305,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az30307c-labRG-deploymentID** |
+    | Resource group | **az30312c-labRG-deploymentID** |
     | Storage account name | any globally unique name between 3 and 24 in length consisting of letters and digits for eg. storageDeploymentID |
     | Location | the name of the Azure region in which you created the virtual network earlier in this task |
     | Performance | **Standard** |
@@ -320,9 +320,9 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Implement protection of a Hyper-V virtual machine
 
-1. Within the Remote Desktop session to **az30307a-hv-vm**, in the Azure portal, on the **az30307b-rsvault** blade, in the **Getting started** section, select **Site Recovery**
+1. Within the Remote Desktop session to **az30312a-hv-vm**, in the Azure portal, on the **az30312b-rsvault** blade, in the **Getting started** section, select **Site Recovery**
 
-1. On the **az30307b-rsvault | Site Recovery** blade, select **Prepare infrastructure**, Under Hyper-V machines to Azure.
+1. On the **az30312b-rsvault | Site Recovery** blade, select **Prepare infrastructure**, Under Hyper-V machines to Azure.
 
     ![](Images/lab9/Ex2_task2_step2.png)
 
@@ -332,7 +332,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **source settings** blade, Select **No** for **Are you using system center VMM to manage Hyper-V hosts?** and then select **Add Hyper-V Site**.
 
-1. On the **Create Hyper-V Site** blade, in the **Name** text box, type **az30307b Hyper-V site** and select **OK**:
+1. On the **Create Hyper-V Site** blade, in the **Name** text box, type **az30312b Hyper-V site** and select **OK**:
 
     ![](Images/lab9/Ex2_task2_step5.png)
 
@@ -386,14 +386,14 @@ The main tasks for this exercise are as follows:
 
     | Setting | Value |
     | --- | --- |
-    | Name | **az30307c replication policy** |
+    | Name | **az30312c replication policy** |
     | Copy frequency | **30 seconds** |
 
     ![](Images/lab9/new/ex2_task2_step22.png)
 
 1. Back on the **Prepare infrastructure** blade, select **Prepare**.
 
-1. Back on the **az30307b-rsvault | Site Recovery** blade, Under **Hyper-V machines to Azure** section, select **2: Enable replication**.
+1. Back on the **az30312b-rsvault | Site Recovery** blade, Under **Hyper-V machines to Azure** section, select **2: Enable replication**.
 
      ![](Images/lab9/new/ex2_task2_step23.png)
 
@@ -406,16 +406,16 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Post-failover resource group | **az30307c-labRG-deploymentID** |
+    | Post-failover resource group | **az30312c-labRG-deploymentID** |
     | Post-failover deployment model | **Resource Manager** |
     | Storage account | the name of the storage account you created in the first task of this exercise |
     | Azure network | Configure now for selected machines |
-    | Post-failover Azure network | **az30307c-dr-vnet** |
+    | Post-failover Azure network | **az30312c-dr-vnet** |
     | Subnet | **subnet0 (10.7.0.0/24)** |
 
    ![](Images/lab9/new/ex2_task2_step25.png)
 
-1. On the **Virtual machine selection** blade, select **az30307a-vm1** and select **Next**:
+1. On the **Virtual machine selection** blade, select **az30312a-vm1** and select **Next**:
 
    ![](Images/lab9/new/ex2_task2_step26.png)
 
@@ -438,29 +438,29 @@ The main tasks for this exercise are as follows:
 
 #### Task 3: Review Azure VM replication settings
 
-1. In the Azure portal, navigate back to the **az30307b-rsvault** blade and select **Replicated items** which comes under protected items in the left navigation pane.
+1. In the Azure portal, navigate back to the **az30312b-rsvault** blade and select **Replicated items** which comes under protected items in the left navigation pane.
 
-1. On the **az30307b-rsvault | Replicated items** blade, ensure that there is an entry representing the **az30307a-vm1** virtual machine and verify that its **Replication Health** is listed as **Healthy** and that its **Status** is listed as **Enabling protection**.
+1. On the **az30312b-rsvault | Replicated items** blade, ensure that there is an entry representing the **az30312a-vm1** virtual machine and verify that its **Replication Health** is listed as **Healthy** and that its **Status** is listed as **Enabling protection**.
 
-   > Note: You might need to wait a few minutes until the **az30307a-vm1** entry appears on the **az30307b-rsvault - Replicated items** blade.
+   > Note: You might need to wait a few minutes until the **az30312a-vm1** entry appears on the **az30307b-rsvault - Replicated items** blade.
 
-1. On the **az30307b-rsvault - Replicated items** blade, select the **az30307a-vm1** entry.
+1. On the **az30312b-rsvault - Replicated items** blade, select the **az30312a-vm1** entry.
 
     ![](Images/lab9/new2/ex2_task3_step1.png)
 
-1. On the **az30307a-vm1** replicated items blade, review the **Health and status**, **Failover readiness**, **Latest recovery points**, and **Infrastructure view** sections. Note the **Planned Failover**, **Failover** and **Test Failover** toolbar icons.
+1. On the **az30312a-vm1** replicated items blade, review the **Health and status**, **Failover readiness**, **Latest recovery points**, and **Infrastructure view** sections. Note the **Planned Failover**, **Failover** and **Test Failover** toolbar icons.
 
 1. Wait until the status changes to **Protected**. This might take additional 15 minutes.
 
     ![](Images/lab9/new2/ex2_task3_step5.png)
 
-1. On the **az30307a-vm1** replicated items blade, select **Latest recovery points** and review **Latest crash-consistent** and **Latest app-consistent** recovery points.
+1. On the **az30312a-vm1** replicated items blade, select **Latest recovery points** and review **Latest crash-consistent** and **Latest app-consistent** recovery points.
 
     ![](Images/lab9/new2/ex2_task3_step6.png)
 
 #### Task 4: Perform a failover of the Hyper-V virtual machine
 
-1. Within the Remote Desktop session to **az30307a-hv-vm**, in the browser window displaying the Azure portal, on the **az30307a-vm1** replicated items blade, select **Test failover**.
+1. Within the Remote Desktop session to **az30312a-hv-vm**, in the browser window displaying the Azure portal, on the **az30312a-vm1** replicated items blade, select **Test failover**.
 
     ![](Images/lab9/new2/ex2_task4_step1.png)
 
@@ -469,17 +469,17 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Choose a recovery point | the default option |
-    | Azure virtual network | **az30307c-test-vnet** |
+    | Azure virtual network | **az30312c-test-vnet** |
 
    ![](Images/lab9/new2/ex2_task4_step2.png)
 
-1. In the Azure portal, navigate back to the **az30307b-rsvault** blade and select **Site Recovery jobs**. Wait until the status of the **Test failover** job is listed as **Successful**.
+1. In the Azure portal, navigate back to the **az30312b-rsvault** blade and select **Site Recovery jobs**. Wait until the status of the **Test failover** job is listed as **Successful**.
 
-1. In the Azure portal, search for and select **Virtual machines** and, on the **Virtual machines** blade, note the entry representing the newly provisioned virtual machine **az30307a-vm1-test**.
+1. In the Azure portal, search for and select **Virtual machines** and, on the **Virtual machines** blade, note the entry representing the newly provisioned virtual machine **az30312a-vm1-test**.
 
     ![](Images/lab9/new2/ex2_task4_step4.png)
 
-1. In the Azure portal, navigate back to the on the **az30307a-vm1** replicated items blade and select **Cleanup test failover*.
+1. In the Azure portal, navigate back to the on the **az30312a-vm1** replicated items blade and select **Cleanup test failover*.
 
     ![](Images/lab9/new2/ex2_task4_step5.png)
 
@@ -487,13 +487,13 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/new2/ex2_task4_step6.png)
 
-1. Once the test failover cleanup job completes, refresh the browser page displaying the **az30307a-vm1** replicated items blade and note that you have the option to perform planned and unplanned failover.
+1. Once the test failover cleanup job completes, refresh the browser page displaying the **az30312a-vm1** replicated items blade and note that you have the option to perform planned and unplanned failover.
 
-1. On the **az30307a-vm1** replicated items blade, select **Planned failover**.
+1. On the **az30312a-vm1** replicated items blade, select **Planned failover**.
 
 1. On the **Planned failover** blade, note that the failover direction settings are already set and not modifiable.
 
-1. Close the **Planned failover** blade and, on the **az30307a-vm1** replicated items blade, select **Failover**.
+1. Close the **Planned failover** blade and, on the **az30312a-vm1** replicated items blade, select **Failover**.
 
 1. On the **Failover** blade, note the available options geared towards minimizing potential data loss.
 
