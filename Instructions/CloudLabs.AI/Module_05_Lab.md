@@ -235,24 +235,6 @@ The main tasks for this exercise are as follows:
 
 1. Press the **Ctrl+C** key combination to return to the Bash shell prompt.
 
-
-#### Task 3: Remove Azure resources deployed in the exercise    
-
-1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
-
-   ```sh
-   az group list --query "[?starts_with(name,'az30301a-')]".name --output tsv
-   ```
-
-    > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
-1. From the Cloud Shell pane, run the following to delete the resource group you used in this lab
-
-   ```sh
-   az group list --query "[?starts_with(name,'az30301a-')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-   ```
-
-1. Close the Cloud Shell pane.
-
 ### Exercise 2: Implement and analyze highly available Azure VM deployments using availability zones and Azure Load Balancer Standard
   
 The main tasks for this exercise are as follows:
