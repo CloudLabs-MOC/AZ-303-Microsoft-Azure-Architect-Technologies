@@ -139,14 +139,14 @@ The main tasks for this exercise are as follows:
 
 1. On the **Network Watcher \| Effective security rules** blade, specify the following settings:
 
- > Note: If you are not able to select the **Network interface**, click on **Virtual machine** field and select the **az30305b-vm0** again.
+ > Note: If you are not able to select the **Network interface**, click on **Virtual machine** field and select the **az30305a-vm0** again.
 
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource group | **az30301a-labRG-(Deployment-id)** |
-    | Virtual machine | **az30305a-vm1** |
-    | Network interface | **az30305a-nic1** |
+    | Virtual machine | **az30305a-vm0** |
+    | Network interface | **az30305a-nic0** |
 
 1. Review the associated network security group and the effective security rules, including two custom rules that allow inbound connectivity via RDP and HTTP.
 
@@ -289,8 +289,8 @@ The main tasks for this exercise are as follows:
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource group | **az30301b-labRG-Deployment-id** |
-    | Virtual machine | **az30305b-vm1** |
-    | Network interface | **az30305b-nic1** |
+    | Virtual machine | **az30305b-vm0** |
+    | Network interface | **az30305b-nic0** |
 
 
    ![](Images/lab5/33.png)
@@ -322,9 +322,7 @@ The main tasks for this exercise are as follows:
 
 1. Review the results and note the latency of the network connection between the Azure VMs.
 
-  ![](Images/lab4/e2_t2_s9.png)
-
-    > Note: The latency might be slightly higher than the one you observed in the previous exercise, since the two VMs are in different zones (within different Azure datacenters).
+     > Note: The latency might be slightly higher than the one you observed in the previous exercise, since the two VMs are in different zones (within different Azure datacenters).
 
 1. In the Azure portal, navigate to the **az30301b-labRG-Deployment-id** resource group blade, in the list of resources, select the **az30305b-vm0** virtual machine entry, and on the **az30305b-vm0** blade, note the **Location** and **Availability zone** entries.
 
