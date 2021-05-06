@@ -193,7 +193,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 3: Generate an account-level shared access signature
 
-1. Within the Remote Desktop session to **az30306a-vm0**, start Internet Explorer, navigate to the [Azure portal](https://portal.azure.com), and sign-in by providing credentials of the user account with the Owner role in the subscription you are using in this lab.
+1. Within the Remote Desktop session to **az30306a-vm0**, start Internet Explorer and download Microsoft edge for better experience, url to download - https://www.microsoft.com/en-us/edge , navigate to the [Azure portal](https://portal.azure.com), and sign-in by providing credentials of the user account with the Owner role in the subscription you are using in this lab.
 
    >**Note**: You can find the Azure Credentials from the environment details tab.
 
