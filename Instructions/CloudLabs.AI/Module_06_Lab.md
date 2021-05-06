@@ -124,7 +124,7 @@ The main tasks for this exercise are as follows:
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
     | Resource group | the name of a new resource group **az30306a-labRG** |
-    | Storage account name | any globally unique name between 3 and 24 in length consisting of letters and digits, For eg: **azstore**Deployment-ID |
+    | Storage account name | **azstore**Deployment-ID |
     | Location | the name of an Azure region where you can create an Azure Storage account  |
     | Performance | **Standard** |
     | Account kind | **StorageV2 (general purpose v2)** |
