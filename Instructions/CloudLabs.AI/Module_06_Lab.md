@@ -130,18 +130,22 @@ The main tasks for this exercise are as follows:
     | Redundancy | **Locally redundant storage (LRS)** |
 
       > Note: You can find the Deployment-id from the environment details tab.
+    
+    ![](Images/lab5/1.png)
 
 1. Select **Next: Advanced >**, on the **Advanced** tab of the **Create storage account** blade, review the available options and accept the default options, and click  **Next: Networking >**
 
-    ![](Images/lab5/ex1_task1_step3.png)
+    ![](Images/lab5/2.png)
 
 1. On the **Networking** tab of the **Create storage account** blade, review the available options, , accept the default option **Public endpoint (all networks}** and when you scroll down, will notice network routing , please accept default value and select **Next: Data protection >**.
 
-    ![](Images/lab5/ex1_task1_step4.png)
+    ![](Images/lab5/3.png)
 
 1. On the **Data protection** tab of the **Create storage account** blade, review the available options, accept the defaults, then select **Next: Tags >**, accept the defaults and click **Next: Review + Create >** , wait for the validation process to complete and when validation passed select **Create**.
 
     > Note: Wait for the Storage account to be created. This should take about 2 minutes.
+  
+   ![](Images/lab5/4.png)
 
 #### Task 2: Install Storage Explorer
 
