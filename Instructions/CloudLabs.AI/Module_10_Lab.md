@@ -170,7 +170,7 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, upload the Azure Resource Manager template **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\10\roledefinition30310.json** into the home directory.
 
-1. From the Cloud Shell pane, run the following to replace the `SUBSCRIPTION_ID` placeholder with the ID value of the Azure subscription:
+1. From the Cloud Shell pane, run the following command 
 
    ```powershell
    $subscription_id = (Get-AzContext).Subscription.id
