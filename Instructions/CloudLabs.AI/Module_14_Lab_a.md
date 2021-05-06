@@ -66,14 +66,14 @@ None
 
  ii. Select existing Resource Group as **az30314a-labRG-Deployment-id** and enter unique names for **storage account name** and **File Share** and select **Create storage**. 
 
-1. From the Cloud Shell pane, run the following to create a new directory named **az30305a1** and set it as your current directory:
+1. From the Cloud Shell pane, run the following to create a new directory named **az30314a1** and set it as your current directory:
 
    ```sh
    mkdir az30314a1
    cd ~/az30314a1/
    ```
 
-1. From the Cloud Shell pane, run the following to clone a sample app repository to the **az30305a1** directory:
+1. From the Cloud Shell pane, run the following to clone a sample app repository to the **az30314a1** directory:
 
    ```sh
    REPO=https://github.com/Azure-Samples/html-docs-hello-world.git
