@@ -230,9 +230,11 @@ The main tasks for this exercise are as follows:
 
 #### Task 4: Create a blob container by using Azure Storage Explorer
 
-1. Within the Remote Desktop session to **az30306a-vm0**, start Azure Storage Explorer.
+1. Within the Remote Desktop session to **az30306a-vm0**, start Azure Storage Explorer. Right click on Storage Accounts and Click **Connect to Azure Storage...**.
 
-1. In the Azure Storage Explorer window, in the **Connect to Azure Storage** window, select **Use a shared access signature (SAS) URI** and select **Next**.
+    ![](Images/lab5/1-storageexplorer.png)
+
+1. In the **Connect to Azure Storage** window, select **Use a shared access signature (SAS) URI** and select **Next**.
 
     ![](Images/lab5/ex1_task4_step2.png)
 
