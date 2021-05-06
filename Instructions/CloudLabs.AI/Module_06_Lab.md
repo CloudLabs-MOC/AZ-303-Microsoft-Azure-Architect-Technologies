@@ -68,7 +68,7 @@ The main tasks for this exercise are as follows:
     
    ![](Images/lab5/ex0_task1_step3.2.png)
 
-   >**Note**: You can find the Deployment-id from the environment details tab.
+      >**Note**: You can find the Deployment-id from the environment details tab.
 
 1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**.
 
@@ -130,7 +130,7 @@ The main tasks for this exercise are as follows:
     | Account kind | **StorageV2 (general purpose v2)** |
     | Replication | **Locally redundant storage (LRS)** |
 
- > Note: You can find the Deployment-id from the environment details tab.
+      > Note: You can find the Deployment-id from the environment details tab.
 
 1. Select **Next: Networking >**, on the **Networking** tab of the **Create storage account** blade, review the available options, accept the default option **Public endpoint (all networks}** and select **Next: Data protection >**.
 
