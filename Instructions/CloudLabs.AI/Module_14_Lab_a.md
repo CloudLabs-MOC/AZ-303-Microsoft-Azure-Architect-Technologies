@@ -64,7 +64,7 @@ None
 
       i. If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab and **click on Show advanced settings**.
 
- ii. Select existing Resource Group as **az3035a-labRG-Deployment-id** and enter unique names for **storage account name** and **File Share** and select **Create storage**. 
+ ii. Select existing Resource Group as **az30314a-labRG-Deployment-id** and enter unique names for **storage account name** and **File Share** and select **Create storage**. 
 
 1. From the Cloud Shell pane, run the following to create a new directory named **az30305a1** and set it as your current directory:
 
