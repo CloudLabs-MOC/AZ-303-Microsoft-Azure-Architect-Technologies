@@ -140,8 +140,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Microsoft Compute** blade, select **Virtual machines**.
 
-1. On the **Virtual Machines** blade, review the list of management actions that can be delegated through RBAC. Note that they include the **Deallocate Virtual Machine** and **Start Virtual Machine** actions.
-
+1. On the **Virtual Machines** blade, review the list of management actions that can be delegated through RBAC.
 
 #### Task 2: Create a custom RBAC role in an Azure AD tenant
 
