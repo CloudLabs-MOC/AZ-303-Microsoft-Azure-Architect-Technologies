@@ -188,7 +188,7 @@ The main tasks for this exercise are as follows:
 
 1. Within the Remote Desktop session to **az30312a-hv-vm**, start Internet Explorer, navigate to the [Azure portal](https://portal.azure.com), and sign in by providing credentials from environment details tab.
 
-1. In the Azure portal, search for and select **Recovery Services vaults** and, on the **Recovery Services vaults** blade, select **+ Add**.
+1. In the Azure portal, search for and select **Recovery Services vaults** and, on the **Recovery Services vaults** blade, select **+ New**.
 
     ![](Images/lab9/Ex1_task1_step2.png)
 
