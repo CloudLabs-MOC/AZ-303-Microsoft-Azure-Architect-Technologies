@@ -130,9 +130,9 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30310a-labRG** blade, select **Access Control (IAM)**.
 
-1. On the **az30310a-labRG - Access Control (IAM)** blade, select **Roles**.
+1. On the **az30310a-labRG - Access Control (IAM)** blade, select **Roles(Classic)**.
 
-1. On the **Roles** blade, select **Owner**.
+1. On the **Roles(Classic)** blade, select **Owner**.
 
 1. On the **Owner** blade, select **Permissions**.
 
