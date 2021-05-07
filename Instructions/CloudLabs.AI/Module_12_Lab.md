@@ -100,7 +100,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex0_task2_step7_1.png)
 
-9. Please Create Two Folders in F: Drive with Names **VHDs** and **VMs**. After that Start Internet Explorer and download Microsoft edge for better experience going forward, url to download microsoft edge - https://www.microsoft.com/en-us/edge
+9. Please Create Two Folders in F: Drive with Names **VHDs** and **VMs**. After that Start Internet Explorer and download Microsoft edge for better experience going forward, url to download microsoft edge - https://go.microsoft.com/fwlink/?linkid=2069324&Channel=Stable&language=en
 
     ![](Images/lab9/Ex0_task2_step7_2_1.png)
 
