@@ -393,9 +393,7 @@ The main tasks for this exercise are as follows:
 
    ```powershell
    $domainName = ((Get-AzureAdTenantDetail).VerifiedDomains)[0].Name
-   ```
-
- > Note: Make sure to replace the Deployment-id. You can find the deployment-id from the environment detail page
+   ``` 
 
    ```powershell
    $passwordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
@@ -404,7 +402,7 @@ The main tasks for this exercise are as follows:
    New-AzureADUser -AccountEnabled $true -DisplayName 'aduserDeployment-ID' -PasswordProfile $passwordProfile -MailNickName 'aduserDeployment-ID' -UserPrincipalName "aduserDeployment-ID@$domainName"
    ```
 
-> Note: Make sure you replace the value of Deployment-id. You can find the deployment-id from the environment detail page
+   > Note: Make sure you replace the value of Deployment-id. You can find the deployment-id from the environment detail page
 
 1. From the Cloud Shell pane, run the following to identify the user principal name of the newly created Azure AD user:
    ```powershell
