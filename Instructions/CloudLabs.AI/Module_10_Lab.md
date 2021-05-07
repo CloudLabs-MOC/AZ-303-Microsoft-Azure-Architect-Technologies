@@ -145,7 +145,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Create a custom RBAC role in an Azure AD tenant
 
-1. On the lab computer, open the file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\10\roledefinition30310.json** and review its content:
+1. On the lab computer, open the file **C:\AllFiles\AZ-303-Microsoft-Azure-Architect-Technologies-master\Allfiles\Labs\10\roledefinition30310.json** and review its content: Please note when trying to open the file it will show **Windows cannot open the file** then please click on **try an app on this PC** and select notepad
 
    ```json
    {
