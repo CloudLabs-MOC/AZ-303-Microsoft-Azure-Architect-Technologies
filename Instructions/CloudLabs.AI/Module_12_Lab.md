@@ -215,7 +215,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **az30312b-rsvault | Properties** blade, select the **Update** link under the **Backup Configuration** label.
 
-1. On the **Backup Configuration** blade, set **Storage replication type** to **Locally-redundant**, select **Save** and close the **Backup Configuration** blade.
+1. On the **Backup Configuration** blade, set **Storage replication type** to **Locally-redundant**, select **Save** and close the **Backup Configuration** blade and azure portal may return a pop-up window saying your unsaved edits will be discarded then click **ok**.
 
     > Note: Storage replication type cannot be changed once you start protecting items.
 
