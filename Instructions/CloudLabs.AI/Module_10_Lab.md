@@ -227,9 +227,9 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Test the RBAC role assignment
 
-1. From the lab computer, start a new in-private web browser session, navigate to the [Azure portal](https://portal.azure.com), and sign in by using the **aduserDeployment-id** user account that you noted earlier it should look similar to aduserDeployment-id@xxxxx.onmicrosoft.com with **Pa55w.rd1234** as password.
+1. From the lab computer, start a new in-private web browser session, navigate to the [Azure portal](https://portal.azure.com), and sign in by using the **aduserDeployment-id** user account with **Pa55w.rd1234** as password.
 
-    > Note: Make sure to use the user principal name of the **aduser(Deployment-id)** user account, which you recorded earlier in this lab.
+    > Note: Make sure to use the user principal name of the **aduser(Deployment-id)** user account, which you recorded earlier in this lab, it should look similar to aduserDeployment-id@xxxxx.onmicrosoft.com
 
 1. In the Azure portal, navigate to the **Resource groups** blade. Note that you are not able to see any resource groups. 
 
