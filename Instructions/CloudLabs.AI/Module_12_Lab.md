@@ -100,11 +100,11 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex0_task2_step7_1.png)
 
-9. Please Create Two Folders in F: Drive with Names **VHDs** and **VMs**.
+9. Please Create Two Folders in F: Drive with Names **VHDs** and **VMs**. After that Start Internet Explorer and download Microsoft edge for better experience going forward, url to download microsoft edge - https://www.microsoft.com/en-us/edge
 
     ![](Images/lab9/Ex0_task2_step7_2_1.png)
 
-10. Within the Remote Desktop session to **az30312a-hv-vm**, start Internet Explorer, browse to this link https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019, and download the Windows Server 2019 **VHD** file and move the file from downloads to **F:\\VHDs** folder. (Please follow the below images if any doubts)
+10. Within the Remote Desktop session to **az30312a-hv-vm**, start microsoft edge, browse to this link https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019, and download the Windows Server 2019 **VHD** file and move the file from downloads to **F:\\VHDs** folder. (Please follow the below images if any doubts)
 
     ![](Images/lab9/new/ex0_task2_step10_1.png)
     
