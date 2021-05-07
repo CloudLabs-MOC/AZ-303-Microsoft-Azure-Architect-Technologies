@@ -368,7 +368,7 @@ The main tasks for this exercise are as follows:
 
     ![](Images/lab9/Ex2_task2_step17.png)
 
-1. Refresh the page displaying the Azure portal and navigate to reach the **Prepare infrastructure** blade. Ensure that both Hyper-V site and Hyper-V server have been added and select **Next**.
+1. Refresh the page displaying the Azure portal and navigate to reach the **Prepare infrastructure** blade. Ensure that both Hyper-V site and Hyper-V server have been added and select **Next**. Please note that you need to wait for a couple of minutes for Hyper-V server to load if you dont see the Hyper-V server then please select on the dropdown of Hyper-V site and select the Hyper-V site again.
 
     ![](Images/lab9/Ex2_task2_step18.png)
 
