@@ -471,7 +471,7 @@ The main tasks for this exercise are as follows:
 
    ![](Images/lab9/new2/ex2_task4_step2.png)
 
-1. In the Azure portal, navigate back to the **az30312b-rsvault** blade and select **Site Recovery jobs**. Wait until the status of the **Test failover** job is listed as **Successful**.
+1. In the Azure portal, navigate back to the **az30312b-rsvault** blade and select **Site Recovery jobs** under Monitoring. Wait until the status of the **Test failover** job is listed as **Successful**.
 
 1. In the Azure portal, search for and select **Virtual machines** and, on the **Virtual machines** blade, note the entry representing the newly provisioned virtual machine **az30312a-vm1-test**.
 
