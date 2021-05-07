@@ -243,7 +243,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Implement the target Azure environment
 
-1. In the Azure portal, search for and select **Virtual networks** and, on the **Virtual networks** blade, select **+ Add**.
+1. In the Azure portal, search for and select **Virtual networks** and, on the **Virtual networks** blade, select **+ New**.
 
     ![](Images/lab9/Ex2_task1_step1.png)
 
