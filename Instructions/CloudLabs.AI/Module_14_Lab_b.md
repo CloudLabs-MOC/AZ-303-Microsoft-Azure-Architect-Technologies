@@ -83,7 +83,8 @@ The main tasks for this exercise are as follows:
 
    ```sh
    export RESOURCE_GROUP_NAME='az30314b-labRG-Deployment-ID'
-
+   ```
+   ```sh
    az group create --name "${RESOURCE_GROUP_NAME}" --location "$LOCATION"
    ```
 
@@ -91,9 +92,11 @@ The main tasks for this exercise are as follows:
 
    ```sh
    export STORAGE_ACCOUNT_NAME="az30314b${PREFIX}"
-
+   ```
+   ```sh
    export CONTAINER_NAME="workitems"
-
+   ```
+   ```sh
    export STORAGE_ACCOUNT=$(az storage account create --name "${STORAGE_ACCOUNT_NAME}" --kind "StorageV2" --location "${LOCATION}" --resource-group "${RESOURCE_GROUP_NAME}" --sku "Standard_LRS")
    ```
 
@@ -115,9 +118,11 @@ The main tasks for this exercise are as follows:
 
    ```sh
    export APPLICATION_INSIGHTS_NAME="az30314bi${PREFIX}"
-
+   ```
+   ```sh
    az resource create --name "${APPLICATION_INSIGHTS_NAME}" --location "${LOCATION}" --properties '{"Application_Type": "other", "ApplicationId": "function", "Flow_Type": "Redfield"}' --resource-group "${RESOURCE_GROUP_NAME}" --resource-type "Microsoft.Insights/components"
-
+   ```
+   ```sh
    export APPINSIGHTS_KEY=$(az resource show --name "${APPLICATION_INSIGHTS_NAME}" --query "properties.InstrumentationKey" --resource-group "${RESOURCE_GROUP_NAME}" --resource-type "Microsoft.Insights/components" -o tsv)
    ```
 
@@ -125,7 +130,8 @@ The main tasks for this exercise are as follows:
 
    ```sh
    export FUNCTION_NAME="az30314f${PREFIX}"
-
+   ```
+   ```sh
    az functionapp create --name "${FUNCTION_NAME}" --resource-group "${RESOURCE_GROUP_NAME}" --app-insights "$APPLICATION_INSIGHTS_NAME" --app-insights-key "$APPINSIGHTS_KEY" --storage-account "${STORAGE_ACCOUNT_NAME}" --consumption-plan-location "${LOCATION}" --runtime "dotnet" --functions-version 2
    ```
 
@@ -133,7 +139,8 @@ The main tasks for this exercise are as follows:
 
    ```sh
    az functionapp config appsettings set --name "${FUNCTION_NAME}" --resource-group "${RESOURCE_GROUP_NAME}" --settings "APPINSIGHTS_INSTRUMENTATIONKEY=$APPINSIGHTS_KEY" FUNCTIONS_EXTENSION_VERSION=~2
-
+   ```
+   ```sh
    az functionapp config appsettings set --name "${FUNCTION_NAME}" --resource-group "${RESOURCE_GROUP_NAME}" --settings "STORAGE_CONNECTION_STRING=$STORAGE_CONNECTION_STRING" FUNCTIONS_EXTENSION_VERSION=~2
    ```
 
@@ -169,9 +176,11 @@ The main tasks for this exercise are as follows:
 
    ```sh
    export RESOURCE_GROUP_NAME='az30314b-labRG-Deployment-ID'
-
+   ```
+   ```sh
    export STORAGE_ACCOUNT_NAME="$(az storage account list --resource-group "${RESOURCE_GROUP_NAME}" --query "[0].name" --output tsv)"
-
+   ```
+   ```sh
    export CONTAINER_NAME="workitems"
    ```
 
@@ -179,11 +188,14 @@ The main tasks for this exercise are as follows:
 
    ```sh
    export STORAGE_ACCESS_KEY="$(az storage account keys list --account-name "${STORAGE_ACCOUNT_NAME}" --resource-group "${RESOURCE_GROUP_NAME}" --query "[0].value" --output tsv)"
-
+   ```
+   ```sh
    export WORKITEM='workitem1.txt'
-
+   ```
+   ```sh
    touch "${WORKITEM}"
-
+   ```
+   ```sh
    az storage blob upload --file "${WORKITEM}" --container-name "${CONTAINER_NAME}" --name "${WORKITEM}" --auth-mode key --account-key "${STORAGE_ACCESS_KEY}" --account-name "${STORAGE_ACCOUNT_NAME}"
    ```
 
@@ -228,11 +240,14 @@ The main tasks for this exercise are as follows:
 
    ```sh
    export RESOURCE_GROUP_NAME_EXISTING='az30314b-labRG-Deployment-ID'
-
+   ```
+   ```sh
    export LOCATION=$(az group list --query "[?name == '${RESOURCE_GROUP_NAME_EXISTING}'].location" --output tsv)
-
+   ```
+   ```sh
    export RESOURCE_GROUP_NAME='az30314c-labRG-Deployment-id'
-
+   ```
+   ```sh
    az group create --name "${RESOURCE_GROUP_NAME}" --location $LOCATION
    ```
 
@@ -240,9 +255,11 @@ The main tasks for this exercise are as follows:
 
    ```sh
    export STORAGE_ACCOUNT_NAME="az30314cst${PREFIX}"
-
+   ```
+   ```sh
    export CONTAINER_NAME="workitems"
-
+   ```
+   ```sh
    export STORAGE_ACCOUNT=$(az storage account create --name "${STORAGE_ACCOUNT_NAME}" --kind "StorageV2" --location "${LOCATION}" --resource-group "${RESOURCE_GROUP_NAME}" --sku "Standard_LRS")
    ```
 
@@ -268,7 +285,8 @@ The main tasks for this exercise are as follows:
 
    ```sh
    export QUEUE_NAME="az30314cq${PREFIX}"
-
+   ```
+   ```sh
    az storage queue create --name "${QUEUE_NAME}" --account-name "${STORAGE_ACCOUNT_NAME}" --connection-string "${STORAGE_CONNECTION_STRING}"
    ```
 
@@ -276,7 +294,8 @@ The main tasks for this exercise are as follows:
 
    ```sh
    export QUEUE_SUBSCRIPTION_NAME="az30314cqsub${PREFIX}"
-
+   ```
+   ```sh
    az eventgrid event-subscription create --name "${QUEUE_SUBSCRIPTION_NAME}" --included-event-types 'Microsoft.Storage.BlobCreated' --endpoint "${STORAGE_ACCOUNT_ID}/queueservices/default/queues/${QUEUE_NAME}" --endpoint-type "storagequeue" --source-resource-id "${STORAGE_ACCOUNT_ID}"
    ```
 
@@ -286,11 +305,14 @@ The main tasks for this exercise are as follows:
 
    ```sh
    export AZURE_STORAGE_ACCESS_KEY="$(az storage account keys list --account-name "${STORAGE_ACCOUNT_NAME}" --resource-group "${RESOURCE_GROUP_NAME}" --query "[0].value" --output tsv)"
-
+   ```
+   ```sh
    export WORKITEM='workitem2.txt'
-
+   ```
+   ```sh
    touch "${WORKITEM}"
-
+   ```
+   ```sh
    az storage blob upload --file "${WORKITEM}" --container-name "${CONTAINER_NAME}" --name "${WORKITEM}" --auth-mode key --account-key "${AZURE_STORAGE_ACCESS_KEY}" --account-name "${STORAGE_ACCOUNT_NAME}"
    ```
 
