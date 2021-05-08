@@ -313,7 +313,7 @@ The main tasks for this exercise are as follows:
    az storage blob upload --file "${WORKITEM}" --container-name "${CONTAINER_NAME}" --name "${WORKITEM}" --auth-mode key --account-key "${AZURE_STORAGE_ACCESS_KEY}" --account-name "${STORAGE_ACCOUNT_NAME}"
    ```
 
-1. In the Azure portal, navigate to the blade displaying the Azure Storage account you created in the previous task of this exercise. Find for the storage account starting with **az30314c**.
+1. In the Azure portal, navigate to the resource group az30314c-labRG-deploymentID blade click the Azure Storage with name starting with **az30314c**.
 
 1. On the blade of the Azure Storage account, select **Queues** to display the list of its queues.
 
