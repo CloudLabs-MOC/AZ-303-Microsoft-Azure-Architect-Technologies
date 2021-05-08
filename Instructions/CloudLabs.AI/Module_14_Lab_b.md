@@ -247,9 +247,6 @@ The main tasks for this exercise are as follows:
    ```sh
    export RESOURCE_GROUP_NAME='az30314c-labRG-Deployment-id'
    ```
-   ```sh
-   az group create --name "${RESOURCE_GROUP_NAME}" --location $LOCATION
-   ```
 
 1. From the Cloud Shell pane, run the following to create an Azure Storage account that will host a container to be used by the Event Grid subscription that you will configure in this task:
 
