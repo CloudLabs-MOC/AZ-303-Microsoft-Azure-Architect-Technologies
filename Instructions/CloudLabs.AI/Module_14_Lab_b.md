@@ -144,7 +144,7 @@ The main tasks for this exercise are as follows:
    az functionapp config appsettings set --name "${FUNCTION_NAME}" --resource-group "${RESOURCE_GROUP_NAME}" --settings "STORAGE_CONNECTION_STRING=$STORAGE_CONNECTION_STRING" FUNCTIONS_EXTENSION_VERSION=~2
    ```
 
-1. Switch to the Azure portal and navigate to the blade of the Azure Function app you created earlier in this task.
+1. Switch to the Azure portal and navigate to the resource group 'az30314b-labRG-deploymentID' and click the Azure Function app you created earlier in this task.
 
 1. On the Azure Function app blade, select **Functions** and then, select **+ Add**.
 
