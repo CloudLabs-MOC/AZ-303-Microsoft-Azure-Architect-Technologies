@@ -107,7 +107,7 @@ The main tasks for this exercise are as follows:
 5. From the Cloud Shell pane, run the following to identify the user principal name of the newly created Azure AD user:
 
    ```powershell
-   (Get-AzureADUser -Filter "MailNickName eq 'aduser(Deployment-id)'").UserPrincipalName
+   (Get-AzureADUser -Filter "MailNickName eq 'aduserDeployment-id'").UserPrincipalName
    ```
 
      > Note: Make sure you replace the value of Deployment-id and record the user principal name of the newly created Azure AD user. You will need it later in this lab.
