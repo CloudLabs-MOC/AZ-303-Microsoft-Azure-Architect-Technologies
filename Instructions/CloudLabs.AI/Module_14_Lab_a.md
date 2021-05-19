@@ -274,11 +274,11 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
-1. From the Cloud Shell pane, run the following to verify set the variables representing  the name of the target web app and its distribution group:
+1. From the Cloud Shell pane, run the following to verify set the variables representing  the name of the target web app and its distribution group: note:- please replace deployemt-id with deployment id that you can find it in the environment details tab.
 
    ```sh
    RGNAME='az30314a-labRG-Deployment-id'
-   WEBAPPNAME=$(az webapp list --resource-group $RGNAME --query "[?starts_with(name,'az30314a')]".name --output tsv)
+   WEBAPPNAME=$(az webapp list --resource-group $RGNAME --query "[?starts_with(name,'az30314')]".name --output tsv)
    ```
 
 1. From the Cloud Shell pane, run the following several times to identify the traffic distribution between the two slots.
