@@ -274,7 +274,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
-1. From the Cloud Shell pane, run the following to verify set the variables representing  the name of the target web app and its distribution group: note:- please replace deployemt-id with deployment id that you can find it in the environment details tab.
+1. From the Cloud Shell pane, run the following to verify set the variables representing  the name of the target web app and its distribution group: note:- please replace deployment-id with deployment id that you can find it in the environment details tab.
 
    ```sh
    RGNAME='az30314a-labRG-Deployment-id'
